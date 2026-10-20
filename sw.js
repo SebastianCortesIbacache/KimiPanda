@@ -2,7 +2,7 @@
  * KIMI PANDA — SERVICE WORKER OFFLINE-FIRST (PWA)
  */
 
-const CACHE_NAME = 'kimi-panda-v7';
+const CACHE_NAME = 'kimi-panda-v8';
 
 const PRECACHE_ASSETS = [
   './',

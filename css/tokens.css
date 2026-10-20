@@ -36,22 +36,44 @@
   --font-b: 'Nunito', sans-serif;
 }
 
-/* Reset Global */
+/* Reset Global & Compatibilidad Cross-Browser (Chrome, Firefox, Safari) */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(36, 28, 21, 0.22) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(36, 28, 21, 0.22);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(36, 28, 21, 0.4);
 }
 
 html, body {
   height: 100%;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   max-height: 100dvh;
   margin: 0;
   padding: 0;
   overflow: hidden;
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

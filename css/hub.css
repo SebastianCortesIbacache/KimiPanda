@@ -135,9 +135,9 @@
 }
 
 .mascot {
-  width: min(48vw, 220px);
-  height: auto;
-  max-height: 240px;
+  width: auto;
+  height: min(38vw, 190px);
+  max-height: 210px;
   object-fit: contain;
   filter: drop-shadow(0 6px 0 rgba(36, 28, 21, 0.15));
   animation: floatMascot 4s ease-in-out infinite;
@@ -306,36 +306,59 @@
    ADAPTACIÓN RESPONSIVA — PANTALLA HUB (5 MODOS)
    ========================================================================== */
 
-/* MODO 1: Computadora (Desktop 1440x900) */
+/* MODO 1: Computadora (Desktop 1440x900 / 1920x1080) */
 @media (min-width: 900px) and (orientation: landscape) {
   #scr-hub {
-    max-width: 960px;
+    max-width: 1020px;
+    width: 100%;
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-    padding: 24px 0;
+    grid-template-columns: 1fr 1.08fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "hud      hud"
+      "hero     menu"
+      "missions missions";
+    gap: 16px 32px;
+    align-items: center;
+    padding: 14px 0;
+    box-sizing: border-box;
+    height: 100%;
   }
   #scr-hub.active {
-    display: flex;
-  }
-  .hub-desktop-columns {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 28px;
-    align-items: center;
+  }
+  .hud {
+    grid-area: hud;
     width: 100%;
   }
   .hero {
-    max-height: 380px;
+    grid-area: hero;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .mascot {
-    width: 220px;
-    max-height: 240px;
+    width: auto;
+    height: 180px;
+    max-height: 200px;
+  }
+  .menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
   }
   .menu .pbtn {
-    height: 64px;
+    height: 68px;
     font-size: 20px;
+  }
+  .missions {
+    grid-area: missions;
+    width: 100%;
+    padding: 16px 20px 14px 20px;
   }
 }
 
@@ -534,11 +557,11 @@
 
 .hero-mochi-hat {
   position: absolute;
-  top: -4px;
-  left: 24%;
-  width: 52%;
-  max-width: 120px;
-  transform: rotate(-4deg);
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 90px;
+  max-width: 52%;
   filter: drop-shadow(0 4px 0 rgba(0,0,0,0.25));
   z-index: 5;
   pointer-events: none;
@@ -564,6 +587,7 @@
 
 .profile-modal::backdrop {
   background: rgba(36, 28, 21, 0.45);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 

@@ -323,3 +323,22 @@
     padding: 8px;
   }
 }
+
+/* Adaptación Desktop Computador (Landscape >= 900px) */
+@media (min-width: 900px) and (orientation: landscape) {
+  #scr-achievements {
+    max-width: 980px;
+    gap: 14px;
+  }
+  .ach-container {
+    min-height: 0;
+  }
+  .ach-grid,
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .ach-card {
+    padding: 10px 12px;
+  }
+}

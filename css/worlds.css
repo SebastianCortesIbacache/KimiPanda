@@ -216,3 +216,22 @@
     font-size: 12px;
   }
 }
+
+/* Adaptación Desktop Computador (Landscape >= 900px) */
+@media (min-width: 900px) and (orientation: landscape) {
+  #scr-worlds {
+    max-width: 980px;
+    gap: 14px;
+  }
+  .worlds-container {
+    min-height: 0;
+  }
+  .worlds-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .world-card {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+}

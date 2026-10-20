@@ -425,36 +425,52 @@
 /* MODO 1: Computadora (Desktop 1440x900) & MODO 3: Tablet Horizontal (1024x768) */
 @media (min-width: 768px) and (orientation: landscape) {
   #scr-game, #scr-summary {
-    max-width: 960px;
+    max-width: 1020px;
+    width: 100%;
   }
   .g-body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "card    answers"
+      "helpers answers";
+    gap: 14px 28px;
     align-items: center;
     flex: 1;
+    min-height: 0;
   }
   .qcard {
-    min-height: 280px;
+    grid-area: card;
+    min-height: 240px;
     height: 100%;
-    max-height: 380px;
+    max-height: 350px;
     justify-content: center;
   }
   .qcard.has-image .q-media-frame {
-    height: 180px;
-    max-height: 180px;
+    height: 170px;
+    max-height: 170px;
+  }
+  .g-helpers {
+    grid-area: helpers;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: -4px;
+    margin-bottom: 2px;
   }
   .answers {
+    grid-area: answers;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     height: 100%;
-    max-height: 380px;
+    max-height: 350px;
     align-content: center;
   }
   .answers .pbtn {
-    height: 90px;
-    font-size: 22px;
+    height: 84px;
+    font-size: 21px;
   }
 }
 

@@ -61,8 +61,9 @@
 
 .shop-diorama-mascot {
   position: relative;
-  width: 80px;
-  height: 85px;
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
 }
 
 .shop-diorama-mascot img {
@@ -74,10 +75,10 @@
 .shop-preview-hat,
 .avatar-preview-hat {
   position: absolute;
-  width: 56%;
-  top: -6%;
-  left: 22%;
-  transform: rotate(-4deg);
+  width: 44px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
   pointer-events: none;
   z-index: 3;
   animation: floatMini 2.5s ease-in-out infinite alternate;
@@ -226,5 +227,27 @@
   }
   .shop-card {
     padding: 8px;
+  }
+}
+
+/* Adaptación Desktop Computador (Landscape >= 900px) */
+@media (min-width: 900px) and (orientation: landscape) {
+  #scr-shop {
+    max-width: 980px;
+    gap: 14px;
+  }
+  .shop-diorama {
+    padding: 8px 16px;
+    gap: 16px;
+  }
+  .shop-items-container {
+    min-height: 0;
+  }
+  .shop-items-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .shop-card {
+    padding: 10px 12px;
   }
 }
