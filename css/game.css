@@ -35,12 +35,16 @@
 .hearts svg {
   width: 26px;
   height: 26px;
-  transition: transform 0.2s var(--bouncy);
+  fill: var(--red, #F0685F);
+  stroke: var(--ink, #241C15);
+  stroke-width: 1.8;
+  transition: transform 0.2s var(--bouncy), opacity 0.2s ease, fill 0.2s ease;
 }
 
 .hearts svg.lost {
-  transform: scale(0.75);
+  fill: #D8D2C9 !important;
   opacity: 0.35;
+  transform: scale(0.75);
 }
 
 .progress {

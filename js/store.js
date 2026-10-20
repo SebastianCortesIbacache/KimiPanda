@@ -60,6 +60,10 @@ export function loadProfile() {
     if (raw) {
       const parsed = JSON.parse(raw);
       currentProfile = { ...DEFAULT_PROFILE, ...parsed };
+      // Garantizar corazones completos al inicializar sesión
+      if (!currentProfile.hearts || currentProfile.hearts <= 0) {
+        currentProfile.hearts = currentProfile.maxHearts || 3;
+      }
     } else {
       currentProfile = { ...DEFAULT_PROFILE };
       saveProfile();

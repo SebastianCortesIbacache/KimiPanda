@@ -192,8 +192,19 @@ function loadQuestion(index) {
     }
     if (qMediaFrame) qMediaFrame.style.display = 'flex';
     if (qMediaImg) {
+      qMediaImg.alt = 'Ilustración educativa';
+      qMediaImg.onerror = () => {
+        // Fallback defensivo ante cualquier error de red o carga
+        if (qMediaFrame) qMediaFrame.style.display = 'none';
+        if (qCard) {
+          qCard.classList.remove('has-image');
+          qCard.classList.add('text-only');
+        }
+      };
+      qMediaImg.onload = () => {
+        if (qMediaFrame) qMediaFrame.style.display = 'flex';
+      };
       qMediaImg.src = q.img;
-      qMediaImg.alt = q.q;
     }
   } else {
     if (qCard) {
@@ -201,6 +212,12 @@ function loadQuestion(index) {
       qCard.classList.add('text-only');
     }
     if (qMediaFrame) qMediaFrame.style.display = 'none';
+    if (qMediaImg) {
+      qMediaImg.src = '';
+      qMediaImg.alt = '';
+      qMediaImg.onerror = null;
+      qMediaImg.onload = null;
+    }
   }
 
   // Texto de la pregunta

@@ -117,35 +117,7 @@ input:focus-visible {
   opacity: 0.35;
 }
 
-/* Islas Flotantes Decorativas (Juicy Environment) */
-.floating-island {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: drop-shadow(0 6px 12px rgba(36, 28, 21, 0.08));
-}
 
-.floating-island.island-1 {
-  bottom: 6%;
-  left: -15px;
-  animation: islandDrift1 8s ease-in-out infinite alternate;
-}
-
-.floating-island.island-2 {
-  top: 14%;
-  right: -10px;
-  animation: islandDrift2 10s ease-in-out infinite alternate;
-}
-
-@keyframes islandDrift1 {
-  0% { transform: translateY(0) rotate(0.8deg); }
-  100% { transform: translateY(-10px) rotate(-0.8deg); }
-}
-
-@keyframes islandDrift2 {
-  0% { transform: translateY(0) rotate(-0.8deg); }
-  100% { transform: translateY(-14px) rotate(1.2deg); }
-}
 
 .floaty {
   position: absolute;
@@ -170,13 +142,13 @@ input:focus-visible {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px;
+  padding: 12px 16px calc(28px + env(safe-area-inset-bottom, 0px)) 16px;
   box-sizing: border-box;
 }
 
 @media (max-width: 480px) {
   .app {
-    padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px)) 10px;
+    padding: 10px 10px calc(28px + env(safe-area-inset-bottom, 0px)) 10px;
   }
 }
 

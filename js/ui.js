@@ -48,13 +48,13 @@ export function burstConfetti(fromElement) {
   }
 }
 
-export function renderHearts(container, currentHearts, maxHearts = 3) {
+export function renderHearts(container, currentHearts = 3, maxHearts = 3) {
   if (!container) return;
   let html = '';
   for (let i = 0; i < maxHearts; i++) {
     const isFull = i < currentHearts;
     html += `
-      <svg class="${isFull ? '' : 'lost'}" viewBox="0 0 24 24" fill="${isFull ? '#F0685F' : '#F3ECE2'}" stroke="#241C15" stroke-width="1.8">
+      <svg class="${isFull ? '' : 'lost'}" viewBox="0 0 24 24" fill="${isFull ? '#F0685F' : '#D8D2C9'}" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
         <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
       </svg>
     `;
