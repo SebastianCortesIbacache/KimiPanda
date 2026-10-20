@@ -1,0 +1,22 @@
+{
+  "name": "kimi-panda",
+  "version": "1.0.0",
+  "description": "Kimi Panda — Aventura de Aprendizaje Didáctico y Agilidad Mental (Tier 1: 6-7 años, Mineduc Chile)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 8000 .",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "pwa",
+    "educational-game",
+    "mineduc-chile",
+    "children",
+    "learning",
+    "math",
+    "science",
+    "language"
+  ],
+  "author": "Sebastian Cortes Ibacache",
+  "license": "MIT"
+}

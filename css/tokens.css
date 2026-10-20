@@ -1,0 +1,364 @@
+/* ==========================================================================
+   KIMI PANDA — TOKENS MAESTROS Y BASE GLOBAL (Playful Chunky Pop)
+   ========================================================================== */
+
+:root {
+  /* Fondo y Neutros */
+  --bg: #FFF4E4;
+  --ink: #241C15;
+  --ink-soft: rgba(36, 28, 21, 0.62);
+  --card: #FFFFFF;
+  --card-cream: #FFFDF8;
+
+  /* Paleta Chunky Vibrante (Base y Sombra Sólida) */
+  --green: #37A05C;   --green-d: #1F7A3D;
+  --orange: #FF8A2A;  --orange-d: #D96A0F;
+  --amber: #FFC53D;   --amber-d: #DE9E12;
+  --blue: #3D9BE9;    --blue-d: #1F6FB4;
+  --purple: #9B6BF3;  --purple-d: #6F3FD1;
+  --red: #F0685F;     --red-d: #C84B43;
+
+  /* Bordes, Curvaturas y Sombras Push 3D */
+  --r-lg: 28px;
+  --r-md: 20px;
+  --r-sm: 14px;
+  --r-pill: 999px;
+  --bw: 3px;
+  --push: 8px;
+  --push-sm: 4px;
+
+  /* Físicas Elásticas de Microinteracción */
+  --bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  /* Tipografías Oficiales */
+  --font-d: 'Fredoka', cursive, sans-serif;
+  --font-b: 'Nunito', sans-serif;
+}
+
+/* Reset Global */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-b);
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Accesibilidad: Foco Visible de Alto Contraste (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+button:focus-visible, 
+[role="button"]:focus-visible, 
+input:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* Fondo Decorativo Suave (Sin interferencia visual) */
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.45;
+}
+.blob.b1 {
+  width: 44vmax;
+  height: 44vmax;
+  background: #CDEECD;
+  top: -14vmax;
+  left: -12vmax;
+}
+.blob.b2 {
+  width: 36vmax;
+  height: 36vmax;
+  background: #FFE1B8;
+  bottom: -12vmax;
+  right: -10vmax;
+}
+.blob.b3 {
+  width: 26vmax;
+  height: 26vmax;
+  background: #D9E9FF;
+  top: 38%;
+  right: 14%;
+  opacity: 0.35;
+}
+
+/* Islas Flotantes Decorativas (Juicy Environment) */
+.floating-island {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: drop-shadow(0 6px 12px rgba(36, 28, 21, 0.08));
+}
+
+.floating-island.island-1 {
+  bottom: 6%;
+  left: -15px;
+  animation: islandDrift1 8s ease-in-out infinite alternate;
+}
+
+.floating-island.island-2 {
+  top: 14%;
+  right: -10px;
+  animation: islandDrift2 10s ease-in-out infinite alternate;
+}
+
+@keyframes islandDrift1 {
+  0% { transform: translateY(0) rotate(0.8deg); }
+  100% { transform: translateY(-10px) rotate(-0.8deg); }
+}
+
+@keyframes islandDrift2 {
+  0% { transform: translateY(0) rotate(-0.8deg); }
+  100% { transform: translateY(-14px) rotate(1.2deg); }
+}
+
+.floaty {
+  position: absolute;
+  pointer-events: none;
+  animation: drift 9s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translateY(-14px) rotate(var(--rot, 0deg));
+  }
+}
+
+/* Contenedor Base de la Aplicación */
+.app {
+  position: relative;
+  z-index: 1;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px)) 10px;
+  }
+}
+
+/* Pantallas y Transiciones */
+.screen {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  animation: screenIn 0.4s var(--ease-out);
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Botones Mecánicos Push 3D (Sticker Pop) */
+.pbtn {
+  --c: var(--green);
+  --cd: var(--green-d);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--c);
+  color: #FFFFFF;
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(16px, 4vw, 20px);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 var(--push) 0 var(--ink);
+  padding: 12px 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.pbtn:hover {
+  filter: brightness(1.05);
+}
+
+.pbtn:active, .pbtn.pressed {
+  transform: translateY(var(--push));
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.pbtn.green  { --c: var(--green);  --cd: var(--green-d); }
+.pbtn.orange { --c: var(--orange); --cd: var(--orange-d); }
+.pbtn.amber  { --c: var(--amber);  --cd: var(--amber-d); color: var(--ink); }
+.pbtn.blue   { --c: var(--blue);   --cd: var(--blue-d); }
+.pbtn.purple { --c: var(--purple); --cd: var(--purple-d); }
+.pbtn.red    { --c: var(--red);    --cd: var(--red-d); }
+
+/* Botones Redondos de Icono */
+.iconbtn {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 0 4px 0 var(--ink);
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.iconbtn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.iconbtn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Píldoras de Contador (Estrellas / Nivel) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  box-shadow: 0 4px 0 var(--ink);
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.pill svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Notificación Flotante (Toast) */
+.toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translate(-50%, -20px) scale(0.9);
+  background: var(--amber);
+  color: var(--ink);
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(16px, 4.2vw, 22px);
+  padding: 10px 24px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  box-shadow: 0 6px 0 var(--ink);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--bouncy), transform 0.25s var(--bouncy);
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+/* Confetti de Estrellitas */
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 90;
+  pointer-events: none;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(115vh) rotate(720deg);
+  }
+}
+
+/* Marca Minimalista */
+.brandtag {
+  position: fixed;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-b);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* Accesibilidad: Reducción de Movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

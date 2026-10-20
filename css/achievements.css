@@ -1,0 +1,325 @@
+/* ==========================================================================
+   KIMI PANDA — SALA DE LOGROS Y MEDALLERO (achievements.css)
+   ========================================================================== */
+
+#scr-achievements {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 12px;
+  overflow: hidden;
+}
+
+#scr-achievements.active {
+  display: flex;
+}
+
+/* 1. Header de Logros */
+.ach-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.ach-title-box {
+  flex: 1;
+}
+
+.ach-title-box h2 {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.ach-title-box p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* 1.1 Selector de Pestañas (Trofeos vs Destrezas) */
+.ach-tabs {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.ach-tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+  text-align: center;
+}
+
+.ach-tab-btn.active {
+  background: var(--amber);
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+/* 2. Contenedor de Logros */
+.ach-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 4px;
+  padding-bottom: 8px;
+}
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  .ach-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ach-card {
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ach-card.unlocked {
+  background: #FFFDF8;
+  border-color: var(--ink);
+}
+
+.ach-card.locked {
+  background: #F4EFE6;
+  opacity: 0.65;
+}
+
+.ach-icon {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--bg);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ach-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ach-title {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ach-desc {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+
+.ach-badge {
+  font-family: var(--font-d);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  border: 2px solid var(--ink);
+  background: var(--green);
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.ach-card.locked .ach-badge {
+  background: #D9D2C5;
+  color: var(--ink-soft);
+}
+
+/* 2.1 Grid de Destrezas Curriculares */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.skill-card {
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.skill-card.amber { border-left: 6px solid var(--amber); }
+.skill-card.green { border-left: 6px solid var(--green); }
+.skill-card.orange { border-left: 6px solid var(--orange); }
+.skill-card.purple { border-left: 6px solid var(--purple); }
+.skill-card.red { border-left: 6px solid var(--coral); }
+.skill-card.blue { border-left: 6px solid var(--blue); }
+
+.skill-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.skill-emoji {
+  font-size: 26px;
+  width: 42px;
+  height: 42px;
+  background: #FFFDF8;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.skill-name {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.skill-oa-badge {
+  font-size: 9px;
+  font-weight: 800;
+  background: #FFFDF8;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 1px 6px;
+  color: var(--ink-soft);
+}
+
+.skill-desc {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+
+.skill-metrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.skill-rank-pill {
+  font-family: var(--font-d);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--ink);
+  background: #FFFDF8;
+  color: var(--ink);
+}
+
+.skill-stats-txt {
+  color: var(--ink-soft);
+}
+
+.skill-pct {
+  color: var(--green-d);
+  font-weight: 800;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: #FFFDF8;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--amber);
+  border-radius: var(--r-pill);
+  transition: width 0.4s var(--bouncy);
+}
+
+.skill-bar-fill.amber { background: var(--amber); }
+.skill-bar-fill.green { background: var(--green); }
+.skill-bar-fill.orange { background: var(--orange); }
+.skill-bar-fill.purple { background: var(--purple); }
+.skill-bar-fill.red { background: var(--coral); }
+.skill-bar-fill.blue { background: var(--blue); }
+
+/* Adaptabilidad Móvil Landscape (844x390 - 2 pulgares) */
+@media (max-height: 480px) and (orientation: landscape) {
+  #scr-achievements {
+    max-width: 100%;
+    gap: 6px;
+    padding: 4px 8px;
+  }
+  .ach-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .ach-card {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,211 @@
+/* ==========================================================================
+   KIMI PANDA — ESTILOS DE LA TIENDA DE MOCHI (shop.css)
+   ========================================================================== */
+
+#scr-shop {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 12px;
+  overflow: hidden;
+}
+
+#scr-shop.active {
+  display: flex;
+}
+
+/* 1. Header de la Tienda */
+.shop-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.shop-title-box {
+  flex: 1;
+}
+
+.shop-title-box h2 {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.shop-title-box p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* 2. Diorama de Previsualización de Mochi */
+.shop-diorama {
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  gap: 16px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.shop-diorama-mascot {
+  position: relative;
+  width: 80px;
+  height: 85px;
+}
+
+.shop-diorama-mascot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.shop-preview-hat {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 30px;
+  animation: floatMini 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatMini {
+  0% { transform: translateY(0) rotate(-5deg); }
+  100% { transform: translateY(-4px) rotate(5deg); }
+}
+
+.shop-diorama-bubble {
+  flex: 1;
+  background: #FFFDF8;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* 3. Cuadrícula de Artículos (Scrollable Interno) */
+.shop-items-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 4px;
+  padding-bottom: 8px;
+}
+
+.shop-items-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  .shop-items-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.shop-card {
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.shop-card.equipped {
+  border-color: var(--green);
+  box-shadow: 0 var(--push-sm) 0 var(--green-d);
+  background: #F2FBF5;
+}
+
+.shop-item-icon {
+  font-size: 34px;
+  width: 50px;
+  height: 50px;
+  background: var(--bg);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.shop-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.shop-item-title {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shop-item-desc {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+
+.shop-item-action {
+  flex-shrink: 0;
+}
+
+.shop-item-action .pbtn {
+  height: 38px;
+  padding: 0 12px;
+  font-size: 13px;
+  border-radius: var(--r-pill);
+  box-shadow: 0 3px 0 var(--ink);
+}
+
+.shop-item-action .pbtn:active {
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.shop-item-action .pbtn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Adaptabilidad Móvil Landscape (844x390 - 2 pulgares) */
+@media (max-height: 480px) and (orientation: landscape) {
+  #scr-shop {
+    max-width: 100%;
+    gap: 6px;
+    padding: 4px 8px;
+  }
+  .shop-diorama {
+    display: none; /* Ahorro de espacio en 2 pulgares */
+  }
+  .shop-items-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .shop-card {
+    padding: 8px;
+  }
+}

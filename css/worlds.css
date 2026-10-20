@@ -1,0 +1,218 @@
+/* ==========================================================================
+   KIMI PANDA — ESTILOS DE MUNDOS CURRICULARES (worlds.css)
+   ========================================================================== */
+
+#scr-worlds {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  gap: 12px;
+  overflow: hidden;
+}
+
+#scr-worlds.active {
+  display: flex;
+}
+
+/* 1. Header de Mundos */
+.worlds-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.worlds-title-box {
+  flex: 1;
+}
+
+.worlds-title-box h2 {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.worlds-title-box p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* 2. Contenedor de Mundos */
+.worlds-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 4px;
+  padding-bottom: 8px;
+}
+
+.worlds-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 580px) {
+  .worlds-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.world-card {
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.12s ease;
+}
+
+/* Acentos Temáticos */
+.world-card.green  { border-top: 6px solid var(--green); }
+.world-card.amber  { border-top: 6px solid var(--amber); }
+.world-card.blue   { border-top: 6px solid var(--blue); }
+.world-card.purple { border-top: 6px solid var(--purple); }
+.world-card.orange { border-top: 6px solid var(--orange); }
+.world-card.red    { border-top: 6px solid var(--red); }
+
+.world-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.world-emoji {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  background: #FFFDF8;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.world-title {
+  font-family: var(--font-d);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.world-desc {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+
+/* Nodos de Nivel */
+.world-levels-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: #FFFDF8;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 6px 10px;
+}
+
+.lvl-node {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.lvl-node:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.lvl-node.open {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.lvl-node.passed {
+  background: var(--green);
+  color: #FFFFFF;
+}
+
+.lvl-node.has-stars {
+  position: relative;
+  background: #FFFDF8;
+  color: var(--ink);
+  border-color: var(--amber-d);
+}
+
+.lvl-stars-mini {
+  position: absolute;
+  bottom: -6px;
+  font-size: 8px;
+  letter-spacing: -2px;
+  line-height: 1;
+  background: var(--card);
+  border: 1px solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 1px 3px;
+  box-shadow: 0 1px 0 var(--ink);
+  white-space: nowrap;
+}
+
+.lvl-node.locked {
+  background: #E8E2D8;
+  color: var(--ink-soft);
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Adaptabilidad Móvil Landscape (844x390 - 2 pulgares) */
+@media (max-height: 480px) and (orientation: landscape) {
+  #scr-worlds {
+    max-width: 100%;
+    gap: 6px;
+    padding: 4px 8px;
+  }
+  .worlds-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .world-card {
+    padding: 8px;
+    gap: 6px;
+  }
+  .world-levels-track {
+    padding: 4px 6px;
+  }
+  .lvl-node {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}

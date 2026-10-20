@@ -1,0 +1,555 @@
+/* ==========================================================================
+   KIMI PANDA — GAMEPLAY, TARJETA ADAPTATIVA Y 5 MODOS RESPONSIVOS
+   ========================================================================== */
+
+#scr-game {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#scr-game.active {
+  display: flex;
+}
+
+/* 1. HUD DE JUEGO */
+.g-hud {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.hearts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hearts svg {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s var(--bouncy);
+}
+
+.hearts svg.lost {
+  transform: scale(0.75);
+  opacity: 0.35;
+}
+
+.progress {
+  flex: 1;
+  height: 14px;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  box-shadow: 0 3px 0 var(--ink);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--amber);
+  border-radius: var(--r-pill);
+  transition: width 0.35s ease;
+}
+
+/* 2. CONTENEDOR CENTRAL DE PREGUNTA Y RESPUESTAS */
+.g-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 2.1 COMODINES PROTECTORES */
+.g-helpers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.helper-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 4px 14px 4px 10px;
+  box-shadow: 0 var(--push-sm) 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.2s ease;
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.helper-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.helper-btn:disabled, .helper-btn.used {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.helper-ico {
+  font-size: 15px;
+}
+
+.helper-badge {
+  background: var(--amber);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Píldora de Pista Didáctica */
+.q-hint-pill {
+  background: #FFFDF8;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--purple-d);
+  box-shadow: 0 2px 0 var(--ink);
+  animation: screenIn 0.3s var(--bouncy);
+}
+
+/* 3. COMPONENTE .QCARD ADAPTATIVO */
+.qcard {
+  position: relative;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-lg);
+  padding: 24px 20px 16px 20px;
+  box-shadow: 0 var(--push) 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 160px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.qcard .sticker {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--purple);
+  color: #FFFFFF;
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 3px 14px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  box-shadow: 0 3px 0 var(--ink);
+  text-transform: capitalize;
+}
+
+/* Modo A: Con Imagen */
+.qcard.has-image .q-media-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 135px;
+  max-height: 135px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.qcard.has-image .q-media-frame img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(36, 28, 21, 0.12));
+}
+
+.qcard.has-image .q-big {
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(18px, 4.2vw, 24px);
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+/* Modo B: Solo Texto */
+.qcard.text-only .q-media-frame {
+  display: none !important;
+}
+
+.qcard.text-only .q-big {
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(28px, 7.5vw, 44px);
+  color: var(--ink);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.qcard .q-hint {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 4. BOTONERA DE RESPUESTAS 2x2 */
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.answers .pbtn {
+  height: 64px;
+  padding: 8px 12px;
+  font-size: clamp(16px, 4vw, 20px);
+  font-family: var(--font-d);
+  font-weight: 700;
+  background: var(--card);
+  color: var(--ink);
+  border: var(--bw) solid var(--ink);
+  box-shadow: 0 var(--push) 0 var(--ink);
+  text-align: center;
+  line-height: 1.15;
+}
+
+.answers .pbtn:hover {
+  background: #FFFDF8;
+}
+
+/* Feedback Acierto / Error */
+.answers .pbtn.correct {
+  background: var(--green) !important;
+  color: #FFFFFF !important;
+  animation: tadaBounce 0.45s var(--bouncy);
+}
+
+.answers .pbtn.wrong {
+  background: var(--red) !important;
+  color: #FFFFFF !important;
+  animation: shakeSoft 0.4s ease-in-out;
+}
+
+@keyframes tadaBounce {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.08) rotate(-2deg); }
+  50% { transform: scale(1.08) rotate(2deg); }
+  75% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shakeSoft {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* 5. PANTALLA RESUMEN DE RONDA (#scr-summary) */
+#scr-summary {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  gap: 16px;
+}
+
+#scr-summary.active {
+  display: flex;
+}
+
+.summary-card {
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-lg);
+  padding: 28px 24px 20px 24px;
+  box-shadow: 0 var(--push) 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.summary-mascot {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 0 rgba(36, 28, 21, 0.15));
+  animation: floatMascot 3s ease-in-out infinite;
+}
+
+.summary-title {
+  font-family: var(--font-d);
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+.summary-rating-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0 2px 0;
+}
+
+.rating-star {
+  font-size: 32px;
+  line-height: 1;
+  display: inline-block;
+  transform: scale(0.6);
+  opacity: 0.2;
+  transition: transform 0.3s var(--bouncy), opacity 0.3s ease;
+  animation: starBounceIn 0.5s var(--bouncy) forwards;
+}
+
+.rating-star.earned {
+  opacity: 1;
+  filter: drop-shadow(0 3px 0 var(--ink));
+}
+
+.rating-star.empty {
+  opacity: 0.25;
+  filter: grayscale(1);
+}
+
+@keyframes starBounceIn {
+  0% { transform: scale(0.2) rotate(-20deg); opacity: 0; }
+  60% { transform: scale(1.25) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.summary-rating-praise {
+  font-family: var(--font-d);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  padding: 3px 14px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--ink);
+  box-shadow: 0 2px 0 var(--ink);
+  display: inline-block;
+}
+
+.summary-rating-praise.gold {
+  background: #FEF9E7;
+  color: #7D6608;
+}
+
+.summary-rating-praise.silver {
+  background: #E8F4F8;
+  color: #1A5276;
+}
+
+.summary-rating-praise.bronze {
+  background: #FFF0E6;
+  color: #873600;
+}
+
+.summary-stars-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: var(--ink);
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 22px;
+  padding: 8px 20px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+.summary-stars-badge svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA — PANTALLA JUEGO (5 MODOS)
+   ========================================================================== */
+
+/* MODO 1: Computadora (Desktop 1440x900) & MODO 3: Tablet Horizontal (1024x768) */
+@media (min-width: 768px) and (orientation: landscape) {
+  #scr-game, #scr-summary {
+    max-width: 960px;
+  }
+  .g-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+  }
+  .qcard {
+    min-height: 280px;
+    height: 100%;
+    max-height: 380px;
+    justify-content: center;
+  }
+  .qcard.has-image .q-media-frame {
+    height: 180px;
+    max-height: 180px;
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 100%;
+    max-height: 380px;
+    align-content: center;
+  }
+  .answers .pbtn {
+    height: 90px;
+    font-size: 22px;
+  }
+}
+
+/* MODO 2: Tablet Vertical (800x1280) */
+@media (min-width: 600px) and (orientation: portrait) {
+  #scr-game, #scr-summary {
+    max-width: 640px;
+  }
+  .qcard {
+    min-height: 320px;
+    padding: 36px 24px;
+  }
+  .qcard.has-image .q-media-frame {
+    height: 200px;
+    max-height: 200px;
+  }
+  .qcard.text-only .q-big {
+    font-size: 48px;
+  }
+  .answers .pbtn {
+    height: 80px;
+    font-size: 24px;
+  }
+}
+
+/* MODO 5: Móvil Horizontal (844x390 - 2 pulgares) */
+@media (max-height: 480px) and (orientation: landscape) {
+  #scr-game, #scr-summary {
+    max-width: 100%;
+    gap: 4px;
+    padding: 2px 10px;
+  }
+  .g-hud {
+    gap: 8px;
+  }
+  .g-hud .iconbtn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+  .g-hud .iconbtn svg {
+    width: 16px;
+    height: 16px;
+  }
+  .hearts svg {
+    width: 18px;
+    height: 18px;
+  }
+  .progress {
+    height: 8px;
+  }
+  .g-helpers {
+    gap: 8px;
+  }
+  .helper-btn {
+    padding: 2px 10px 2px 8px;
+    font-size: 11px;
+  }
+  .helper-ico {
+    font-size: 13px;
+  }
+  .helper-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+  .g-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-items: center;
+    flex: 1;
+  }
+  .qcard {
+    min-height: unset;
+    height: 100%;
+    padding: 10px 10px 8px 10px;
+  }
+  .qcard.has-image .q-media-frame {
+    height: 80px;
+    max-height: 80px;
+    margin-bottom: 2px;
+  }
+  .qcard.has-image .q-big {
+    font-size: 14px;
+  }
+  .qcard.text-only .q-big {
+    font-size: 20px;
+    margin: 2px 0;
+  }
+  .qcard .q-hint {
+    display: none; /* Ahorro de espacio en 2 pulgares */
+  }
+  .answers {
+    gap: 6px;
+  }
+  .answers .pbtn {
+    height: 46px;
+    font-size: 14px;
+  }
+}
