@@ -12,7 +12,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_001.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira el ave en la imagen y piensa con qué parte de tu carita aprecias sus colores."
   },
   {
     "id": "kp_ciencias_002",
@@ -27,7 +28,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Recuerda qué parte de tu cabeza te permite escuchar las canciones y ruidos."
   },
   {
     "id": "kp_ciencias_003",
@@ -42,7 +44,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa qué usas para oler cuando tu familia cocina algo rico."
   },
   {
     "id": "kp_ciencias_004",
@@ -57,7 +60,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_021.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el animal marino de la ilustración, ¡es gigante y toma aire!"
   },
   {
     "id": "kp_ciencias_005",
@@ -72,7 +76,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tiene dos patitas, alas con plumas y pone huevitos en el nido."
   },
   {
     "id": "kp_ciencias_006",
@@ -87,7 +92,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_034.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira los pliegues a los lados del pez que toman el aire del agua."
   },
   {
     "id": "kp_ciencias_007",
@@ -102,7 +108,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_041.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la parte de la planta escondida bajo tierra que toma agua."
   },
   {
     "id": "kp_ciencias_008",
@@ -117,7 +124,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Piensa en la parte más colorida de la planta que huele dulce."
   },
   {
     "id": "kp_ciencias_009",
@@ -132,7 +140,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_054.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Fíjate en el cuerpo verde y grueso del cactus que guarda agua."
   },
   {
     "id": "kp_ciencias_010",
@@ -147,7 +156,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Busca el que nace, crece, se alimenta y se mueve solito."
   },
   {
     "id": "kp_ciencias_011",
@@ -162,7 +172,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Las plantitas buscan la luz del sol para crecer sanas y fuertes."
   },
   {
     "id": "kp_ciencias_012",
@@ -177,7 +188,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Brilla arriba en el cielo y nos entrega calor y luz cada día."
   },
   {
     "id": "kp_ciencias_013",
@@ -192,7 +204,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_081.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el dibujo con sol brillante, traje de baño y juegos de arena."
   },
   {
     "id": "kp_ciencias_014",
@@ -207,7 +220,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_087.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en nuestro planeta girando como un trompo frente a la luz."
   },
   {
     "id": "kp_ciencias_015",
@@ -222,7 +236,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_094.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa la imagen con lluvia y frío, donde nos abrigamos con bufanda."
   },
   {
     "id": "kp_ciencias_016",
@@ -237,7 +252,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_101.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la motita blanca en la imagen, ¡parece una nube muy suave!"
   },
   {
     "id": "kp_ciencias_017",
@@ -252,7 +268,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_107.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Fíjate en el material fino del cuaderno que puedes doblar con dedos."
   },
   {
     "id": "kp_ciencias_018",
@@ -267,7 +284,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_114.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira tu polera o pantalón, ¿de qué material suave están hechos?"
   },
   {
     "id": "kp_ciencias_019",
@@ -282,7 +300,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Son las extremidades que doblamos para saltar, correr y jugar fútbol."
   },
   {
     "id": "kp_ciencias_020",
@@ -297,7 +316,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_127.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Toma mucho aire por tu nariz y siente cómo tu pecho se infla."
   },
   {
     "id": "kp_ciencias_021",
@@ -312,7 +332,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Son dos ventanitas en tu rostro que usas para mirar letras e imágenes."
   },
   {
     "id": "kp_ciencias_022",
@@ -327,7 +348,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_141.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el cubito en el dibujo: cuando el agua se enfría mucho se endurece."
   },
   {
     "id": "kp_ciencias_023",
@@ -342,7 +364,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_147.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa las cumbres blancas y frías de la cordillera en la imagen."
   },
   {
     "id": "kp_ciencias_024",
@@ -357,7 +380,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_154.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración qué animalito alcanza las ramas más altas del árbol."
   },
   {
     "id": "kp_ciencias_025",
@@ -372,7 +396,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_161.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa las manzanas y verduras de colores que llenan tu cuerpo de energía."
   },
   {
     "id": "kp_ciencias_026",
@@ -387,7 +412,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en un material duro y firme que resista caídas al suelo."
   },
   {
     "id": "kp_ciencias_027",
@@ -402,7 +428,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es algo invisible que entra por tu nariz y llena tus pulmones."
   },
   {
     "id": "kp_ciencias_028",
@@ -417,7 +444,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_181.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la figura de las plantitas produciendo el aire limpio que respiramos."
   },
   {
     "id": "kp_ciencias_029",
@@ -432,7 +460,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en cómo están las copas de los árboles cuando hace calor."
   },
   {
     "id": "kp_ciencias_030",
@@ -447,7 +476,8 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_194.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en el pecho el motor que late 'pum pum' sin parar."
   },
   {
     "id": "kp_historia_001",
@@ -462,7 +492,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_001.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la cordillera en el dibujo: el sol siempre asoma por ese lado."
   },
   {
     "id": "kp_historia_002",
@@ -477,7 +508,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "El sol parece caminar en el cielo, pero es la Tierra la que gira."
   },
   {
     "id": "kp_historia_003",
@@ -492,7 +524,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_021.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa la esfera redonda en la imagen que muestra toda nuestra Tierra."
   },
   {
     "id": "kp_historia_004",
@@ -507,7 +540,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Son cuatro guías: Norte, Sur, Este y Oeste para no perder el rumbo."
   },
   {
     "id": "kp_historia_005",
@@ -522,7 +556,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Chile tiene territorio en América, en la Antártica y en islas polinésicas."
   },
   {
     "id": "kp_historia_006",
@@ -537,7 +572,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en los vecinos cuyas casas tocan la pandereta de tu patio."
   },
   {
     "id": "kp_historia_007",
@@ -552,7 +588,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es la gran ciudad del Maule famosa por su plaza y río."
   },
   {
     "id": "kp_historia_008",
@@ -567,7 +604,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es una ciudad nortina con playa hermosa junto al gran desierto."
   },
   {
     "id": "kp_historia_009",
@@ -582,7 +620,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es todo lo que tus ojos ven al contemplar la naturaleza o ciudad."
   },
   {
     "id": "kp_historia_010",
@@ -597,7 +636,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_091.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración esa montaña que echa humo por la cumbre."
   },
   {
     "id": "kp_historia_011",
@@ -612,7 +652,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Contar con tus palabras qué ves: montañas, ríos, casas o árboles."
   },
   {
     "id": "kp_historia_012",
@@ -627,7 +668,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_111.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el pedacito de tierra en la imagen rodeado de agua marina."
   },
   {
     "id": "kp_historia_013",
@@ -642,7 +684,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_121.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Chile es largo: arriba hace calor, al centro valles y abajo frío."
   },
   {
     "id": "kp_historia_014",
@@ -657,7 +700,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_131.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la tierna vizcacha en el dibujo: quedan poquitas y debemos cuidarlas."
   },
   {
     "id": "kp_historia_015",
@@ -672,7 +716,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_141.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa los lagos y volcanes verdes del sur chileno en la imagen."
   },
   {
     "id": "kp_historia_016",
@@ -687,7 +732,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "En el norte llueve muy poco, por eso los cerros son secos."
   },
   {
     "id": "kp_historia_017",
@@ -702,7 +748,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_161.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Es el cariño profundo de los pueblos hacia la tierra y naturaleza."
   },
   {
     "id": "kp_historia_018",
@@ -717,7 +764,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_171.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira las palmeras y arena blanca de la playa polinésica en Rapa Nui."
   },
   {
     "id": "kp_historia_019",
@@ -732,7 +780,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es un lugar con arena, palmeras y olas cerca del mar azul."
   },
   {
     "id": "kp_historia_020",
@@ -747,7 +796,8 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Escuchar con cariño a tus amigos aunque tengan ideas o gustos diferentes."
   },
   {
     "id": "kp_ingles_001",
@@ -762,7 +812,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "When someone asks your name, you say: 'My name is...'"
   },
   {
     "id": "kp_ingles_002",
@@ -777,7 +828,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Count your fingers on both hands: one, two... up to ten!"
   },
   {
     "id": "kp_ingles_003",
@@ -792,7 +844,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_021.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the stars in the picture and count: ten plus one!"
   },
   {
     "id": "kp_ingles_004",
@@ -807,7 +860,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_031.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the drawing: you use it to write and draw in school!"
   },
   {
     "id": "kp_ingles_005",
@@ -822,7 +876,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_041.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the picture with many colorful things used to draw together."
   },
   {
     "id": "kp_ingles_006",
@@ -837,7 +892,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_051.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the green school object used to write on your notebook."
   },
   {
     "id": "kp_ingles_007",
@@ -852,7 +908,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_061.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the color in the picture: it looks like a juicy strawberry!"
   },
   {
     "id": "kp_ingles_008",
@@ -867,7 +924,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_071.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the fruit in the drawing: it shares its color's name!"
   },
   {
     "id": "kp_ingles_009",
@@ -882,7 +940,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_081.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the body part with five fingers used to wave hello!"
   },
   {
     "id": "kp_ingles_010",
@@ -897,7 +956,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_091.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the face part in the drawing you use to see!"
   },
   {
     "id": "kp_ingles_011",
@@ -912,7 +972,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_101.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the picture: you use them on your head to listen!"
   },
   {
     "id": "kp_ingles_012",
@@ -927,7 +988,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_111.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the happy man in the drawing: he is the father!"
   },
   {
     "id": "kp_ingles_013",
@@ -942,7 +1004,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_121.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the loving lady in the drawing: she is the mother!"
   },
   {
     "id": "kp_ingles_014",
@@ -957,7 +1020,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_131.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the sweet animal in the picture that says 'meow'!"
   },
   {
     "id": "kp_ingles_015",
@@ -972,7 +1036,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_141.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the cute little baby dog with floppy ears playing happily!"
   },
   {
     "id": "kp_ingles_016",
@@ -987,7 +1052,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_151.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the delicious slice with melting cheese and tomato sauce!"
   },
   {
     "id": "kp_ingles_017",
@@ -1002,7 +1068,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_161.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the boy's face: he doesn't like that dairy snack!"
   },
   {
     "id": "kp_ingles_018",
@@ -1017,7 +1084,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_171.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the toy vehicle on tracks that says 'choo-choo'!"
   },
   {
     "id": "kp_ingles_019",
@@ -1032,7 +1100,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "When the sun shines warm outside, wear light clothes on your chest!"
   },
   {
     "id": "kp_ingles_020",
@@ -1047,7 +1116,8 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_191.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Look at the fish swimming happily inside the little bowl in room!"
   },
   {
     "id": "kp_lenguaje_001",
@@ -1062,7 +1132,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Imita el sonido alegre con que el gallito despierta a la granja."
   },
   {
     "id": "kp_lenguaje_002",
@@ -1077,7 +1148,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_005.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el animal con aletas que nada en el agua marina salada."
   },
   {
     "id": "kp_lenguaje_003",
@@ -1092,7 +1164,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es un simpático marsupial australiano cuyo nombre empieza con la letra W."
   },
   {
     "id": "kp_lenguaje_004",
@@ -1107,7 +1180,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en el pastito verde y tierno que come el caballito."
   },
   {
     "id": "kp_lenguaje_005",
@@ -1122,7 +1196,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tiene alitas, pico y construye su casita de ramitas en lo alto."
   },
   {
     "id": "kp_lenguaje_006",
@@ -1137,7 +1212,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_021.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración el animalito con caparazón en espiral que repta."
   },
   {
     "id": "kp_lenguaje_007",
@@ -1152,7 +1228,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es la acción de emitir sonidos melodiosos como hacen las aves."
   },
   {
     "id": "kp_lenguaje_008",
@@ -1167,7 +1244,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tiene cresta roja y es el compañero cantor de la gallinita."
   },
   {
     "id": "kp_lenguaje_009",
@@ -1182,7 +1260,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mueve su hociquito, come zanahorias y da saltos con patas traseras."
   },
   {
     "id": "kp_lenguaje_010",
@@ -1197,7 +1276,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tiene bigotes largos, ronronea cuando le haces cariño y trepa tejados."
   },
   {
     "id": "kp_lenguaje_011",
@@ -1212,7 +1292,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_041.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la rodaja jugosa y curvada de la fruta en el dibujo."
   },
   {
     "id": "kp_lenguaje_012",
@@ -1227,7 +1308,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_045.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la imagen la fruta rojita con semillitas pequeñas por fuera."
   },
   {
     "id": "kp_lenguaje_013",
@@ -1242,7 +1324,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_049.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa las dos frutitas rojas unidas por un tallo verde delgado."
   },
   {
     "id": "kp_lenguaje_014",
@@ -1257,7 +1340,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Las frutas tienen vitaminas que protegen tu cuerpito de los resfríos."
   },
   {
     "id": "kp_lenguaje_015",
@@ -1272,7 +1356,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es un tubérculo dulce y anaranjado muy rico que se come caliente."
   },
   {
     "id": "kp_lenguaje_016",
@@ -1287,7 +1372,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_061.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la fruta amarilla en la imagen: ¡al probarla arrugas la carita!"
   },
   {
     "id": "kp_lenguaje_017",
@@ -1302,7 +1388,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_065.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira la gran estrella dorada en el dibujo que ilumina todo el campo."
   },
   {
     "id": "kp_lenguaje_018",
@@ -1317,7 +1404,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_069.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la fruta gigante verde por fuera y roja con pepitas adentro."
   },
   {
     "id": "kp_lenguaje_019",
@@ -1332,7 +1420,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es el terreno con tierra fértil donde crecen verduras y árboles frutales."
   },
   {
     "id": "kp_lenguaje_020",
@@ -1347,7 +1436,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Comer manzanas nos hace bien porque cuidan nuestros dientes y pancita."
   },
   {
     "id": "kp_lenguaje_021",
@@ -1362,7 +1452,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Di en voz alta: man-za-na... busca otra palabra que termine en 'ana'."
   },
   {
     "id": "kp_lenguaje_022",
@@ -1377,7 +1468,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Pronuncia las opciones y busca la que suena con la doble ele."
   },
   {
     "id": "kp_lenguaje_023",
@@ -1392,7 +1484,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Cuenta los sonidos de cada letra: K - I - W - I."
   },
   {
     "id": "kp_lenguaje_024",
@@ -1407,7 +1500,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "La palabra 'Él' se usa para nombrar a un niño o varón."
   },
   {
     "id": "kp_lenguaje_025",
@@ -1422,7 +1516,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Pon tu mano en la garganta y siente cómo suena fuerte 'co-ra-zón'."
   },
   {
     "id": "kp_lenguaje_026",
@@ -1437,7 +1532,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Son gotas de agua que caen de las nubes y empieza con 'Ll'."
   },
   {
     "id": "kp_lenguaje_027",
@@ -1452,7 +1548,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Pronuncia 'ce-re-za': la letra C suena suave como la S."
   },
   {
     "id": "kp_lenguaje_028",
@@ -1467,7 +1564,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es deslizarse sobre las olas parado sobre una tabla con vela."
   },
   {
     "id": "kp_lenguaje_029",
@@ -1482,7 +1580,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_113.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la prenda tejida tradicional de huaso chileno en la ilustración."
   },
   {
     "id": "kp_lenguaje_030",
@@ -1497,7 +1596,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es un animal grande con crin y cola que corre al galope."
   },
   {
     "id": "kp_lenguaje_031",
@@ -1512,7 +1612,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Da aplausos diciendo la palabra: ¡me!... ¡lón!... ¿cuántos aplausos diste?"
   },
   {
     "id": "kp_lenguaje_032",
@@ -1527,7 +1628,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es el nombre de la niña del cuento que comienza con letra W."
   },
   {
     "id": "kp_lenguaje_033",
@@ -1542,7 +1644,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Son pequeñas lucecitas calientes que saltan cuando la leña arde."
   },
   {
     "id": "kp_lenguaje_034",
@@ -1557,7 +1660,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es una palabra cariñosa para nombrar a una niña o señorita joven."
   },
   {
     "id": "kp_lenguaje_035",
@@ -1572,7 +1676,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Escucha la terminación: Cocorocó... busca la palabra que termine con 'ó'."
   },
   {
     "id": "kp_lenguaje_036",
@@ -1587,7 +1692,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tiene dos ruedas, manubrio, timbre y avanzas moviendo tus pies."
   },
   {
     "id": "kp_lenguaje_037",
@@ -1602,7 +1708,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Abriga los hombros en invierno y su nombre empieza con letra Ch."
   },
   {
     "id": "kp_lenguaje_038",
@@ -1617,7 +1724,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es una fruta redonda, pesada y dulce que rueda por la huerta."
   },
   {
     "id": "kp_lenguaje_039",
@@ -1632,7 +1740,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Un campesino es un ser humano trabajador que cuida la siembra."
   },
   {
     "id": "kp_lenguaje_040",
@@ -1647,7 +1756,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_157.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el dibujo del paso de cebra: fíjate si vienen autos cerca."
   },
   {
     "id": "kp_lenguaje_041",
@@ -1662,7 +1772,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tiene dos manecillas que giran en círculo marcando los minutos."
   },
   {
     "id": "kp_lenguaje_042",
@@ -1677,7 +1788,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "La usas frente al espejo para desenredar tu pelo cada mañana."
   },
   {
     "id": "kp_lenguaje_043",
@@ -1692,7 +1804,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_169.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el basurero en la imagen: los envoltorios siempre van adentro."
   },
   {
     "id": "kp_lenguaje_044",
@@ -1707,7 +1820,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_173.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración el cartel rojo con ocho lados que dice PARE."
   },
   {
     "id": "kp_lenguaje_045",
@@ -1722,7 +1836,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es el electrodoméstico frío de la cocina que conserva los alimentos frescos."
   },
   {
     "id": "kp_lenguaje_046",
@@ -1737,7 +1852,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_181.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el sol resplandeciente en la imagen: ¡el cielo está brillante!"
   },
   {
     "id": "kp_lenguaje_047",
@@ -1752,7 +1868,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Jugar y moverse hace que tu corazón y músculos crezcan fuertes."
   },
   {
     "id": "kp_lenguaje_048",
@@ -1767,7 +1884,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Al salir de la camita, lavamos nuestra carita y comemos alimentos ricos."
   },
   {
     "id": "kp_lenguaje_049",
@@ -1782,7 +1900,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Imagina mojar una esponja con mucha agua hasta que gotee solita."
   },
   {
     "id": "kp_lenguaje_050",
@@ -1797,7 +1916,8 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "La alegría es como una luz cálida que aparta toda nubecita."
   },
   {
     "id": "kp_logica_001",
@@ -1812,7 +1932,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_001.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira en la ilustración ese gran animal gris con trompa larga y orejas."
   },
   {
     "id": "kp_logica_002",
@@ -1827,7 +1948,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es un bichito diminuto que a veces vive en el pelo de niños."
   },
   {
     "id": "kp_logica_003",
@@ -1842,7 +1964,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_011.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el insecto de caparazón brillante en la imagen: rima con 'abajo'."
   },
   {
     "id": "kp_logica_004",
@@ -1857,7 +1980,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_016.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira en la ilustración el insecto a rayas que fabrica miel dulce."
   },
   {
     "id": "kp_logica_005",
@@ -1872,7 +1996,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Su nombre termina en 'llena' y nada como gigante en el océano."
   },
   {
     "id": "kp_logica_006",
@@ -1887,7 +2012,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_026.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el insecto nocturno en el dibujo cuyo nombre empieza con 'Cu'."
   },
   {
     "id": "kp_logica_007",
@@ -1902,7 +2028,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_031.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa el pajarito amarillo en la imagen que canta en su jaulita."
   },
   {
     "id": "kp_logica_008",
@@ -1917,7 +2044,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_036.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira en el dibujo al animalito ciego que cava túneles bajo tierra."
   },
   {
     "id": "kp_logica_009",
@@ -1932,7 +2060,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Junta las palabras: tiene garra y tiene pata... ¿qué bicho es?"
   },
   {
     "id": "kp_logica_010",
@@ -1947,7 +2076,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_046.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la figura del caracolito con su concha redonda en la espalda."
   },
   {
     "id": "kp_logica_011",
@@ -1962,7 +2092,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_051.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración al animalito andino lanudo... ¡su nombre te llama!"
   },
   {
     "id": "kp_logica_012",
@@ -1977,7 +2108,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Tiene melena grande y si lees 'león' al revés casi suena Noel."
   },
   {
     "id": "kp_logica_013",
@@ -1992,7 +2124,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_061.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa en el dibujo la fruta verde con forma de campanita jugosa."
   },
   {
     "id": "kp_logica_014",
@@ -2007,7 +2140,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_066.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la imagen el sombrerito que brota en la tierra húmeda."
   },
   {
     "id": "kp_logica_015",
@@ -2022,7 +2156,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Es una verdura alargada de piel morada brillante y tallo verde."
   },
   {
     "id": "kp_logica_016",
@@ -2037,7 +2172,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_076.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa en la ilustración la piña de araucaria con sus semillas adentro."
   },
   {
     "id": "kp_logica_017",
@@ -2052,7 +2188,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_081.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira las semillas marrones en el dibujo que se tuestan en invierno."
   },
   {
     "id": "kp_logica_018",
@@ -2067,7 +2204,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_086.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa en la imagen los bastoncitos fritos dorados con azúcar espolvoreada."
   },
   {
     "id": "kp_logica_019",
@@ -2082,7 +2220,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_091.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la imagen la marraqueta recién salida del horno del panadero."
   },
   {
     "id": "kp_logica_020",
@@ -2097,7 +2236,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_096.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa la taza humeante en el dibujo de líquido oscuro y aromático."
   },
   {
     "id": "kp_logica_021",
@@ -2112,7 +2252,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_101.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira la espiga dorada en el campo que se muele para harina."
   },
   {
     "id": "kp_logica_022",
@@ -2127,7 +2268,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_106.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa la gran flor en la imagen con pétalos que siguen al sol."
   },
   {
     "id": "kp_logica_023",
@@ -2142,7 +2284,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_111.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira en el dibujo el mueble de cuatro patas donde comemos todos."
   },
   {
     "id": "kp_logica_024",
@@ -2157,7 +2300,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_116.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la imagen el palito de madera con cabeza roja inflamable."
   },
   {
     "id": "kp_logica_025",
@@ -2172,7 +2316,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "La usas después de ducharte: te seca a ti y queda mojada."
   },
   {
     "id": "kp_logica_026",
@@ -2187,7 +2332,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_126.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa en la ilustración el artefacto caliente que alisa arrugas de ropa."
   },
   {
     "id": "kp_logica_027",
@@ -2202,7 +2348,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_131.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira el instrumento de madera con cuatro cuerdas y arco frotador."
   },
   {
     "id": "kp_logica_028",
@@ -2217,7 +2364,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_136.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa en la imagen el instrumento que suena con golpes de baqueta."
   },
   {
     "id": "kp_logica_029",
@@ -2232,7 +2380,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_141.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira el tubito de madera con agujeros que suena al soplar."
   },
   {
     "id": "kp_logica_030",
@@ -2247,7 +2396,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_146.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira en el dibujo la prenda abrigadora de lana sin mangas."
   },
   {
     "id": "kp_logica_031",
@@ -2262,7 +2412,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Piensa con calma: solo las gallinitas hembras ponen huevitos en el nido."
   },
   {
     "id": "kp_logica_032",
@@ -2277,7 +2428,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_156.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el calendario en la imagen: ¡todos los meses alcanzan 28 días!"
   },
   {
     "id": "kp_logica_033",
@@ -2292,7 +2444,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Tenía diez ayer, hoy cumple once y el próximo cumplirá doce."
   },
   {
     "id": "kp_logica_034",
@@ -2307,7 +2460,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_166.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en el dibujo al marsupial que salta y lleva a su cría."
   },
   {
     "id": "kp_logica_035",
@@ -2322,7 +2476,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "La esposa de mi hermano tiene de suegra a mi propia mamá."
   },
   {
     "id": "kp_logica_036",
@@ -2337,7 +2492,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "El hijo de tu tía querida comparte juegos contigo: es tu..."
   },
   {
     "id": "kp_logica_037",
@@ -2352,7 +2508,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_181.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la foto familiar: una hermana es tu tía y la otra..."
   },
   {
     "id": "kp_logica_038",
@@ -2367,7 +2524,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Contiene A-E-I-O-U y es un mamífero con alitas que vuela de noche."
   },
   {
     "id": "kp_logica_039",
@@ -2382,7 +2540,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_191.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Mira en la imagen a los tres chanchitos refugiados en casa de ladrillo."
   },
   {
     "id": "kp_logica_040",
@@ -2397,7 +2556,8 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_196.webp",
-    "diff": "medium"
+    "diff": "medium",
+    "hint": "Observa al niño mago con gafas redondas y cicatriz en la frente."
   },
   {
     "id": "kp_matematicas_001",
@@ -2412,7 +2572,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_001.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Cuenta en la imagen los lápices de colores con tu dedito: uno, dos..."
   },
   {
     "id": "kp_matematicas_002",
@@ -2427,7 +2588,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_006.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira las dos manitos abiertas en el dibujo y cuenta todos los dedos."
   },
   {
     "id": "kp_matematicas_003",
@@ -2442,7 +2604,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Di los números en orden: uno, dos, tres, cuatro... ¿cuál viene?"
   },
   {
     "id": "kp_matematicas_004",
@@ -2457,7 +2620,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Si tienes cuatro manzanas y no sumas nada, sigues teniendo las mismas."
   },
   {
     "id": "kp_matematicas_005",
@@ -2472,7 +2636,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_021.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la imagen y cuenta cuántos soles brillantes iluminan el cielo."
   },
   {
     "id": "kp_matematicas_006",
@@ -2487,7 +2652,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Pon dos deditos en una mano y dos en otra: júntalos y cuenta."
   },
   {
     "id": "kp_matematicas_007",
@@ -2502,7 +2668,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Muestra seis dedos, esconde dos de ellos y cuenta cuántos quedaron parados."
   },
   {
     "id": "kp_matematicas_008",
@@ -2517,7 +2684,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_036.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración cuántos libros descansan sobre la mesa."
   },
   {
     "id": "kp_matematicas_009",
@@ -2532,7 +2700,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Compara: nueve caramelos son muchos más que solo dos caramelos pequeños."
   },
   {
     "id": "kp_matematicas_010",
@@ -2547,7 +2716,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_046.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el número dibujado en la figura: es el primer número natural."
   },
   {
     "id": "kp_matematicas_011",
@@ -2562,7 +2732,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en el número que viene inmediatamente después del nueve al contar."
   },
   {
     "id": "kp_matematicas_012",
@@ -2577,7 +2748,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_056.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira tu pie descalzo o en el dibujo y cuenta los deditos."
   },
   {
     "id": "kp_matematicas_013",
@@ -2592,7 +2764,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Sigue la serie numérica despacito: dos, tres, cuatro... ¿qué número falta?"
   },
   {
     "id": "kp_matematicas_014",
@@ -2607,7 +2780,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tenías dos ricas galletitas y tu amigo te regaló dos más."
   },
   {
     "id": "kp_matematicas_015",
@@ -2622,7 +2796,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_071.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Toca cada estrella en la imagen con la punta de tu dedito."
   },
   {
     "id": "kp_matematicas_016",
@@ -2637,7 +2812,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Busca el número que está justo al medio entre cero y dos."
   },
   {
     "id": "kp_matematicas_017",
@@ -2652,7 +2828,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_081.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa el balón en la imagen: no tiene esquinas, gira como círculo."
   },
   {
     "id": "kp_matematicas_018",
@@ -2667,7 +2844,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_086.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la figura en el dibujo: tiene tres lados rectos y esquinas."
   },
   {
     "id": "kp_matematicas_019",
@@ -2682,7 +2860,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_091.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa la rebanada de pizza en la imagen con sus tres esquinas."
   },
   {
     "id": "kp_matematicas_020",
@@ -2697,7 +2876,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_096.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el techo de la carpa en el dibujo: parece una pirámide."
   },
   {
     "id": "kp_matematicas_021",
@@ -2712,7 +2892,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Al contar después de diez viene un número con dos unos juntos."
   },
   {
     "id": "kp_matematicas_022",
@@ -2727,7 +2908,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Cuenta hacia atrás desde el dieciocho para ver quién está antes."
   },
   {
     "id": "kp_matematicas_023",
@@ -2742,7 +2924,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Cuenta despacio las estrellas en la pantalla una por una con calma."
   },
   {
     "id": "kp_matematicas_024",
@@ -2757,7 +2940,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_116.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la cajita de huevos en el dibujo: son diez más dos."
   },
   {
     "id": "kp_matematicas_025",
@@ -2772,7 +2956,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_121.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Observa en la imagen qué animalito tiene patas gigantes y cuerpo pesado."
   },
   {
     "id": "kp_matematicas_026",
@@ -2787,7 +2972,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_126.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en la ilustración el vehículo con alas que transporta muchas personas."
   },
   {
     "id": "kp_matematicas_027",
@@ -2802,7 +2988,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Cuenta de cinco en cinco: cinco, diez, quince... suma cinco más."
   },
   {
     "id": "kp_matematicas_028",
@@ -2817,7 +3004,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Busca el número que está antes del cinco en la recta numérica."
   },
   {
     "id": "kp_matematicas_029",
@@ -2832,7 +3020,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_141.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira el reloj en la imagen: la aguja corta apunta al número..."
   },
   {
     "id": "kp_matematicas_030",
@@ -2847,7 +3036,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Sigue la fila: diez, once, doce, trece... ¿qué número llega después?"
   },
   {
     "id": "kp_matematicas_031",
@@ -2862,7 +3052,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tienes ocho en tu mente, suma dos deditos más: nueve y..."
   },
   {
     "id": "kp_matematicas_032",
@@ -2877,7 +3068,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_156.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira la torta en la imagen y cuenta las velitas encendidas."
   },
   {
     "id": "kp_matematicas_033",
@@ -2892,7 +3084,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tienes seis fichas, agrégale cuatro más y completa una decena redonda."
   },
   {
     "id": "kp_matematicas_034",
@@ -2907,7 +3100,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Si de diez dedos escondes una mano completa, ¿cuántos dedos quedan?"
   },
   {
     "id": "kp_matematicas_035",
@@ -2922,7 +3116,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Nueve es casi diez: solo agrégale uno más para llegar."
   },
   {
     "id": "kp_matematicas_036",
@@ -2937,7 +3132,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_176.webp",
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Mira en el dibujo: suma dos ojitos más dos orejitas peludas."
   },
   {
     "id": "kp_matematicas_037",
@@ -2952,7 +3148,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Tres deditos más tres deditos: ¡júntalos y cuenta hasta seis!"
   },
   {
     "id": "kp_matematicas_038",
@@ -2967,7 +3164,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Cuenta a partir del once hacia adelante: once y luego viene..."
   },
   {
     "id": "kp_matematicas_039",
@@ -2982,7 +3180,8 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Si tienes una manzana y no te dan nada, sigues teniendo..."
   },
   {
     "id": "kp_matematicas_040",
@@ -2997,6 +3196,7 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy"
+    "diff": "easy",
+    "hint": "Piensa en el número que está justo antes del diez al contar."
   }
 ]

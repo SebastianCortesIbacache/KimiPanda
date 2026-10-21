@@ -130,11 +130,14 @@ function useHintHelper() {
   const hintText = document.getElementById('q-hint-text');
 
   if (hintBox && hintText && q) {
-    let msg = '¡Cuenta despacio y fíjate bien!';
-    if (q.cat === 'matematicas') msg = '¡Usa tus deditos o suma paso a paso!';
-    else if (q.cat === 'ciencias') msg = '¡Piensa en lo que has visto en la naturaleza!';
-    else if (q.cat === 'lenguaje') msg = '¡Escucha cómo suena cada palabra!';
-    else if (q.cat === 'logica') msg = '¡Mira qué elemento se repite!';
+    let msg = q.hint;
+    if (!msg) {
+      msg = '¡Cuenta despacio y fíjate bien!';
+      if (q.cat === 'matematicas') msg = '¡Usa tus deditos o suma paso a paso!';
+      else if (q.cat === 'ciencias') msg = '¡Piensa en lo que has visto en la naturaleza!';
+      else if (q.cat === 'lenguaje') msg = '¡Escucha cómo suena cada palabra!';
+      else if (q.cat === 'logica') msg = '¡Mira qué elemento se repite!';
+    }
 
     hintText.textContent = msg;
     hintBox.style.display = 'flex';
