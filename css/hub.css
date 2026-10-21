@@ -201,7 +201,7 @@
   background: var(--card);
   border: var(--bw) solid var(--ink);
   border-radius: var(--r-lg);
-  padding: 18px 16px 14px 16px;
+  padding: 22px 20px 16px 20px;
   box-shadow: 0 6px 0 var(--ink);
   display: flex;
   flex-direction: column;
@@ -313,14 +313,16 @@
     width: 100%;
     display: none;
     grid-template-columns: 1fr 1.08fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       "hud      hud"
       "hero     menu"
       "missions missions";
-    gap: 16px 32px;
+    gap: 20px 32px;
+    align-content: center;
+    justify-content: center;
     align-items: center;
-    padding: 14px 0;
+    padding: 10px 0 32px 0;
     box-sizing: border-box;
     height: 100%;
   }
@@ -358,7 +360,8 @@
   .missions {
     grid-area: missions;
     width: 100%;
-    padding: 16px 20px 14px 20px;
+    padding: 22px 22px 16px 22px;
+    margin-bottom: 24px;
   }
 }
 
