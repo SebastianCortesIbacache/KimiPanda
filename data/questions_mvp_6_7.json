@@ -555,9 +555,9 @@
     "correct": 2,
     "cat": "historia",
     "oa": "HIS-01",
-    "img": null,
+    "img": "assets/preguntas/mvp_historia_041.webp",
     "diff": "medium",
-    "hint": "Chile tiene territorio en América, en la Antártica y en islas polinésicas."
+    "hint": "Cuenta los tres lugares del globo: Chile continental, Rapa Nui y la Antártica."
   },
   {
     "id": "kp_historia_006",
@@ -817,7 +817,7 @@
   },
   {
     "id": "kp_ingles_002",
-    "q": "👉 10 👈 What number is this?",
+    "q": "What number is this?",
     "opts": [
       "Six",
       "Nine",
@@ -827,9 +827,9 @@
     "correct": 2,
     "cat": "ingles",
     "oa": "ENG-01",
-    "img": null,
+    "img": "assets/preguntas/mvp_ingles_011.webp",
     "diff": "easy",
-    "hint": "Count your fingers on both hands: one, two... up to ten!"
+    "hint": "Look at the number and count the fingers on both hands!"
   },
   {
     "id": "kp_ingles_003",
@@ -2797,7 +2797,7 @@
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_071.webp",
     "diff": "easy",
-    "hint": "Toca cada estrella en la imagen con la punta de tu dedito."
+    "hint": "Cuenta las 3 filas de estrellitas con tu dedito: 3 arriba, 3 al medio y 3 abajo."
   },
   {
     "id": "kp_matematicas_016",
@@ -2913,7 +2913,7 @@
   },
   {
     "id": "kp_matematicas_023",
-    "q": "⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ¿Cuántas estrellas ves?",
+    "q": "¿Cuántas estrellas ves?",
     "opts": [
       "10",
       "11",
@@ -2923,9 +2923,9 @@
     "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
-    "img": null,
+    "img": "assets/preguntas/mvp_matematicas_111.webp",
     "diff": "easy",
-    "hint": "Cuenta despacio las estrellas en la pantalla una por una con calma."
+    "hint": "Hay dos filas de 5 estrellas, más una estrellita que acompaña al lado."
   },
   {
     "id": "kp_matematicas_024",
