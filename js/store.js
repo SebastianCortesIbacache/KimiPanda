@@ -130,6 +130,27 @@ export function addStars(count = 3) {
   return currentProfile.stars;
 }
 
+let secondChanceUsed = false;
+
+export function isSecondChanceUsed() {
+  return secondChanceUsed;
+}
+
+export function setSecondChanceUsed(used = true) {
+  secondChanceUsed = Boolean(used);
+  return secondChanceUsed;
+}
+
+export function resetRoundSecondChance() {
+  secondChanceUsed = false;
+  return secondChanceUsed;
+}
+
+export function rechargeHeart(amount = 1) {
+  currentProfile.hearts = Math.min(currentProfile.maxHearts || 3, (currentProfile.hearts || 0) + amount);
+  return currentProfile.hearts;
+}
+
 export function decrementHeart() {
   currentProfile.hearts = Math.max(0, (currentProfile.hearts || 1) - 1);
   return currentProfile.hearts;

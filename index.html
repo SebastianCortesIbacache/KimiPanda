@@ -243,8 +243,8 @@
          ============================================================ -->
     <section class="screen" id="scr-summary" aria-label="Resumen de Ronda">
       <div class="summary-card">
-        <img class="summary-mascot" src="assets/mascotas/mochi_celebrate.webp" alt="Mochi celebrando victoria">
-        <h2 class="summary-title">¡Ronda Superada!</h2>
+        <img class="summary-mascot" id="summary-mascot" src="assets/mascotas/mochi_celebrate.webp" alt="Mochi celebrando victoria">
+        <h2 class="summary-title" id="summary-title">¡Ronda Superada!</h2>
         <div class="summary-rating-stars" id="summary-rating-stars" aria-label="Calificación de 1 a 3 estrellas">
           <span class="rating-star earned" style="animation-delay: 0.05s">⭐</span>
           <span class="rating-star earned" style="animation-delay: 0.2s">⭐</span>
@@ -257,10 +257,15 @@
           </svg>
           <span id="summary-stars">+18 ⭐</span>
         </div>
-        <p style="font-weight: 700; color: var(--ink-soft); margin-bottom: 8px;">¡Excelente trabajo de agilidad mental!</p>
-        <button type="button" class="pbtn green" id="btn-summary-done" style="width: 100%; height: 60px;">
-          ¡Continuar al Hub! 🚀
-        </button>
+        <p id="summary-encouragement" style="font-weight: 700; color: var(--ink-soft); margin-bottom: 8px;">¡Excelente trabajo de agilidad mental!</p>
+        <div class="summary-actions" id="summary-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+          <button type="button" class="pbtn orange" id="btn-summary-retry" style="display: none; width: 100%; height: 54px;">
+            Reintentar Ronda 🔄
+          </button>
+          <button type="button" class="pbtn green" id="btn-summary-done" style="width: 100%; height: 60px;">
+            ¡Continuar al Hub! 🚀
+          </button>
+        </div>
       </div>
     </section>
 
@@ -355,6 +360,20 @@
     </section>
 
   </main>
+
+  <!-- Modal de Apoyo Afectivo: Segunda Oportunidad de Mochi (0 Corazones) -->
+  <dialog class="mochi-help-modal" id="mochi-help-modal" aria-labelledby="mochi-help-title">
+    <div class="mochi-help-content">
+      <div class="mochi-help-mascot-box">
+        <img src="assets/mascotas/mochi_avatar.webp" alt="Mochi amigable" class="mochi-help-mascot" id="mochi-help-img">
+      </div>
+      <h3 id="mochi-help-title" class="mochi-help-title">¡Ánimo, tú puedes! 🐼💖</h3>
+      <p class="mochi-help-msg" id="mochi-help-msg">¡Uff, estas preguntas están un poco difíciles! Toca a Mochi para recargar energías ✨</p>
+      <button type="button" class="pbtn green" id="btn-mochi-recharge" style="width: 100%; height: 56px;">
+        ¡Recargar y seguir! 💖
+      </button>
+    </div>
+  </dialog>
 
   <!-- Modal de Pasaporte / Perfil -->
   <dialog class="profile-modal" id="profile-modal" aria-labelledby="profile-modal-title">

@@ -3,8 +3,31 @@
  */
 
 import { getRandomRound, getCategoryRound, hasImage } from './db.js';
-import { getProfile, addStars, addXP, decrementHeart, resetHearts, unlockNextWorldLevel, recordMissionProgress, recordLevelStars, recordCategoryAnswer } from './store.js';
-import { playPop, playCorrect, playWrongSoft, playStar, playLevelUp, playMagic, playHint, playFanfare3Stars } from './audio.js';
+import {
+  getProfile,
+  addStars,
+  addXP,
+  decrementHeart,
+  resetHearts,
+  rechargeHeart,
+  isSecondChanceUsed,
+  setSecondChanceUsed,
+  resetRoundSecondChance,
+  unlockNextWorldLevel,
+  recordMissionProgress,
+  recordLevelStars,
+  recordCategoryAnswer
+} from './store.js';
+import {
+  playPop,
+  playCorrect,
+  playWrongSoft,
+  playStar,
+  playLevelUp,
+  playMagic,
+  playHint,
+  playFanfare3Stars
+} from './audio.js';
 import { showScreen, showToast, burstConfetti, renderHearts } from './ui.js';
 
 let currentRound = [];
@@ -13,6 +36,8 @@ let roundStarsEarned = 0;
 let roundXpEarned = 0;
 let roundErrorsCount = 0;
 let currentWorldId = null;
+let currentWorldCategory = null;
+let currentWorldName = null;
 let currentLevelNumber = null;
 let helper5050Used = false;
 let helperHintUsed = false;
@@ -29,6 +54,8 @@ const PRAISES = [
 export async function startFreePlayRound() {
   playPop();
   currentWorldId = null;
+  currentWorldCategory = null;
+  currentWorldName = null;
   currentLevelNumber = null;
   roundErrorsCount = 0;
   currentRound = await getRandomRound(ROUND_SIZE);
@@ -38,6 +65,7 @@ export async function startFreePlayRound() {
   helper5050Used = false;
   helperHintUsed = false;
   resetHearts();
+  resetRoundSecondChance();
 
   initHelpers();
   updateHUD();
@@ -48,6 +76,8 @@ export async function startFreePlayRound() {
 export async function startWorldRound(worldId, category, level, worldName) {
   playPop();
   currentWorldId = worldId;
+  currentWorldCategory = category;
+  currentWorldName = worldName;
   currentLevelNumber = level;
   roundErrorsCount = 0;
   currentRound = await getCategoryRound(category, 5);
@@ -57,11 +87,23 @@ export async function startWorldRound(worldId, category, level, worldName) {
   helper5050Used = false;
   helperHintUsed = false;
   resetHearts();
+  resetRoundSecondChance();
 
   initHelpers();
   updateHUD();
   showScreen('scr-game');
   loadQuestion(currentQuestionIndex);
+}
+
+export function retryCurrentRound() {
+  playPop();
+  resetHearts();
+  resetRoundSecondChance();
+  if (currentWorldId && currentWorldCategory && currentLevelNumber) {
+    startWorldRound(currentWorldId, currentWorldCategory, currentLevelNumber, currentWorldName);
+  } else {
+    startFreePlayRound();
+  }
 }
 
 function initHelpers() {
@@ -130,15 +172,7 @@ function useHintHelper() {
   const hintText = document.getElementById('q-hint-text');
 
   if (hintBox && hintText && q) {
-    let msg = q.hint;
-    if (!msg) {
-      msg = '¡Cuenta despacio y fíjate bien!';
-      if (q.cat === 'matematicas') msg = '¡Usa tus deditos o suma paso a paso!';
-      else if (q.cat === 'ciencias') msg = '¡Piensa en lo que has visto en la naturaleza!';
-      else if (q.cat === 'lenguaje') msg = '¡Escucha cómo suena cada palabra!';
-      else if (q.cat === 'logica') msg = '¡Mira qué elemento se repite!';
-    }
-
+    const msg = q.hint || '¡Observa con atención la pregunta y piensa con calma!';
     hintText.textContent = msg;
     hintBox.style.display = 'flex';
   }
@@ -161,7 +195,7 @@ function updateHUD() {
 
 function loadQuestion(index) {
   if (index >= currentRound.length) {
-    showRoundSummary();
+    showRoundSummary(false);
     return;
   }
 
@@ -228,7 +262,8 @@ function loadQuestion(index) {
 
   // Barra de progreso (1 a 6)
   if (progBar) {
-    const percent = Math.round((index / ROUND_SIZE) * 100);
+    const totalQ = currentRound.length || ROUND_SIZE;
+    const percent = Math.round((index / totalQ) * 100);
     progBar.style.width = `${percent}%`;
   }
 
@@ -289,7 +324,7 @@ function handleAnswer(clickedBtn, isCorrect) {
     setTimeout(() => {
       currentQuestionIndex++;
       if (currentQuestionIndex >= currentRound.length) {
-        showRoundSummary();
+        showRoundSummary(false);
       } else {
         loadQuestion(currentQuestionIndex);
       }
@@ -303,8 +338,27 @@ function handleAnswer(clickedBtn, isCorrect) {
 
     clickedBtn.classList.add('wrong');
     playWrongSoft();
-    decrementHeart();
+    const remainingHearts = decrementHeart();
     updateHUD();
+
+    if (remainingHearts <= 0) {
+      // Comprobar si ya se usó la Segunda Oportunidad de Mochi en esta ronda
+      if (!isSecondChanceUsed()) {
+        setSecondChanceUsed(true);
+        const delayModal = (typeof navigator !== 'undefined' && navigator.webdriver) ? 100 : 450;
+        setTimeout(() => {
+          showMochiSecondChanceModal(allBtns);
+        }, delayModal);
+        return;
+      } else {
+        // Cierre Amable de Ronda (Soft Fail)
+        const delaySummary = (typeof navigator !== 'undefined' && navigator.webdriver) ? 150 : 600;
+        setTimeout(() => {
+          showRoundSummary(true);
+        }, delaySummary);
+        return;
+      }
+    }
 
     showToast('¡Casi! Inténtalo otra vez');
 
@@ -318,50 +372,144 @@ function handleAnswer(clickedBtn, isCorrect) {
   }
 }
 
-function showRoundSummary() {
-  recordMissionProgress('gamesPlayed', 1);
-
-  let starsRating = 3;
-  if (roundErrorsCount === 1) {
-    starsRating = 2;
-  } else if (roundErrorsCount >= 2) {
-    starsRating = 1;
+function showMochiSecondChanceModal(allBtns) {
+  const modal = document.getElementById('mochi-help-modal');
+  if (!modal) {
+    rechargeHeart(1);
+    updateHUD();
+    allBtns.forEach(b => {
+      b.disabled = false;
+      b.classList.remove('wrong');
+    });
+    return;
   }
 
-  if (currentWorldId && currentLevelNumber) {
-    recordLevelStars(currentWorldId, currentLevelNumber, starsRating);
-    unlockNextWorldLevel(currentWorldId);
-  } else if (currentWorldId) {
-    unlockNextWorldLevel(currentWorldId);
+  const btnRecharge = document.getElementById('btn-mochi-recharge');
+  const imgMochi = document.getElementById('mochi-help-img');
+
+  function handleRecharge() {
+    playMagic();
+    rechargeHeart(1);
+    updateHUD();
+    try {
+      modal.close();
+    } catch (e) {
+      modal.style.display = 'none';
+    }
+
+    allBtns.forEach(b => {
+      b.disabled = false;
+      b.classList.remove('wrong');
+    });
+
+    showToast('¡Corazón recuperado! ¡Tú puedes! 💖');
+
+    if (btnRecharge) btnRecharge.onclick = null;
+    if (imgMochi) imgMochi.onclick = null;
   }
 
-  if (starsRating === 3) {
-    playFanfare3Stars();
-  } else {
-    playStar();
-  }
+  if (btnRecharge) btnRecharge.onclick = handleRecharge;
+  if (imgMochi) imgMochi.onclick = handleRecharge;
 
+  try {
+    modal.showModal();
+  } catch (e) {
+    modal.setAttribute('open', '');
+  }
+}
+
+export function showRoundSummary(isSoftFail = false) {
+  const summaryTitle = document.getElementById('summary-title');
+  const summaryMascot = document.getElementById('summary-mascot');
+  const summaryEncouragement = document.getElementById('summary-encouragement');
+  const btnRetry = document.getElementById('btn-summary-retry');
+  const btnDone = document.getElementById('btn-summary-done');
   const summaryStars = document.getElementById('summary-stars');
-  if (summaryStars) {
-    summaryStars.textContent = `+${roundStarsEarned} ⭐ · +${roundXpEarned} XP`;
+
+  if (isSoftFail) {
+    playWrongSoft();
+    // Otorgar 1 ⭐ de perseverancia
+    addStars(1);
+    roundStarsEarned += 1;
+
+    if (summaryTitle) summaryTitle.textContent = '¡Buen esfuerzo! Practiquemos juntos 🐼';
+    if (summaryMascot) summaryMascot.src = 'assets/mascotas/mochi_avatar.webp';
+    if (summaryEncouragement) summaryEncouragement.textContent = '¡El cerebro es como un músculo: crece con cada reto!';
+
+    if (btnRetry) {
+      btnRetry.style.display = 'block';
+      btnRetry.textContent = 'Reintentar Ronda 🔄';
+      btnRetry.onclick = () => retryCurrentRound();
+    }
+    if (btnDone) {
+      btnDone.textContent = currentWorldId ? 'Volver al Mapa 🗺️' : 'Volver al Hub 🚀';
+    }
+
+    if (summaryStars) {
+      summaryStars.textContent = `+${roundStarsEarned} ⭐ · +${roundXpEarned} XP`;
+    }
+
+    renderSummaryStarsUI(1, true);
+  } else {
+    recordMissionProgress('gamesPlayed', 1);
+
+    let starsRating = 3;
+    if (roundErrorsCount === 1) {
+      starsRating = 2;
+    } else if (roundErrorsCount >= 2) {
+      starsRating = 1;
+    }
+
+    if (currentWorldId && currentLevelNumber) {
+      recordLevelStars(currentWorldId, currentLevelNumber, starsRating);
+      unlockNextWorldLevel(currentWorldId);
+    } else if (currentWorldId) {
+      unlockNextWorldLevel(currentWorldId);
+    }
+
+    if (starsRating === 3) {
+      playFanfare3Stars();
+    } else {
+      playStar();
+    }
+
+    if (summaryTitle) summaryTitle.textContent = '¡Ronda Superada!';
+    if (summaryMascot) summaryMascot.src = 'assets/mascotas/mochi_celebrate.webp';
+    if (summaryEncouragement) summaryEncouragement.textContent = '¡Excelente trabajo de agilidad mental!';
+
+    if (btnRetry) {
+      btnRetry.style.display = 'none';
+      btnRetry.onclick = null;
+    }
+    if (btnDone) {
+      btnDone.textContent = '¡Continuar al Hub! 🚀';
+    }
+
+    if (summaryStars) {
+      summaryStars.textContent = `+${roundStarsEarned} ⭐ · +${roundXpEarned} XP`;
+    }
+
+    renderSummaryStarsUI(starsRating, false);
   }
 
-  renderSummaryStarsUI(starsRating);
   showScreen('scr-summary');
 }
 
-function renderSummaryStarsUI(stars) {
+function renderSummaryStarsUI(stars, isSoftFail = false) {
   const container = document.getElementById('summary-rating-stars');
   const praise = document.getElementById('summary-rating-praise');
   if (container) {
     container.innerHTML = `
       <span class="rating-star ${stars >= 1 ? 'earned' : 'empty'}" style="animation-delay: 0.05s">⭐</span>
-      <span class="rating-star ${stars >= 2 ? 'earned' : 'empty'}" style="animation-delay: 0.2s">⭐</span>
-      <span class="rating-star ${stars >= 3 ? 'earned' : 'empty'}" style="animation-delay: 0.35s">⭐</span>
+      <span class="rating-star ${(!isSoftFail && stars >= 2) ? 'earned' : 'empty'}" style="animation-delay: 0.2s">⭐</span>
+      <span class="rating-star ${(!isSoftFail && stars >= 3) ? 'earned' : 'empty'}" style="animation-delay: 0.35s">⭐</span>
     `;
   }
   if (praise) {
-    if (stars === 3) {
+    if (isSoftFail) {
+      praise.textContent = '¡Ganaste 1 ⭐ de perseverancia! Practiquemos juntos 🌱';
+      praise.className = 'summary-rating-praise bronze';
+    } else if (stars === 3) {
       praise.textContent = '¡Ronda Perfecta! ¡Eres increíble! 🌟';
       praise.className = 'summary-rating-praise gold';
     } else if (stars === 2) {

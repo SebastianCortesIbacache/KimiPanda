@@ -5,7 +5,7 @@
 import { loadProfile, getProfile, saveProfile, toggleAudioMute, claimMissionReward, resetProfile } from './store.js';
 import { setMuted, playPop, playChest } from './audio.js';
 import { showScreen, showToast, burstConfetti, initSkyFloaties } from './ui.js';
-import { startFreePlayRound } from './game.js';
+import { startFreePlayRound, retryCurrentRound } from './game.js';
 import { renderShopUI, updateHubEquippedHat } from './shop.js';
 import { renderWorldsUI } from './worlds.js';
 import { renderAchievementsUI, switchAchievementsTab } from './achievements.js';
@@ -194,6 +194,9 @@ function initEventHandlers() {
 
   const btnSummaryDone = document.getElementById('btn-summary-done');
   if (btnSummaryDone) btnSummaryDone.onclick = () => returnToHub();
+
+  const btnSummaryRetry = document.getElementById('btn-summary-retry');
+  if (btnSummaryRetry) btnSummaryRetry.onclick = () => retryCurrentRound();
 
   const btnShopBack = document.getElementById('btn-shop-back');
   if (btnShopBack) btnShopBack.onclick = () => returnToHub();
