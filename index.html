@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <title>Kimi Panda — Aventura de Aprendizaje</title>
 
@@ -32,9 +32,10 @@
 
   <meta name="apple-mobile-web-app-title" content="Kimi Panda">
 
-  <link rel="icon" href="assets/mascotas/skins/mochi_classic_avatar.webp" type="image/webp">
+  <link rel="icon" href="assets/iconos/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="favicon.ico">
 
-  <link rel="apple-touch-icon" href="assets/mascotas/skins/mochi_classic_avatar.webp">
+  <link rel="apple-touch-icon" href="assets/iconos/apple-touch-icon.png">
 
   <!-- Hojas de Estilo Modulares Desacopladas -->
 
@@ -408,6 +409,8 @@
 
           <span class="sticker" id="q-cat">Matemáticas</span>
 
+          <button type="button" class="tts-speak-btn" id="btn-speak-q" aria-label="Escuchar la pregunta en voz alta">🔊</button>
+
           <div class="q-media-frame" style="display: none;">
 
             <img id="q-media-img" src="" alt="Ilustración didáctica">
@@ -416,7 +419,7 @@
 
           <h2 class="q-big" id="q-text">8 + 7 = ?</h2>
 
-          <div class="q-hint-pill" id="q-hint-box" style="display: none;">
+          <div class="q-hint-pill" id="q-hint-box" style="display: none;" aria-live="polite">
 
             <span class="q-hint-icon" aria-hidden="true">💡</span>
 
@@ -772,7 +775,7 @@
 
   <!-- Pie de Marca Minimalista -->
 
-  <footer class="brandtag" aria-hidden="true">Kimi Panda v1.0.1 · MVP Flash PWA</footer>
+  <footer class="brandtag" aria-hidden="true">Kimi Panda v1.2.0 · MVP Flash PWA</footer>
 
   <!-- Script Modular ESM -->
 

@@ -27,6 +27,8 @@ def get_budget_category(rel_path):
         return "preguntas"
     if "mascotas" in lower:
         return "mascotas"
+    if "icon-512" in lower or "icon_512" in lower:
+        return "general"
     if "interface" in lower or "icon" in lower:
         return "interface"
     if "sound" in lower or "audio" in lower:

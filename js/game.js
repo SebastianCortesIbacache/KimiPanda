@@ -16,7 +16,8 @@ import {
   unlockNextWorldLevel,
   recordMissionProgress,
   recordLevelStars,
-  recordCategoryAnswer
+  recordCategoryAnswer,
+  recordStreak
 } from './store.js';
 import {
   playPop,
@@ -29,6 +30,7 @@ import {
   playFanfare3Stars
 } from './audio.js';
 import { showScreen, showToast, burstConfetti, renderHearts } from './ui.js';
+import { speakQuestion, stopSpeaking } from './speech.js';
 
 let currentRound = [];
 let currentQuestionIndex = 0;
@@ -41,6 +43,7 @@ let currentWorldName = null;
 let currentLevelNumber = null;
 let helper5050Used = false;
 let helperHintUsed = false;
+let currentRoundToken = 0;
 const ROUND_SIZE = 6;
 
 const PRAISES = [
@@ -53,6 +56,7 @@ const PRAISES = [
 
 export async function startFreePlayRound() {
   playPop();
+  currentRoundToken++;
   currentWorldId = null;
   currentWorldCategory = null;
   currentWorldName = null;
@@ -75,12 +79,13 @@ export async function startFreePlayRound() {
 
 export async function startWorldRound(worldId, category, level, worldName) {
   playPop();
+  currentRoundToken++;
   currentWorldId = worldId;
   currentWorldCategory = category;
   currentWorldName = worldName;
   currentLevelNumber = level;
   roundErrorsCount = 0;
-  currentRound = await getCategoryRound(category, 5);
+  currentRound = await getCategoryRound(category, 5, level);
   currentQuestionIndex = 0;
   roundStarsEarned = 0;
   roundXpEarned = 0;
@@ -221,6 +226,14 @@ function loadQuestion(index) {
   };
   if (qCat) qCat.textContent = CAT_NAMES[q.cat] || q.cat || 'General';
 
+  // Lector por Voz Accesible (TTS Infantil)
+  const speakBtn = document.getElementById('btn-speak-q');
+  if (speakBtn) {
+    speakBtn.onclick = () => {
+      speakQuestion(q);
+    };
+  }
+
   // Componente Adaptativo (has-image vs text-only)
   if (hasImage(q)) {
     if (qCard) {
@@ -260,35 +273,50 @@ function loadQuestion(index) {
   // Texto de la pregunta
   if (qText) qText.textContent = q.q;
 
-  // Barra de progreso (1 a 6)
+  // Barra de progreso (1 a 6) con llegada al 100% en paso final
   if (progBar) {
     const totalQ = currentRound.length || ROUND_SIZE;
-    const percent = Math.round((index / totalQ) * 100);
+    const percent = Math.min(100, Math.round(((index + 1) / totalQ) * 100));
     progBar.style.width = `${percent}%`;
+    progBar.setAttribute('aria-valuenow', percent);
   }
 
-  // Generar 4 opciones mecánicas 2x2
+  // Generar 4 opciones mecánicas 2x2 con Fisher-Yates runtime shuffle anti-sesgo
   if (answersBox) {
     answersBox.innerHTML = '';
-    q.opts.forEach((optText, optIdx) => {
+    const optsWithStatus = q.opts.map((optText, optIdx) => ({
+      text: optText,
+      isCorrect: optIdx === q.correct
+    }));
+
+    // Fisher-Yates shuffle
+    for (let i = optsWithStatus.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [optsWithStatus[i], optsWithStatus[j]] = [optsWithStatus[j], optsWithStatus[i]];
+    }
+
+    optsWithStatus.forEach((optObj, slotIdx) => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'pbtn';
-      btn.dataset.correct = (optIdx === q.correct) ? '1' : '0';
-      btn.textContent = optText;
-      btn.style.animation = `screenIn 0.35s var(--bouncy) ${optIdx * 0.05}s backwards`;
-      btn.onclick = () => handleAnswer(btn, optIdx === q.correct);
+      btn.dataset.correct = optObj.isCorrect ? '1' : '0';
+      btn.textContent = optObj.text;
+      btn.style.animation = `screenIn 0.35s var(--bouncy) ${slotIdx * 0.05}s backwards`;
+      btn.onclick = () => handleAnswer(btn, optObj.isCorrect);
       answersBox.appendChild(btn);
     });
   }
 }
 
 function handleAnswer(clickedBtn, isCorrect) {
+  stopSpeaking();
+  const token = currentRoundToken;
   // Deshabilitar todos los botones durante la resolución
   const allBtns = document.querySelectorAll('#answers .pbtn');
   allBtns.forEach(b => { b.disabled = true; });
 
   if (isCorrect) {
+    recordStreak(true);
     clickedBtn.classList.add('correct');
     playCorrect();
     playStar();
@@ -322,6 +350,7 @@ function handleAnswer(clickedBtn, isCorrect) {
 
     const advanceDelay = (typeof navigator !== 'undefined' && navigator.webdriver) ? 300 : 1400;
     setTimeout(() => {
+      if (token !== currentRoundToken) return;
       currentQuestionIndex++;
       if (currentQuestionIndex >= currentRound.length) {
         showRoundSummary(false);
@@ -330,6 +359,7 @@ function handleAnswer(clickedBtn, isCorrect) {
       }
     }, advanceDelay);
   } else {
+    recordStreak(false);
     roundErrorsCount++;
     const currentQ = currentRound[currentQuestionIndex];
     if (currentQ && currentQ.cat) {
@@ -347,6 +377,7 @@ function handleAnswer(clickedBtn, isCorrect) {
         setSecondChanceUsed(true);
         const delayModal = (typeof navigator !== 'undefined' && navigator.webdriver) ? 100 : 450;
         setTimeout(() => {
+          if (token !== currentRoundToken) return;
           showMochiSecondChanceModal(allBtns);
         }, delayModal);
         return;
@@ -354,6 +385,7 @@ function handleAnswer(clickedBtn, isCorrect) {
         // Cierre Amable de Ronda (Soft Fail)
         const delaySummary = (typeof navigator !== 'undefined' && navigator.webdriver) ? 150 : 600;
         setTimeout(() => {
+          if (token !== currentRoundToken) return;
           showRoundSummary(true);
         }, delaySummary);
         return;
@@ -364,6 +396,7 @@ function handleAnswer(clickedBtn, isCorrect) {
 
     const retryDelay = (typeof navigator !== 'undefined' && navigator.webdriver) ? 200 : 900;
     setTimeout(() => {
+      if (token !== currentRoundToken) return;
       allBtns.forEach(b => {
         b.disabled = false;
         b.classList.remove('wrong');
@@ -374,6 +407,23 @@ function handleAnswer(clickedBtn, isCorrect) {
 
 function showMochiSecondChanceModal(allBtns) {
   const modal = document.getElementById('mochi-help-modal');
+  if (!modal) {
+    rechargeHeart(1);
+    updateHUD();
+    allBtns.forEach(b => {
+      b.disabled = false;
+      b.classList.remove('wrong');
+    });
+    return;
+  }
+
+  // Listener para evento 'cancel' (pulsar tecla Escape en el diálogo)
+  modal.addEventListener('cancel', () => {
+    allBtns.forEach(b => {
+      b.disabled = false;
+      b.classList.remove('wrong');
+    });
+  }, { once: true });
   if (!modal) {
     rechargeHeart(1);
     updateHUD();
@@ -419,6 +469,7 @@ function showMochiSecondChanceModal(allBtns) {
 }
 
 export function showRoundSummary(isSoftFail = false) {
+  stopSpeaking();
   const summaryTitle = document.getElementById('summary-title');
   const summaryMascot = document.getElementById('summary-mascot');
   const summaryEncouragement = document.getElementById('summary-encouragement');
@@ -442,7 +493,14 @@ export function showRoundSummary(isSoftFail = false) {
       btnRetry.onclick = () => retryCurrentRound();
     }
     if (btnDone) {
-      btnDone.textContent = currentWorldId ? 'Volver al Mapa 🗺️' : 'Volver al Hub 🚀';
+      btnDone.textContent = '¡Continuar al Hub! 🚀';
+      btnDone.onclick = () => {
+        if (typeof window !== 'undefined' && typeof window.returnToHub === 'function') {
+          window.returnToHub();
+        } else {
+          showScreen('scr-hub');
+        }
+      };
     }
 
     if (summaryStars) {
@@ -483,6 +541,13 @@ export function showRoundSummary(isSoftFail = false) {
     }
     if (btnDone) {
       btnDone.textContent = '¡Continuar al Hub! 🚀';
+      btnDone.onclick = () => {
+        if (typeof window !== 'undefined' && typeof window.returnToHub === 'function') {
+          window.returnToHub();
+        } else {
+          showScreen('scr-hub');
+        }
+      };
     }
 
     if (summaryStars) {

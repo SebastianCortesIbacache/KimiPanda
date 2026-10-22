@@ -95,6 +95,11 @@
   border: var(--bw) solid var(--ink);
   border-radius: var(--r-pill);
   padding: 4px 14px 4px 10px;
+  min-height: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  min-width: 44px;
   box-shadow: 0 var(--push-sm) 0 var(--ink);
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.2s ease;
@@ -542,6 +547,9 @@
   .helper-btn {
     padding: 2px 10px 2px 8px;
     font-size: 11px;
+    min-height: 44px;
+    height: 44px;
+    box-sizing: border-box;
   }
   .helper-ico {
     font-size: 13px;
@@ -676,4 +684,36 @@
   gap: 10px;
   width: 100%;
   margin-top: 6px;
+}
+
+/* Botón Accesible de Lectura por Voz (TTS Infantil) */
+.tts-speak-btn {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  background: var(--card, #FFFFFF);
+  border: var(--bw, 3px) solid var(--ink, #241C15);
+  border-radius: 50%;
+  box-shadow: 0 4px 0 var(--ink, #241C15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.1s var(--bouncy), box-shadow 0.1s ease;
+  z-index: 5;
+}
+
+.tts-speak-btn:hover {
+  transform: scale(1.08);
+}
+
+.tts-speak-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--ink, #241C15);
 }

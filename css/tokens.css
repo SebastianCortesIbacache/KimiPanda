@@ -5,6 +5,7 @@
 :root {
   /* Fondo y Neutros */
   --bg: #FFF4E4;
+  --cream: #FFFDF8;
   --ink: #241C15;
   --ink-soft: rgba(36, 28, 21, 0.62);
   --card: #FFFFFF;
@@ -17,8 +18,10 @@
   --blue: #3D9BE9;    --blue-d: #1F6FB4;
   --purple: #9B6BF3;  --purple-d: #6F3FD1;
   --red: #F0685F;     --red-d: #C84B43;
+  --coral: #FF6B6B;   --coral-d: #D9534F;
 
   /* Bordes, Curvaturas y Sombras Push 3D */
+  --r-xl: 36px;
   --r-lg: 28px;
   --r-md: 20px;
   --r-sm: 14px;
@@ -89,7 +92,7 @@ body {
 
 /* Accesibilidad: Foco Visible de Alto Contraste (WCAG 2.2 AA) */
 :focus-visible {
-  outline: 3px solid var(--blue);
+  outline: 3px solid var(--ink);
   outline-offset: 3px;
   border-radius: var(--r-sm);
 }
@@ -97,7 +100,7 @@ body {
 button:focus-visible, 
 [role="button"]:focus-visible, 
 input:focus-visible {
-  outline: 3px solid var(--blue);
+  outline: 3px solid var(--ink);
   outline-offset: 3px;
 }
 

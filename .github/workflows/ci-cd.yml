@@ -21,7 +21,7 @@ jobs:
   # 1. VALIDACIÓN TÉCNICA Y AUDITORÍA DE CALIDAD
   # -------------------------------------------------------------
   validate:
-    name: Lint, Syntax & Asset Budget Check
+    name: Lint, Syntax, Asset & Playwright Audit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -42,8 +42,8 @@ jobs:
           node -e "
             const fs = require('fs');
             const data = JSON.parse(fs.readFileSync('data/questions_mvp_6_7.json', 'utf8'));
-            if (!Array.isArray(data) || data.length === 0) {
-              console.error('questions_mvp_6_7.json debe ser un array no vacío');
+            if (!Array.isArray(data) || data.length !== 200) {
+              console.error('questions_mvp_6_7.json debe contener exactamente 200 preguntas');
               process.exit(1);
             }
             console.log('✅ Banco JSON validado correctamente. Total preguntas:', data.length);
@@ -59,6 +59,16 @@ jobs:
       - name: Run Asset Budget Audit
         run: |
           python tools/check_asset_budgets.py
+
+      - name: Install Playwright Browsers
+        run: |
+          npx playwright install --with-deps chromium
+
+      - name: Run Playwright Quality & Audit Test Suites
+        run: |
+          npx playwright test tests/question_distribution.spec.js tests/store_reset.spec.js tests/achievements_streak.spec.js tests/accessibility_wcag.spec.js --project=computadora
+        env:
+          APP_URL: '/index.html'
 
   # -------------------------------------------------------------
   # 2. DESPLIEGUE CONTINUO A GITHUB PAGES (SOLO EN MAIN)

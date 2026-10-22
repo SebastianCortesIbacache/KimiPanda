@@ -1,6 +1,7 @@
 {
   "name": "kimi-panda",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "type": "module",
   "description": "Kimi Panda — Aventura de Aprendizaje Didáctico y Agilidad Mental (Tier 1: 6-7 años, Mineduc Chile)",
   "main": "index.html",
   "scripts": {

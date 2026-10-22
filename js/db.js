@@ -61,11 +61,23 @@ export async function getRandomRound(count = 6) {
 
 /**
  * Selecciona una tanda de preguntas de una o varias categorías específicas (para Modo Mundos)
+ * con progresión curricular de dificultad (Niveles 1-2: easy, Niveles 3-4: medium, Nivel 5: mixto)
  */
-export async function getCategoryRound(categories, count = 5) {
+export async function getCategoryRound(categories, count = 5, level = 1) {
   const pool = await loadQuestions();
   const cats = Array.isArray(categories) ? categories : [categories];
-  const filtered = pool.filter(q => cats.includes(q.cat));
+  let filtered = pool.filter(q => cats.includes(q.cat));
+
+  // Filtrado pedagógico por nivel
+  if (level <= 2) {
+    const easyPool = filtered.filter(q => q.diff === 'easy');
+    if (easyPool.length >= count) filtered = easyPool;
+  } else if (level <= 4) {
+    const medPool = filtered.filter(q => q.diff === 'medium');
+    if (medPool.length >= count) filtered = medPool;
+  }
+  // Nivel 5: desafío mixto con todo el catálogo de la categoría
+
   const poolToUse = filtered.length >= count ? filtered : pool;
   const shuffled = [...poolToUse].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);

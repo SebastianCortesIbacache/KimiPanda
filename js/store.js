@@ -7,7 +7,7 @@ const STORAGE_KEY = 'kp_profile_v1';
 const DEFAULT_PROFILE = {
   name: 'Sofía',
   age: 7,
-  rank: 'Exploradora',
+  rank: 'Novata',
   stars: 128,
   xp: 0,
   level: 1,
@@ -53,14 +53,21 @@ const DEFAULT_PROFILE = {
   audioMuted: false,
 };
 
-let currentProfile = { ...DEFAULT_PROFILE };
+let currentProfile = structuredClone(DEFAULT_PROFILE);
 
 export function loadProfile() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      currentProfile = { ...DEFAULT_PROFILE, ...parsed };
+      currentProfile = {
+        ...structuredClone(DEFAULT_PROFILE),
+        ...parsed,
+        worldLevels: { ...DEFAULT_PROFILE.worldLevels, ...(parsed.worldLevels || {}) },
+        levelStars: { ...DEFAULT_PROFILE.levelStars, ...(parsed.levelStars || {}) },
+        stats: { ...DEFAULT_PROFILE.stats, ...(parsed.stats || {}) },
+        missions: { ...DEFAULT_PROFILE.missions, ...(parsed.missions || {}) }
+      };
       // Garantizar corazones completos al inicializar sesión
       if (!currentProfile.hearts || currentProfile.hearts <= 0) {
         currentProfile.hearts = currentProfile.maxHearts || 3;
@@ -72,12 +79,12 @@ export function loadProfile() {
       }
       currentProfile.equippedSkin = currentProfile.equippedSkin || 'classic';
     } else {
-      currentProfile = { ...DEFAULT_PROFILE };
+      currentProfile = structuredClone(DEFAULT_PROFILE);
       saveProfile();
     }
   } catch (e) {
     console.warn('[Store] Error cargando perfil:', e);
-    currentProfile = { ...DEFAULT_PROFILE };
+    currentProfile = structuredClone(DEFAULT_PROFILE);
   }
   return currentProfile;
 }
@@ -99,35 +106,16 @@ export function getProfile() {
 }
 
 export function resetProfile() {
-  currentProfile = {
-    ...DEFAULT_PROFILE,
-    levelStars: {
-      inicio: {},
-      matematicas: {},
-      ciencias: {},
-      logica: {},
-      lenguaje: {},
-      historia: {}
-    },
-    stats: {
-      matematicas: { total: 0, correct: 0 },
-      ciencias: { total: 0, correct: 0 },
-      lenguaje: { total: 0, correct: 0 },
-      logica: { total: 0, correct: 0 },
-      historia: { total: 0, correct: 0 },
-      ingles: { total: 0, correct: 0 }
-    },
-    missions: {
-      gamesPlayed: 0,
-      mathCorrect: 0,
-      claimed1: false,
-      claimed2: false
-    },
-    inventory: ['classic'],
-    equippedSkin: 'classic',
-    equippedHat: null,
-    achievements: []
+  currentProfile = structuredClone(DEFAULT_PROFILE);
+  currentProfile.worldLevels = {
+    inicio: 1,
+    matematicas: 1,
+    ciencias: 1,
+    logica: 1,
+    lenguaje: 1,
+    historia: 1
   };
+  currentProfile.audioMuted = false;
   saveProfile();
   return currentProfile;
 }
@@ -173,6 +161,26 @@ export function toggleAudioMute() {
   currentProfile.audioMuted = !currentProfile.audioMuted;
   saveProfile();
   return currentProfile.audioMuted;
+}
+
+export function setMuted(muted = false) {
+  currentProfile.audioMuted = Boolean(muted);
+  saveProfile();
+  return currentProfile.audioMuted;
+}
+
+export function recordStreak(isCorrect) {
+  if (isCorrect) {
+    currentProfile.streak = (currentProfile.streak || 0) + 1;
+    currentProfile.highStreak = Math.max(currentProfile.highStreak || 0, currentProfile.streak);
+    if (currentProfile.streak >= 5) {
+      unlockAchievement('streak_5');
+    }
+  } else {
+    currentProfile.streak = 0;
+  }
+  saveProfile();
+  return { streak: currentProfile.streak, highStreak: currentProfile.highStreak };
 }
 
 export function addXP(amount = 15) {

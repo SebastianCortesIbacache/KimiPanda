@@ -1,7 +1,7 @@
 [
   {
     "id": "kp_ciencias_001",
-    "q": "¿Cuál de estos sentidos te permite ver el color de un \"siete colores\" que vuela en el cielo?",
+    "q": "¿Cuál de estos sentidos te permite ver los colores del picaflor que vuela en el jardín?",
     "opts": [
       "La visión",
       "El gusto",
@@ -12,7 +12,7 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_001.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Mira el ave en la imagen y piensa con qué parte de tu carita aprecias sus colores."
   },
   {
@@ -20,11 +20,11 @@
     "q": "¿Qué sentido nos avisa si la música de un pajarito está muy fuerte?",
     "opts": [
       "El gusto",
-      "La visión",
       "La audición",
+      "La visión",
       "El tacto"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
@@ -36,11 +36,11 @@
     "q": "¿Qué sentido nos permite disfrutar del olor de un pan recién horneado?",
     "opts": [
       "La visión",
-      "El olfato",
       "El gusto",
+      "El olfato",
       "La audición"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
@@ -52,11 +52,11 @@
     "q": "¿Cuál de estos animales es un mamífero que vive en el mar de Chile?",
     "opts": [
       "El pingüino",
-      "La ballena jorobada",
+      "La gaviota",
       "El tiburón",
-      "La gaviota"
+      "La ballena jorobada"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_021.webp",
@@ -67,12 +67,12 @@
     "id": "kp_ciencias_005",
     "q": "¿Qué animal nace de un huevo y tiene plumas?",
     "opts": [
-      "El gato",
       "La gallina",
+      "El gato",
       "El ratón",
       "El conejo"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
@@ -117,26 +117,26 @@
     "opts": [
       "La raíz",
       "El tronco",
-      "La flor",
-      "La espina"
+      "La espina",
+      "La flor"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Piensa en la parte más colorida de la planta que huele dulce."
   },
   {
     "id": "kp_ciencias_009",
     "q": "¿Qué parte de la planta es el cactus que tiene espinas?",
     "opts": [
-      "Es la flor",
       "Es el tallo",
+      "Es la flor",
       "Es el fruto",
       "Es la raíz"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_054.webp",
@@ -164,11 +164,11 @@
     "q": "¿Cómo responden las plantas a la luz del sol?",
     "opts": [
       "Se esconden en la tierra",
-      "Crecen inclinándose hacia la luz",
       "Se ponen de color negro",
+      "Crecen inclinándose hacia la luz",
       "Empiezan a caminar"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
@@ -180,27 +180,27 @@
     "q": "¿Cuál es la principal fuente de energía para casi todos los seres vivos de la Tierra?",
     "opts": [
       "La Luna",
-      "El Sol",
+      "Las pilas",
       "El viento",
-      "Las pilas"
+      "El Sol"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Brilla arriba en el cielo y nos entrega calor y luz cada día."
   },
   {
     "id": "kp_ciencias_013",
     "q": "¿Cuál es la estación del año en la que hace más calor y vamos a la playa?",
     "opts": [
-      "Invierno",
       "Verano",
+      "Invierno",
       "Otoño",
       "Primavera"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_081.webp",
@@ -228,15 +228,15 @@
     "q": "¿Cuál es la estación del año que tiene los días más cortos y las noches más largas?",
     "opts": [
       "Verano",
-      "Invierno",
       "Otoño",
+      "Invierno",
       "Primavera"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_094.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Observa la imagen con lluvia y frío, donde nos abrigamos con bufanda."
   },
   {
@@ -244,31 +244,31 @@
     "q": "¿Cuál de estos materiales es suave al tacto?",
     "opts": [
       "Una lija",
-      "El algodón",
+      "El tronco de un árbol",
       "Una piedra",
-      "El tronco de un árbol"
+      "El algodón"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_101.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa la motita blanca en la imagen, ¡parece una nube muy suave!"
   },
   {
     "id": "kp_ciencias_017",
     "q": "¿Qué material se puede doblar fácilmente sin romperse?",
     "opts": [
-      "Una regla de metal",
       "Una hoja de papel",
+      "Una regla de metal",
       "Un plato de cerámica",
       "Un vidrio"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_107.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Fíjate en el material fino del cuaderno que puedes doblar con dedos."
   },
   {
@@ -284,7 +284,7 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_114.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira tu polera o pantalón, ¿de qué material suave están hechos?"
   },
   {
@@ -292,15 +292,15 @@
     "q": "¿Qué parte de nuestro cuerpo usamos para caminar y correr?",
     "opts": [
       "Los brazos",
-      "Las piernas",
       "La cabeza",
+      "Las piernas",
       "La espalda"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Son las extremidades que doblamos para saltar, correr y jugar fútbol."
   },
   {
@@ -308,31 +308,31 @@
     "q": "¿Qué ocurre con nuestros pulmones cuando tomamos aire (inhalamos)?",
     "opts": [
       "Se hacen pequeñitos",
-      "Se inflan o se llenan de aire",
+      "Se detienen",
       "Se ponen de color azul",
-      "Se detienen"
+      "Se inflan o se llenan de aire"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_127.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Toma mucho aire por tu nariz y siente cómo tu pecho se infla."
   },
   {
     "id": "kp_ciencias_021",
     "q": "¿Qué órgano de los sentidos usamos para leer un libro de cuentos?",
     "opts": [
-      "Los oídos",
       "Los ojos",
+      "Los oídos",
       "La nariz",
       "La boca"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Son dos ventanitas en tu rostro que usas para mirar letras e imágenes."
   },
   {
@@ -348,7 +348,7 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_141.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira el cubito en el dibujo: cuando el agua se enfría mucho se endurece."
   },
   {
@@ -356,15 +356,15 @@
     "q": "¿Dónde podemos encontrar agua en estado sólido en la naturaleza chilena?",
     "opts": [
       "En el desierto",
-      "En los glaciares y en la nieve de la cordillera",
       "En las termas calientes",
+      "En los glaciares y en la nieve de la cordillera",
       "En las piscinas"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_147.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa las cumbres blancas y frías de la cordillera en la imagen."
   },
   {
@@ -372,31 +372,31 @@
     "q": "¿Qué animal tiene el cuello muy largo para comer hojas de árboles altos?",
     "opts": [
       "El elefante",
-      "La jirafa",
+      "El rinoceronte",
       "El hipopótamo",
-      "El rinoceronte"
+      "La jirafa"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_154.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en la ilustración qué animalito alcanza las ramas más altas del árbol."
   },
   {
     "id": "kp_ciencias_025",
     "q": "¿Cuál de estos es un hábito saludable?",
     "opts": [
-      "Comer muchos dulces todos los días",
       "Comer frutas y verduras",
+      "Comer muchos dulces todos los días",
       "No bañarse nunca",
       "Dormir solo 2 horas"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_161.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa las manzanas y verduras de colores que llenan tu cuerpo de energía."
   },
   {
@@ -412,7 +412,7 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Piensa en un material duro y firme que resista caídas al suelo."
   },
   {
@@ -420,15 +420,15 @@
     "q": "¿Qué necesitan los animales para respirar?",
     "opts": [
       "Jugo",
-      "Aire (oxígeno)",
       "Galletas",
+      "Aire (oxígeno)",
       "Piedras"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es algo invisible que entra por tu nariz y llena tus pulmones."
   },
   {
@@ -436,31 +436,31 @@
     "q": "¿Qué gas usamos los seres humanos para respirar?",
     "opts": [
       "Humo",
-      "Oxígeno",
+      "Vapor",
       "Gas de globo",
-      "Vapor"
+      "Oxígeno"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_181.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa la figura de las plantitas produciendo el aire limpio que respiramos."
   },
   {
     "id": "kp_ciencias_029",
     "q": "¿Cómo son las hojas de la mayoría de los árboles en verano?",
     "opts": [
-      "Amarillas y secas",
       "Verdes y sanas",
+      "Amarillas y secas",
       "No tienen hojas",
       "Son de color azul"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Piensa en cómo están las copas de los árboles cuando hace calor."
   },
   {
@@ -476,7 +476,7 @@
     "cat": "ciencias",
     "oa": "CIE-01",
     "img": "assets/preguntas/mvp_ciencias_194.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en el pecho el motor que late 'pum pum' sin parar."
   },
   {
@@ -500,43 +500,43 @@
     "q": "¿Cómo se le llama al movimiento del Sol que nos permite identificar los puntos cardinales?",
     "opts": [
       "Movimiento real",
-      "Movimiento aparente",
+      "Movimiento circular",
       "Movimiento rápido",
-      "Movimiento circular"
+      "Movimiento aparente"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "medium",
+    "diff": "easy",
     "hint": "El sol parece caminar en el cielo, pero es la Tierra la que gira."
   },
   {
     "id": "kp_historia_003",
     "q": "Si quieres ver la forma real de los continentes sin que se vean planos, ¿qué usarías?",
     "opts": [
-      "Un planisferio",
       "Un globo terráqueo",
+      "Un planisferio",
       "Un croquis",
       "Una maqueta"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_021.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Observa la esfera redonda en la imagen que muestra toda nuestra Tierra."
   },
   {
     "id": "kp_historia_004",
     "q": "¿Qué nos permite orientarnos con exactitud en cualquier parte del mundo?",
     "opts": [
-      "Los puntos cardinales",
       "Los dibujos",
+      "Los puntos cardinales",
       "Los libros",
       "Las fotos"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
@@ -556,7 +556,7 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_041.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Cuenta los tres lugares del globo: Chile continental, Rapa Nui y la Antártica."
   },
   {
@@ -564,11 +564,11 @@
     "q": "¿Cómo se llaman los países que comparten fronteras directas con otro país?",
     "opts": [
       "Países lejanos",
-      "Países limítrofes",
+      "Países isleños",
       "Países de ultramar",
-      "Países isleños"
+      "Países limítrofes"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
@@ -579,12 +579,12 @@
     "id": "kp_historia_007",
     "q": "¿Cuál es la capital de la Región del Maule?",
     "opts": [
-      "Curicó",
-      "Linares",
       "Talca",
+      "Linares",
+      "Curicó",
       "Cauquenes"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
@@ -612,11 +612,11 @@
     "q": "¿Qué es un paisaje según el vocabulario geográfico?",
     "opts": [
       "Un dibujo hecho en clases",
-      "Porción de terreno vista desde un lugar y momento determinados",
       "Una foto antigua",
+      "Porción de terreno vista desde un lugar y momento determinados",
       "Un mapa sin nombres"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
@@ -629,10 +629,10 @@
     "opts": [
       "Cerro",
       "Valle",
-      "Volcán",
-      "Archipiélago"
+      "Archipiélago",
+      "Volcán"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_091.webp",
@@ -643,16 +643,16 @@
     "id": "kp_historia_011",
     "q": "Según el taller de habilidades, ¿qué significa \"describir un paisaje\"?",
     "opts": [
-      "Pintarlo con colores llamativos",
       "Explicar cómo es el lugar para dar una idea completa",
+      "Pintarlo con colores llamativos",
       "Sacarle una foto rápida",
       "Correr por el terreno"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Contar con tus palabras qué ves: montañas, ríos, casas o árboles."
   },
   {
@@ -660,15 +660,15 @@
     "q": "Una porción de tierra rodeada totalmente por el océano es una:",
     "opts": [
       "Valle",
-      "Fiordo",
       "Isla",
+      "Fiordo",
       "Altiplano"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_111.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa el pedacito de tierra en la imagen rodeado de agua marina."
   },
   {
@@ -676,15 +676,15 @@
     "q": "¿En cuántas grandes zonas geográficas se suele dividir Chile por sus paisajes?",
     "opts": [
       "En cinco",
-      "En tres (Norte, Centro y Sur)",
       "En diez",
+      "En tres (Norte, Centro y Sur)",
       "No tiene divisiones"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_121.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Chile es largo: arriba hace calor, al centro valles y abajo frío."
   },
   {
@@ -692,47 +692,47 @@
     "q": "¿Cuál es el estado de conservación actual de la Vizcacha en Chile?",
     "opts": [
       "Es una plaga",
-      "Está en peligro de extinción",
+      "Vive en las casas",
       "No está protegida",
-      "Vive en las casas"
+      "Está en peligro de extinción"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_131.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira la tierna vizcacha en el dibujo: quedan poquitas y debemos cuidarlas."
   },
   {
     "id": "kp_historia_015",
     "q": "¿Qué zona natural es famosa por sus numerosos volcanes y grandes lagos?",
     "opts": [
-      "Zona Norte",
-      "Zona Centro",
       "Zona Sur",
+      "Zona Centro",
+      "Zona Norte",
       "El Altiplano"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_141.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa los lagos y volcanes verdes del sur chileno en la imagen."
   },
   {
     "id": "kp_historia_016",
     "q": "Un elemento natural muy frecuente de ver en la Zona Norte es:",
     "opts": [
-      "Los cerros áridos",
       "Los grandes ríos",
+      "Los cerros áridos",
       "Las selvas húmedas",
       "Los campos de flores permanentes"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "En el norte llueve muy poco, por eso los cerros son secos."
   },
   {
@@ -740,11 +740,11 @@
     "q": "Para los pueblos originarios, el respeto a la naturaleza es parte fundamental de su:",
     "opts": [
       "Negocio",
-      "Cosmovisión o forma de ver la vida",
       "Juego",
+      "Cosmovisión o forma de ver la vida",
       "Pasatiempo"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_161.webp",
@@ -756,15 +756,15 @@
     "q": "¿Cuál es la playa más famosa y turística de la isla de Rapa Nui?",
     "opts": [
       "Playa Blanca",
-      "Playa Anakena",
+      "Pichilemu",
       "Playa Ancha",
-      "Pichilemu"
+      "Playa Anakena"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "historia",
     "oa": "HIS-01",
     "img": "assets/preguntas/mvp_historia_171.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira las palmeras y arena blanca de la playa polinésica en Rapa Nui."
   },
   {
@@ -780,23 +780,23 @@
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es un lugar con arena, palmeras y olas cerca del mar azul."
   },
   {
     "id": "kp_historia_020",
     "q": "¿Qué valor practicamos cuando aceptamos que otros niños piensen distinto?",
     "opts": [
-      "Respeto",
       "Enojo",
+      "Respeto",
       "Rapidez",
       "Tristeza"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "historia",
     "oa": "HIS-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Escuchar con cariño a tus amigos aunque tengan ideas o gustos diferentes."
   },
   {
@@ -804,11 +804,11 @@
     "q": "Hello! What's your name?",
     "opts": [
       "I am 7.",
-      "My name's Monica.",
       "Red and blue.",
+      "My name's Monica.",
       "This is my dad."
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": null,
@@ -821,10 +821,10 @@
     "opts": [
       "Six",
       "Nine",
-      "Ten",
-      "Two"
+      "Two",
+      "Ten"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_011.webp",
@@ -835,12 +835,12 @@
     "id": "kp_ingles_003",
     "q": "Count the stars.",
     "opts": [
-      "Ten",
       "Eleven",
+      "Ten",
       "Twelve",
       "Thirteen"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_021.webp",
@@ -884,11 +884,11 @@
     "q": "What's this? It's a green...",
     "opts": [
       "pen",
-      "pencil",
+      "ruler",
       "rubber",
-      "ruler"
+      "pencil"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_051.webp",
@@ -899,12 +899,12 @@
     "id": "kp_ingles_007",
     "q": "What colour is this?",
     "opts": [
-      "Blue",
       "Red",
+      "Blue",
       "Green",
       "Pink"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_061.webp",
@@ -932,11 +932,11 @@
     "q": "My body! What's this?",
     "opts": [
       "Leg",
-      "Hand",
       "Arm",
+      "Hand",
       "Foot"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_081.webp",
@@ -947,12 +947,12 @@
     "id": "kp_ingles_010",
     "q": "My face! What's this?",
     "opts": [
-      "Eye",
+      "Mouth",
       "Ear",
       "Nose",
-      "Mouth"
+      "Eye"
     ],
-    "correct": 0,
+    "correct": 3,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_091.webp",
@@ -972,55 +972,55 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_101.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the picture: you use them on your head to listen!"
   },
   {
     "id": "kp_ingles_012",
     "q": "My family! This is my...",
     "opts": [
-      "dad",
       "mum",
+      "dad",
       "brother",
       "granny"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_111.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the happy man in the drawing: he is the father!"
   },
   {
     "id": "kp_ingles_013",
     "q": "Meet my family! This is my...",
     "opts": [
-      "mum",
-      "grandad",
       "brother",
+      "grandad",
+      "mum",
       "dad"
     ],
-    "correct": 0,
+    "correct": 2,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_121.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the loving lady in the drawing: she is the mother!"
   },
   {
     "id": "kp_ingles_014",
     "q": "Pets! What's this?",
     "opts": [
-      "Cat",
+      "Rat",
       "Dog",
       "Rabbit",
-      "Rat"
+      "Cat"
     ],
-    "correct": 0,
+    "correct": 3,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_131.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the sweet animal in the picture that says 'meow'!"
   },
   {
@@ -1036,7 +1036,7 @@
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_141.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the cute little baby dog with floppy ears playing happily!"
   },
   {
@@ -1044,31 +1044,31 @@
     "q": "Food! What's this?",
     "opts": [
       "Cake",
-      "Yoghurt",
       "Pizza",
+      "Yoghurt",
       "Chicken"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_151.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the delicious slice with melting cheese and tomato sauce!"
   },
   {
     "id": "kp_ingles_017",
     "q": "Do you like yoghurt?",
     "opts": [
-      "No, I don't like yoghurt.",
-      "Yes, I like yoghurt.",
       "I am six.",
+      "Yes, I like yoghurt.",
+      "No, I don't like yoghurt.",
       "This is my mum."
     ],
-    "correct": 0,
+    "correct": 2,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_161.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the boy's face: he doesn't like that dairy snack!"
   },
   {
@@ -1077,58 +1077,58 @@
     "opts": [
       "Ball",
       "Puppy",
-      "Train",
-      "Car"
+      "Car",
+      "Train"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_171.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the toy vehicle on tracks that says 'choo-choo'!"
   },
   {
     "id": "kp_ingles_019",
     "q": "It's sunny. Put on your...",
     "opts": [
-      "Coat",
       "T-shirt",
+      "Coat",
       "Umbrella",
       "Boots"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "When the sun shines warm outside, wear light clothes on your chest!"
   },
   {
     "id": "kp_ingles_020",
     "q": "Is the fish in the bedroom?",
     "opts": [
-      "Yes",
       "No",
+      "Yes",
       "Hello",
       "Pizza"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "ingles",
     "oa": "ENG-01",
     "img": "assets/preguntas/mvp_ingles_191.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Look at the fish swimming happily inside the little bowl in room!"
   },
   {
     "id": "kp_lenguaje_001",
-    "q": "¿Cómo canta el gallo que acompaña a la gallina Pintadita?",
+    "q": "¿Cómo canta el gallo al amanecer para despertar a la granja?",
     "opts": [
       "Pío",
-      "Cocorocó",
       "Guau",
+      "Cocorocó",
       "Miau"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1137,14 +1137,14 @@
   },
   {
     "id": "kp_lenguaje_002",
-    "q": "¿Qué animal vive en los \"campos de agua y sal\" según el poema Cosecha?",
+    "q": "En los mares y océanos (\"campos de agua y sal\"), ¿qué animal vive y nada?",
     "opts": [
       "El perro",
-      "El pez",
+      "El chimpancé",
       "El chancho",
-      "El chimpancé"
+      "El pez"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_005.webp",
@@ -1153,14 +1153,14 @@
   },
   {
     "id": "kp_lenguaje_003",
-    "q": "¿Qué animal es \"Walter\" en la sección de la letra W?",
+    "q": "¿Qué simpático animal marsupial australiano empieza con la letra W?",
     "opts": [
-      "Un chimpancé",
       "Un wombat",
+      "Un chimpancé",
       "Un zorro",
       "Un pez"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1169,7 +1169,7 @@
   },
   {
     "id": "kp_lenguaje_004",
-    "q": "Según el poema, ¿qué siente el caballo en su garganta?",
+    "q": "Al pastar en el campo, ¿qué alimento fresco y tierno come un caballo?",
     "opts": [
       "Agua fría",
       "Tibia yerba",
@@ -1188,11 +1188,11 @@
     "q": "Si ves un nido en una rama, ¿quién vive allí?",
     "opts": [
       "Un pez",
-      "Un pájaro",
       "Un zorro",
+      "Un pájaro",
       "Un chancho"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1204,11 +1204,11 @@
     "q": "¿Qué animal tiene un caparazón y camina muy lento?",
     "opts": [
       "Chancho",
-      "Caracol",
+      "Gallo",
       "Zorro",
-      "Gallo"
+      "Caracol"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_021.webp",
@@ -1219,12 +1219,12 @@
     "id": "kp_lenguaje_007",
     "q": "¿Cómo se llama el sonido que hace el gallo cuando sale el sol?",
     "opts": [
-      "Ladrar",
       "Cantar",
+      "Ladrar",
       "Maullar",
       "Rugir"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1252,11 +1252,11 @@
     "q": "¿Qué animal tiene orejas largas y salta mucho?",
     "opts": [
       "Tortuga",
-      "Conejo",
       "Caracol",
+      "Conejo",
       "Pez"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1268,11 +1268,11 @@
     "q": "¿Qué animal caza ratones y hace \"miau\"?",
     "opts": [
       "Perro",
-      "Gato",
+      "Vaca",
       "Gallo",
-      "Vaca"
+      "Gato"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1283,12 +1283,12 @@
     "id": "kp_lenguaje_011",
     "q": "¿Qué fruta parece una sonrisa cuando se corta en rodajas?",
     "opts": [
-      "Manzana",
       "Melón",
+      "Manzana",
       "Plátano",
       "Kiwi"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_041.webp",
@@ -1316,11 +1316,11 @@
     "q": "¿Qué fruta se come \"debajo de la mesa\"?",
     "opts": [
       "Naranja",
-      "Cereza",
       "Plátano",
+      "Cereza",
       "Kiwi"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_049.webp",
@@ -1329,14 +1329,14 @@
   },
   {
     "id": "kp_lenguaje_014",
-    "q": "¿Por qué es bueno comer frutas en invierno según el texto informativo?",
+    "q": "¿Por qué es muy importante y saludable comer frutas en invierno?",
     "opts": [
       "Para dormir",
-      "Para aumentar las defensas",
+      "Para correr",
       "Para tener frío",
-      "Para correr"
+      "Para aumentar las defensas"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1345,14 +1345,14 @@
   },
   {
     "id": "kp_lenguaje_015",
-    "q": "¿Qué alimento dulce de invierno menciona el cuento \"Las semillas de la sonrisa\"?",
+    "q": "¿Qué tubérculo dulce y anaranjado se disfruta caliente en invierno?",
     "opts": [
-      "Helado",
       "Camote",
+      "Helado",
       "Chocolate",
       "Galletas"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1380,15 +1380,15 @@
     "q": "¿Qué elemento del cielo ayuda a las plantas a crecer y hace que los personajes canten?",
     "opts": [
       "Las nubes",
-      "El sol",
       "El viento",
+      "El sol",
       "La luna"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_065.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Mira la gran estrella dorada en el dibujo que ilumina todo el campo."
   },
   {
@@ -1396,11 +1396,11 @@
     "q": "¿Qué fruta es muy grande y se come \"a montones\" con el melón?",
     "opts": [
       "Uva",
-      "Sandía",
+      "Naranja",
       "Cereza",
-      "Naranja"
+      "Sandía"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_069.webp",
@@ -1411,12 +1411,12 @@
     "id": "kp_lenguaje_019",
     "q": "¿Cómo se llama el lugar donde el campesino cultiva sus frutas?",
     "opts": [
-      "Escuela",
       "Campo o Huerto",
+      "Escuela",
       "Playa",
       "Ciudad"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1425,7 +1425,7 @@
   },
   {
     "id": "kp_lenguaje_020",
-    "q": "Según la retahíla, ¿por qué nos gusta comer manzanas?",
+    "q": "¿Por qué es rico y muy saludable comer manzanas todos los días?",
     "opts": [
       "Porque son dulces",
       "Porque son sanas",
@@ -1441,14 +1441,14 @@
   },
   {
     "id": "kp_lenguaje_021",
-    "q": "¿Qué palabra rima con \"manzana\" según la retahíla?",
+    "q": "¿Qué palabra rima con la palabra \"manzana\"?",
     "opts": [
       "Pera",
-      "Sana",
       "Dulce",
+      "Sana",
       "Roja"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1460,11 +1460,11 @@
     "q": "¿Cuál de estas palabras tiene el sonido \"ll\"?",
     "opts": [
       "Casa",
-      "Gallina",
+      "Sol",
       "Perro",
-      "Sol"
+      "Gallina"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1475,12 +1475,12 @@
     "id": "kp_lenguaje_023",
     "q": "¿Cuántos sonidos tiene la palabra \"KIWI\"?",
     "opts": [
-      "2",
       "4",
+      "2",
       "6",
       "8"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
@@ -1508,48 +1508,48 @@
     "q": "¿Cómo suena la \"c\" en \"corazón\"?",
     "opts": [
       "Suave",
-      "Fuerte",
       "Como la S",
+      "Fuerte",
       "Como la J"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
     "diff": "easy",
-    "hint": "Pon tu mano en la garganta y siente cómo suena fuerte 'co-ra-zón'."
+    "hint": "Pon tu mano en la garganta y siente el golpe de voz vibrante en \"zón\"."
   },
   {
     "id": "kp_lenguaje_026",
     "q": "¿Cuál de estas palabras empieza con el sonido \"ll\"?",
     "opts": [
       "Luna",
-      "Lluvia",
+      "Lupa",
       "Lápiz",
-      "Lupa"
+      "Lluvia"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Son gotas de agua que caen de las nubes y empieza con 'Ll'."
   },
   {
     "id": "kp_lenguaje_027",
     "q": "¿Cómo suena la \"c\" antes de la vocal \"e\"?",
     "opts": [
-      "Fuerte",
       "Suave",
+      "Fuerte",
       "Como la G",
       "No suena"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
-    "hint": "Pronuncia 'ce-re-za': la letra C suena suave como la S."
+    "diff": "medium",
+    "hint": "Pronuncia \"ce-re-za\": la letra c suena delicada, igual que al decir sol."
   },
   {
     "id": "kp_lenguaje_028",
@@ -1564,7 +1564,7 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es deslizarse sobre las olas parado sobre una tabla con vela."
   },
   {
@@ -1572,15 +1572,15 @@
     "q": "¿Qué palabra tiene el sonido \"ch\" y es una prenda de vestir chilena?",
     "opts": [
       "Zapato",
-      "Poncho",
       "Gorro",
+      "Poncho",
       "Camisa"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_113.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira la prenda tejida tradicional de huaso chileno en la ilustración."
   },
   {
@@ -1588,31 +1588,31 @@
     "q": "¿Qué palabra tiene el sonido \"ll\" y es un animal de la granja que no es ave?",
     "opts": [
       "Gallina",
-      "Caballo",
+      "Pájaro",
       "Gallo",
-      "Pájaro"
+      "Caballo"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es un animal grande con crin y cola que corre al galope."
   },
   {
     "id": "kp_lenguaje_031",
     "q": "¿Cuántas sílabas tiene la palabra \"melón\"?",
     "opts": [
-      "Una",
       "Dos",
+      "Una",
       "Tres",
       "Cuatro"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Da aplausos diciendo la palabra: ¡me!... ¡lón!... ¿cuántos aplausos diste?"
   },
   {
@@ -1628,23 +1628,23 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es el nombre de la niña del cuento que comienza con letra W."
   },
   {
     "id": "kp_lenguaje_033",
     "q": "¿Qué palabra tiene el sonido \"ch\" y sale de las fogatas?",
     "opts": [
-      "Chispas",
-      "Sol",
       "Agua",
+      "Sol",
+      "Chispas",
       "Tierra"
     ],
-    "correct": 0,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Son pequeñas lucecitas calientes que saltan cuando la leña arde."
   },
   {
@@ -1652,31 +1652,31 @@
     "q": "¿Qué palabra de la lista de la \"Ch\" se refiere a una mujer joven?",
     "opts": [
       "Chimpancé",
-      "Muchacha",
+      "Poncho",
       "Mochila",
-      "Poncho"
+      "Muchacha"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es una palabra cariñosa para nombrar a una niña o señorita joven."
   },
   {
     "id": "kp_lenguaje_035",
     "q": "¿Qué palabra rima con \"Cocorocó\"?",
     "opts": [
-      "Gallina",
       "Cantó",
+      "Gallina",
       "Sol",
       "Rama"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Escucha la terminación: Cocorocó... busca la palabra que termine con 'ó'."
   },
   {
@@ -1692,7 +1692,7 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Tiene dos ruedas, manubrio, timbre y avanzas moviendo tus pies."
   },
   {
@@ -1700,31 +1700,31 @@
     "q": "¿Qué prenda de vestir chilena se usa sobre los hombros y empieza con \"Ch\"?",
     "opts": [
       "Camisa",
-      "Poncho",
       "Zapato",
+      "Poncho",
       "Gorro"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Abriga los hombros en invierno y su nombre empieza con letra Ch."
   },
   {
     "id": "kp_lenguaje_038",
-    "q": "¿Qué objeto es \"grande como un balón\" en el cuento?",
+    "q": "En la huerta, ¿qué fruta dulce es tan grande y redonda como un balón?",
     "opts": [
       "La uva",
-      "El melón",
+      "La naranja",
       "La ciruela",
-      "La naranja"
+      "El melón"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es una fruta redonda, pesada y dulce que rueda por la huerta."
   },
   {
@@ -1740,7 +1740,7 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Un campesino es un ser humano trabajador que cuida la siembra."
   },
   {
@@ -1756,7 +1756,7 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_157.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira el dibujo del paso de cebra: fíjate si vienen autos cerca."
   },
   {
@@ -1764,47 +1764,47 @@
     "q": "¿Qué objeto usamos para ver la hora?",
     "opts": [
       "Lupa",
-      "Reloj",
       "Espejo",
+      "Reloj",
       "Plato"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Tiene dos manecillas que giran en círculo marcando los minutos."
   },
   {
     "id": "kp_lenguaje_042",
-    "q": "¿Qué objeto tiene dientes pero no come según la adivinanza?",
+    "q": "Adivinanza: \"Tengo muchos dientes pero no como ni muerdo, peino tu pelo\". ¿Qué soy?",
     "opts": [
       "Serrucho",
-      "Peineta",
+      "Martillo",
       "Hacha",
-      "Martillo"
+      "Peineta"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "La usas frente al espejo para desenredar tu pelo cada mañana."
   },
   {
     "id": "kp_lenguaje_043",
     "q": "¿Dónde debemos botar siempre la basura?",
     "opts": [
-      "Al suelo",
       "Al basurero",
+      "Al suelo",
       "Bajo la cama",
       "Por la ventana"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_169.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa el basurero en la imagen: los envoltorios siempre van adentro."
   },
   {
@@ -1820,7 +1820,7 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_173.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en la ilustración el cartel rojo con ocho lados que dice PARE."
   },
   {
@@ -1828,15 +1828,15 @@
     "q": "¿Dónde se guardan las frutas para que duren más?",
     "opts": [
       "En el horno",
-      "En el refrigerador",
       "En la mochila",
+      "En el refrigerador",
       "En la cama"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Es el electrodoméstico frío de la cocina que conserva los alimentos frescos."
   },
   {
@@ -1844,31 +1844,31 @@
     "q": "Si el sol está brillante y resplandeciente, ¿cómo se llama ese día?",
     "opts": [
       "Opaco",
-      "Radiante",
+      "Oscuro",
       "Apagado",
-      "Oscuro"
+      "Radiante"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": "assets/preguntas/mvp_lenguaje_181.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira el sol resplandeciente en la imagen: ¡el cielo está brillante!"
   },
   {
     "id": "kp_lenguaje_047",
     "q": "¿Por qué es importante hacer actividad física?",
     "opts": [
-      "Para estar cansado",
       "Para mantenerse saludable",
+      "Para estar cansado",
       "Para dormir todo el día",
       "Para estar triste"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Jugar y moverse hace que tu corazón y músculos crezcan fuertes."
   },
   {
@@ -1884,23 +1884,23 @@
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Al salir de la camita, lavamos nuestra carita y comemos alimentos ricos."
   },
   {
     "id": "kp_lenguaje_049",
-    "q": "¿Qué significa \"empapar\" el suelo según el vocabulario del cuento?",
+    "q": "¿Qué significa exactamente la palabra \"empapar\"?",
     "opts": [
       "Secarlo",
-      "Humedecerlo hasta que quede lleno de líquido",
       "Pintarlo",
+      "Humedecerlo hasta que quede lleno de líquido",
       "Barrerlo"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Imagina mojar una esponja con mucha agua hasta que gotee solita."
   },
   {
@@ -1908,31 +1908,31 @@
     "q": "¿Qué sucede con el sol cuando la gente empieza a reír a carcajadas?",
     "opts": [
       "Se esconde",
-      "Asoma tras las nubes",
+      "Desaparece",
       "Se apaga",
-      "Desaparece"
+      "Asoma tras las nubes"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "lenguaje",
     "oa": "LEN-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "La alegría es como una luz cálida que aparta toda nubecita."
   },
   {
     "id": "kp_logica_001",
     "q": "Para ser más elegante no usa guante ni chaqué, solo cambia en un instante por una \"f\" la \"g\".",
     "opts": [
-      "El gato",
-      "El búho",
       "El elefante",
+      "El búho",
+      "El gato",
       "El gallo"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_001.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Mira en la ilustración ese gran animal gris con trompa larga y orejas."
   },
   {
@@ -1940,11 +1940,11 @@
     "q": "¿Cuál es el animal que camina con las patas en la cabeza?",
     "opts": [
       "La araña",
-      "El cangrejo",
       "El piojo",
+      "El cangrejo",
       "La hormiga"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
@@ -1956,11 +1956,11 @@
     "q": "Este es un animal tan original que al ponerse cara arriba, ya no se llama igual.",
     "opts": [
       "El caracol",
-      "El escarabajo",
       "La oruga",
+      "El escarabajo",
       "La mariposa"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_011.webp",
@@ -1972,15 +1972,15 @@
     "q": "Zumba que te zumba, van y vienen sin descanso, de flor en flor trajinando y nuestra vida endulzando.",
     "opts": [
       "La mosca",
-      "La abeja",
+      "La hormiga",
       "La avispa",
-      "La hormiga"
+      "La abeja"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_016.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Mira en la ilustración el insecto a rayas que fabrica miel dulce."
   },
   {
@@ -1996,7 +1996,7 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Su nombre termina en 'llena' y nada como gigante en el océano."
   },
   {
@@ -2004,11 +2004,11 @@
     "q": "Dicen que la tía Cuca se arrastra con mala racha. ¿Quién será esa muchacha?",
     "opts": [
       "La lombriz",
-      "La serpiente",
       "La cucaracha",
+      "La serpiente",
       "La oruga"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_026.webp",
@@ -2020,15 +2020,15 @@
     "q": "La jaula es su casa, su ropaje amarillo, y con su canto alegra a todos los vecinos.",
     "opts": [
       "El loro",
-      "El canario",
       "El gallo",
+      "El canario",
       "El búho"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_031.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Observa el pajarito amarillo en la imagen que canta en su jaulita."
   },
   {
@@ -2044,19 +2044,19 @@
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_036.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Mira en el dibujo al animalito ciego que cava túneles bajo tierra."
   },
   {
     "id": "kp_logica_009",
     "q": "Garra pero no mata, pata pero no de vaca.",
     "opts": [
-      "El tigre",
       "La garrapata",
+      "El tigre",
       "El oso",
       "El águila"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
@@ -2067,17 +2067,17 @@
     "id": "kp_logica_010",
     "q": "Un solo portero, un solo inquilino, tu casa redonda la llevas contigo.",
     "opts": [
-      "El caracol",
       "La tortuga",
+      "El caracol",
       "El cangrejo",
       "El mejillón"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_046.webp",
     "diff": "easy",
-    "hint": "Observa la figura del caracolito con su concha redonda en la espalda."
+    "hint": "Observa al pequeño animalito de jardín que lleva su casita en espiral a cuestas."
   },
   {
     "id": "kp_logica_011",
@@ -2100,27 +2100,27 @@
     "q": "Si me escribes como es soy de la selva el rey, si me escribes al revés yo seré Papá Noel.",
     "opts": [
       "El tigre",
-      "El león",
+      "El mono",
       "El elefante",
-      "El mono"
+      "El león"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Tiene melena grande y si lees 'león' al revés casi suena Noel."
   },
   {
     "id": "kp_logica_013",
     "q": "Blanca por dentro, verde por fuera. Si quieres que te lo diga, espera.",
     "opts": [
-      "La manzana",
+      "La pera",
       "El kiwi",
       "La uva",
-      "La pera"
+      "La manzana"
     ],
-    "correct": 3,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_061.webp",
@@ -2149,10 +2149,10 @@
     "opts": [
       "La zanahoria",
       "La cebolla",
-      "La uva",
-      "La berenjena"
+      "La berenjena",
+      "La uva"
     ],
-    "correct": 3,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
@@ -2164,31 +2164,31 @@
     "q": "Somos cien hermanitos, todos muy igualitos y estamos encerrados en un globo bonito.",
     "opts": [
       "Las uvas",
-      "Los piñones",
+      "Las lentejas",
       "Las arvejas",
-      "Las lentejas"
+      "Los piñones"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_076.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Observa en la ilustración la piña de araucaria con sus semillas adentro."
   },
   {
     "id": "kp_logica_017",
     "q": "Son de color chocolate, se ablandan con el calor, y si se meten al horno, explotan con gran furor.",
     "opts": [
-      "Las almendras",
+      "Las castañas",
       "Las nueces",
       "Las avellanas",
-      "Las castañas"
+      "Las almendras"
     ],
-    "correct": 3,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_081.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Mira las semillas marrones en el dibujo que se tuestan en invierno."
   },
   {
@@ -2196,11 +2196,11 @@
     "q": "Somos blancos, larguiruchos, nos fríen en las verbenas, dorados y calentitos.",
     "opts": [
       "Los fideos",
-      "Los espárragos",
       "Los churros",
+      "Los espárragos",
       "Las papas fritas"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_086.webp",
@@ -2212,16 +2212,16 @@
     "q": "Cuanto más caliente, más fresco y crujiente.",
     "opts": [
       "El helado",
-      "El pan",
       "El queso",
+      "El pan",
       "El pastel"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_091.webp",
     "diff": "easy",
-    "hint": "Mira en la imagen la marraqueta recién salida del horno del panadero."
+    "hint": "Mira en la imagen el alimento crujiente elaborado con harina y levadura."
   },
   {
     "id": "kp_logica_020",
@@ -2229,26 +2229,26 @@
     "opts": [
       "El té",
       "La leche",
-      "El café",
-      "El chocolate"
+      "El chocolate",
+      "El café"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_096.webp",
-    "diff": "medium",
+    "diff": "easy",
     "hint": "Observa la taza humeante en el dibujo de líquido oscuro y aromático."
   },
   {
     "id": "kp_logica_021",
     "q": "En la tierra te sembraron, las aves te desearon, cuando estuviste dorado los hombres te segaron.",
     "opts": [
-      "El maíz",
-      "El arroz",
       "El trigo",
+      "El arroz",
+      "El maíz",
       "El pasto"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_101.webp",
@@ -2260,11 +2260,11 @@
     "q": "Su cabeza es amarilla, siguiendo al sol, gira y gira, muchos comen sus pepitas y dicen que son muy ricas.",
     "opts": [
       "El tulipán",
-      "La amapola",
+      "El girasol",
       "El clavel",
-      "El girasol"
+      "La amapola"
     ],
-    "correct": 3,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_106.webp",
@@ -2277,10 +2277,10 @@
     "opts": [
       "La silla",
       "La cama",
-      "El sillón",
-      "La mesa"
+      "La mesa",
+      "El sillón"
     ],
-    "correct": 3,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_111.webp",
@@ -2291,32 +2291,32 @@
     "id": "kp_logica_024",
     "q": "Cuerpo de palo, cabeza de color, me encienden con cuidado y doy mucho calor.",
     "opts": [
-      "El fósforo",
+      "La lámpara",
       "La vela",
       "El carbón",
-      "La lámpara"
+      "El fósforo"
     ],
-    "correct": 0,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_116.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en la imagen el palito de madera con cabeza roja inflamable."
   },
   {
     "id": "kp_logica_025",
     "q": "¿Qué quién es aquella que cuanto más se moja, más te seca?",
     "opts": [
-      "La esponja",
       "La toalla",
+      "La esponja",
       "La ropa",
       "La mano"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "La usas después de ducharte: te seca a ti y queda mojada."
   },
   {
@@ -2324,15 +2324,15 @@
     "q": "Locomotora no soy, mucho con vapor doy, dejo muy alisado, si me usan con cuidado.",
     "opts": [
       "La olla",
-      "La estufa",
       "La plancha",
+      "La estufa",
       "El horno"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_126.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa en la ilustración el artefacto caliente que alisa arrugas de ropa."
   },
   {
@@ -2340,11 +2340,11 @@
     "q": "Con tan sólo cuatro cuerdas, que un arco pone en acción, esta caja melodiosa te alegrará el corazón.",
     "opts": [
       "La guitarra",
-      "El violín",
       "El violonchelo",
+      "El violín",
       "El arpa"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_131.webp",
@@ -2357,26 +2357,26 @@
     "opts": [
       "El baile",
       "Los pies",
-      "El tambor",
-      "La cuerda"
+      "La cuerda",
+      "El tambor"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_136.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa en la imagen el instrumento que suena con golpes de baqueta."
   },
   {
     "id": "kp_logica_029",
     "q": "En el bosque nací, en el bosque crecí y, cuando instrumento fui, al soplar música oí.",
     "opts": [
-      "El clarinete",
       "La flauta",
+      "El clarinete",
       "La trompeta",
       "El saxofón"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_141.webp",
@@ -2388,11 +2388,11 @@
     "q": "Me pones y me quitas, me tomas y me dejas, conmigo no tiritas, y estoy hecho de madejas.",
     "opts": [
       "La manta",
-      "La bufanda",
       "El chaleco",
+      "La bufanda",
       "La polera"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_146.webp",
@@ -2404,11 +2404,11 @@
     "q": "Hay un gallo sentado justo en la cima de un granero. Si pone un huevo, ¿hacia qué lado rodaría?",
     "opts": [
       "Hacia la derecha",
-      "Los gallos no ponen huevos",
       "Hacia la izquierda",
+      "Los gallos no ponen huevos",
       "Hacia el frente"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
@@ -2421,26 +2421,26 @@
     "opts": [
       "Solo Febrero",
       "Los años bisiestos",
-      "Todos los meses",
-      "Ninguno"
+      "Ninguno",
+      "Todos los meses"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_156.webp",
-    "diff": "easy",
-    "hint": "Mira el calendario en la imagen: ¡todos los meses alcanzan 28 días!"
+    "diff": "medium",
+    "hint": "Recuerda que hasta el mes más cortito del año supera los veintisiete días."
   },
   {
     "id": "kp_logica_033",
     "q": "Una niña tenía diez años en su último cumpleaños y cumplirá doce años el próximo. ¿Cómo es posible?",
     "opts": [
-      "Es magia",
-      "Se saltó un año",
       "Hoy es su undécimo cumpleaños",
+      "Se saltó un año",
+      "Es magia",
       "Mintió sobre su edad"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
@@ -2452,15 +2452,15 @@
     "q": "Si quieres caminar salto, y si quiero parar me agacho.",
     "opts": [
       "La rana",
-      "El saltamontes",
+      "El canguro",
       "El conejo",
-      "El canguro"
+      "El saltamontes"
     ],
-    "correct": 3,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_166.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en el dibujo al marsupial que salta y lleva a su cría."
   },
   {
@@ -2468,15 +2468,15 @@
     "q": "¿Qué relación tengo yo con la suegra de la mujer de mi hermano?",
     "opts": [
       "Mi abuela",
-      "Mi madre",
       "Mi tía",
+      "Mi madre",
       "Mi hermana"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "La esposa de mi hermano tiene de suegra a mi propia mamá."
   },
   {
@@ -2485,30 +2485,30 @@
     "opts": [
       "Hermano",
       "Tío",
-      "Primo",
-      "Sobrino"
+      "Sobrino",
+      "Primo"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "El hijo de tu tía querida comparte juegos contigo: es tu..."
   },
   {
     "id": "kp_logica_037",
     "q": "Dos hermanas, mentira no es, la una es mi tía, la otra no lo es.",
     "opts": [
-      "Mi prima",
       "Mi madre",
+      "Mi prima",
       "Mi abuela",
       "Mi hermana"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_181.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira la foto familiar: una hermana es tu tía y la otra..."
   },
   {
@@ -2516,15 +2516,15 @@
     "q": "¿Cuál es el animal que tiene las cinco vocales en su nombre y vuela de noche?",
     "opts": [
       "El búho",
-      "La mariposa",
+      "El murciélago",
       "El águila",
-      "El murciélago"
+      "La mariposa"
     ],
-    "correct": 3,
+    "correct": 1,
     "cat": "logica",
     "oa": "LOG-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Contiene A-E-I-O-U y es un mamífero con alitas que vuela de noche."
   },
   {
@@ -2532,11 +2532,11 @@
     "q": "Tres hermanos en su casa, ven al lobo pasar, y por mucho que éste sople, no la consigue tirar.",
     "opts": [
       "Los tres mosqueteros",
-      "Los tres cerditos",
       "Los siete enanitos",
+      "Los tres cerditos",
       "Los tres ositos"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_191.webp",
@@ -2549,10 +2549,10 @@
     "opts": [
       "Peter Pan",
       "Merlín",
-      "Harry Potter",
-      "Thor"
+      "Thor",
+      "Harry Potter"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "logica",
     "oa": "LOG-01",
     "img": "assets/preguntas/mvp_logica_196.webp",
@@ -2563,12 +2563,12 @@
     "id": "kp_matematicas_001",
     "q": "¿Cuántos lápices ves en la imagen?",
     "opts": [
-      "1",
-      "2",
       "3",
+      "2",
+      "1",
       "5"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_001.webp",
@@ -2612,11 +2612,11 @@
     "q": "¿Cuál es el resultado de 4 + 0?",
     "opts": [
       "0",
-      "4",
+      "1",
       "40",
-      "1"
+      "4"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
@@ -2659,12 +2659,12 @@
     "id": "kp_matematicas_007",
     "q": "Si tienes 6 lápices y pierdes 2, ¿cuántos te quedan?",
     "opts": [
-      "4",
-      "3",
       "5",
+      "3",
+      "4",
       "8"
     ],
-    "correct": 0,
+    "correct": 2,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
@@ -2675,12 +2675,12 @@
     "id": "kp_matematicas_008",
     "q": "¿Cuántos libros hay?",
     "opts": [
-      "1",
+      "3",
       "2",
       "0",
-      "3"
+      "1"
     ],
-    "correct": 0,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_036.webp",
@@ -2691,12 +2691,12 @@
     "id": "kp_matematicas_009",
     "q": "¿Qué número es mayor: 2 o 9?",
     "opts": [
-      "2",
       "9",
+      "2",
       "Son iguales",
       "0"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
@@ -2707,12 +2707,12 @@
     "id": "kp_matematicas_010",
     "q": "¿Qué número es?",
     "opts": [
-      "Uno",
       "Dos",
+      "Uno",
       "Tres",
       "Cero"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_046.webp",
@@ -2724,11 +2724,11 @@
     "q": "¿Qué número es mayor que 9?",
     "opts": [
       "8",
-      "10",
       "7",
+      "10",
       "5"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
@@ -2740,11 +2740,11 @@
     "q": "¿Cuántos dedos tienes en un pie?",
     "opts": [
       "4",
-      "5",
+      "10",
       "6",
-      "10"
+      "5"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_056.webp",
@@ -2772,11 +2772,11 @@
     "q": "Si tienes 2 galletas y te dan 2 más, ¿cuántas tienes?",
     "opts": [
       "2",
-      "3",
       "4",
+      "3",
       "5"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
@@ -2804,11 +2804,11 @@
     "q": "¿Qué número es mayor que 0 y menor que 2?",
     "opts": [
       "0",
-      "1",
+      "3",
       "2",
-      "3"
+      "1"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
@@ -2819,12 +2819,12 @@
     "id": "kp_matematicas_017",
     "q": "¿Cuál es la forma de una pelota?",
     "opts": [
-      "Cuadrada",
       "Redonda",
+      "Cuadrada",
       "Triangular",
       "Rectangular"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_081.webp",
@@ -2836,11 +2836,11 @@
     "q": "¿Qué forma es esta?",
     "opts": [
       "Cuadrado",
-      "Círculo",
       "Triángulo",
+      "Círculo",
       "Estrella"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_086.webp",
@@ -2868,11 +2868,11 @@
     "q": "¿Qué forma tiene el techo de la carpa?",
     "opts": [
       "Cuadrado",
-      "Triangular",
+      "Rectangular",
       "Redondo",
-      "Rectangular"
+      "Triangular"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_096.webp",
@@ -2883,32 +2883,32 @@
     "id": "kp_matematicas_021",
     "q": "¿Qué número es mayor que 10?",
     "opts": [
-      "9",
       "11",
+      "9",
       "8",
       "5"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Al contar después de diez viene un número con dos unos juntos."
   },
   {
     "id": "kp_matematicas_022",
     "q": "¿Qué número está antes del 18?",
     "opts": [
-      "17",
       "19",
+      "17",
       "20",
       "16"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Cuenta hacia atrás desde el dieciocho para ver quién está antes."
   },
   {
@@ -2916,15 +2916,15 @@
     "q": "¿Cuántas estrellas ves?",
     "opts": [
       "10",
-      "11",
       "12",
+      "11",
       "9"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_111.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Hay dos filas de 5 estrellas, más una estrellita que acompaña al lado."
   },
   {
@@ -2933,46 +2933,46 @@
     "opts": [
       "10",
       "11",
-      "12",
-      "20"
+      "20",
+      "12"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_116.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira la cajita de huevos en el dibujo: son diez más dos."
   },
   {
     "id": "kp_matematicas_025",
     "q": "¿Qué es más pesado?",
     "opts": [
-      "La hormiga",
       "El elefante",
+      "La hormiga",
       "Pesan lo mismo",
       "Ninguno"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_121.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Observa en la imagen qué animalito tiene patas gigantes y cuerpo pesado."
   },
   {
     "id": "kp_matematicas_026",
     "q": "¿Cuál objeto es más grande?",
     "opts": [
-      "Un avión",
       "Una hormiga",
+      "Un avión",
       "Una pelota",
       "Un lápiz"
     ],
-    "correct": 0,
+    "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_126.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en la ilustración el vehículo con alas que transporta muchas personas."
   },
   {
@@ -2980,15 +2980,15 @@
     "q": "¿Qué número falta en la serie: 5, 10, 15, __?",
     "opts": [
       "16",
-      "20",
       "25",
+      "20",
       "10"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Cuenta de cinco en cinco: cinco, diez, quince... suma cinco más."
   },
   {
@@ -2996,31 +2996,31 @@
     "q": "¿Qué número es menor que 5?",
     "opts": [
       "6",
-      "4",
+      "8",
       "7",
-      "8"
+      "4"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Busca el número que está antes del cinco en la recta numérica."
   },
   {
     "id": "kp_matematicas_029",
     "q": "¿Qué hora es?",
     "opts": [
-      "Las 2",
-      "Las 4",
       "Las 3",
+      "Las 4",
+      "Las 2",
       "Las 1"
     ],
-    "correct": 2,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_141.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira el reloj en la imagen: la aguja corta apunta al número..."
   },
   {
@@ -3028,15 +3028,15 @@
     "q": "¿Qué número sigue: 10, 11, 12, 13, __?",
     "opts": [
       "12",
-      "15",
       "14",
+      "15",
       "16"
     ],
-    "correct": 2,
+    "correct": 1,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Sigue la fila: diez, once, doce, trece... ¿qué número llega después?"
   },
   {
@@ -3052,7 +3052,7 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Tienes ocho en tu mente, suma dos deditos más: nueve y..."
   },
   {
@@ -3060,31 +3060,31 @@
     "q": "¿Cuántos años cumple el niño?",
     "opts": [
       "6",
-      "7",
+      "5",
       "8",
-      "5"
+      "7"
     ],
-    "correct": 1,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_156.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira la torta en la imagen y cuenta las velitas encendidas."
   },
   {
     "id": "kp_matematicas_033",
     "q": "¿Cuál es el resultado de 6 + 4?",
     "opts": [
-      "9",
       "10",
+      "9",
       "11",
       "12"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Tienes seis fichas, agrégale cuatro más y completa una decena redonda."
   },
   {
@@ -3100,7 +3100,7 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Si de diez dedos escondes una mano completa, ¿cuántos dedos quedan?"
   },
   {
@@ -3108,15 +3108,15 @@
     "q": "¿Cuál es el resultado de 1 + 9?",
     "opts": [
       "9",
-      "10",
       "11",
+      "10",
       "8"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Nueve es casi diez: solo agrégale uno más para llegar."
   },
   {
@@ -3125,30 +3125,30 @@
     "opts": [
       "2",
       "3",
-      "4",
-      "5"
+      "5",
+      "4"
     ],
-    "correct": 2,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": "assets/preguntas/mvp_matematicas_176.webp",
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Mira en el dibujo: suma dos ojitos más dos orejitas peludas."
   },
   {
     "id": "kp_matematicas_037",
     "q": "¿Cuál es el resultado de 3 + 3?",
     "opts": [
-      "5",
       "6",
+      "5",
       "7",
       "3"
     ],
-    "correct": 1,
+    "correct": 0,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Tres deditos más tres deditos: ¡júntalos y cuenta hasta seis!"
   },
   {
@@ -3164,7 +3164,7 @@
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Cuenta a partir del once hacia adelante: once y luego viene..."
   },
   {
@@ -3172,31 +3172,31 @@
     "q": "¿Cuál es el resultado de 1 + 0?",
     "opts": [
       "0",
-      "1",
       "10",
+      "1",
       "11"
     ],
-    "correct": 1,
+    "correct": 2,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Si tienes una manzana y no te dan nada, sigues teniendo..."
   },
   {
     "id": "kp_matematicas_040",
     "q": "¿Qué número está antes del 10?",
     "opts": [
-      "9",
+      "1",
       "11",
       "8",
-      "1"
+      "9"
     ],
-    "correct": 0,
+    "correct": 3,
     "cat": "matematicas",
     "oa": "MAT-01",
     "img": null,
-    "diff": "easy",
+    "diff": "medium",
     "hint": "Piensa en el número que está justo antes del diez al contar."
   }
 ]
