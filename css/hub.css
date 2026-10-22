@@ -1,661 +1,675 @@
-/* ==========================================================================
-   KIMI PANDA — HUB PRINCIPAL (Bento Pop & 5 Modos Responsivos)
-   ========================================================================== */
-
-#scr-hub {
-  display: none;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-#scr-hub.active {
-  display: flex;
-}
-
-/* 1. TOP BAR HUD */
-.hud {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--card);
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-pill);
-  padding: 4px 14px 4px 6px;
-  box-shadow: 0 4px 0 var(--ink);
-  cursor: pointer;
-  transition: transform 0.12s ease;
-}
-
-.profile:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--ink);
-}
-
-.avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--ink);
-  background: #CDEECD;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile .hi {
-  font-family: var(--font-d);
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--ink);
-}
-
-.profile .sub {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--ink-soft);
-  line-height: 1.1;
-}
-
-.spacer {
-  flex: 1;
-}
-
-/* 2. HERO SECTION: MOCHI + GLOBO DE DIÁLOGO */
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  min-height: 140px;
-  max-height: 260px;
-}
-
-.bubble {
-  position: relative;
-  background: var(--card);
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-lg);
-  padding: 10px 18px;
-  font-family: var(--font-d);
-  font-size: clamp(16px, 4vw, 20px);
-  font-weight: 600;
-  color: var(--ink);
-  box-shadow: 0 5px 0 var(--ink);
-  margin-bottom: 6px;
-  animation: bubblePop 0.5s var(--bouncy);
-}
-
-.bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid var(--ink);
-}
-
-@keyframes bubblePop {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.mochi-hero-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.mascot {
-  width: auto;
-  height: min(38vw, 190px);
-  max-height: 210px;
-  object-fit: contain;
-  filter: drop-shadow(0 6px 0 rgba(36, 28, 21, 0.15));
-  animation: floatMascot 4s ease-in-out infinite;
-}
-
-.mochi-shadow {
-  width: 140px;
-  height: 18px;
-  background: rgba(36, 28, 21, 0.12);
-  border-radius: 50%;
-  filter: blur(4px);
-  margin: -10px auto 0;
-  animation: shadowPulse 4s ease-in-out infinite;
-}
-
-@keyframes shadowPulse {
-  0%, 100% { transform: scale(1); opacity: 0.14; }
-  50% { transform: scale(0.85); opacity: 0.08; }
-}
-
-@keyframes floatMascot {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* 3. MENÚ 2x2 DE ACCIONES MECÁNICAS */
-.menu {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.menu .pbtn {
-  height: 56px;
-  padding: 0 16px;
-  font-size: clamp(16px, 3.8vw, 19px);
-  justify-content: flex-start;
-}
-
-.menu .ico {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: var(--r-sm);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.menu .ico svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* 4. TARJETA BENTO DE MISIONES SEMANALES */
-.missions {
-  position: relative;
-  background: var(--card);
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-lg);
-  padding: 22px 20px 16px 20px;
-  box-shadow: 0 6px 0 var(--ink);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.missions .sticker {
-  position: absolute;
-  top: -12px;
-  left: 18px;
-  background: var(--amber);
-  color: var(--ink);
-  font-family: var(--font-d);
-  font-weight: 700;
-  font-size: 13px;
-  padding: 3px 12px;
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-pill);
-  box-shadow: 0 3px 0 var(--ink);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.mission {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.mission-claim-btn {
-  font-family: var(--font-d);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--r-pill);
-  background: var(--amber);
-  color: var(--ink);
-  border: 1.5px solid var(--ink);
-  cursor: pointer;
-  box-shadow: 0 2px 0 var(--ink);
-  animation: pulseClaim 1.8s ease-in-out infinite;
-  white-space: nowrap;
-}
-
-@keyframes pulseClaim {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.mission-claim-btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 1px 0 var(--ink);
-}
-
-.mission .txt {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--ink);
-}
-
-.mission .reward {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-d);
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--green-d);
-}
-
-.mission .reward svg {
-  width: 16px;
-  height: 16px;
-}
-
-.mission .bar {
-  height: 12px;
-  background: #F0ECE4;
-  border: 2px solid var(--ink);
-  border-radius: var(--r-pill);
-  overflow: hidden;
-  position: relative;
-}
-
-.mission .bar i {
-  display: block;
-  height: 100%;
-  background: var(--green);
-  border-radius: var(--r-pill);
-  transition: width 0.4s ease;
-}
-
-.mission .bar.blue i {
-  background: var(--blue);
-}
-
-/* ==========================================================================
-   ADAPTACIÓN RESPONSIVA — PANTALLA HUB (5 MODOS)
-   ========================================================================== */
-
-/* MODO 1: Computadora (Desktop 1440x900 / 1920x1080) */
-@media (min-width: 900px) and (orientation: landscape) {
-  #scr-hub {
-    max-width: 1020px;
-    width: 100%;
-    display: none;
-    grid-template-columns: 1fr 1.08fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "hud      hud"
-      "hero     menu"
-      "missions missions";
-    gap: 20px 32px;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0 32px 0;
-    box-sizing: border-box;
-    height: 100%;
-  }
-  #scr-hub.active {
-    display: grid;
-  }
-  .hud {
-    grid-area: hud;
-    width: 100%;
-  }
-  .hero {
-    grid-area: hero;
-    max-height: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .mascot {
-    width: auto;
-    height: 180px;
-    max-height: 200px;
-  }
-  .menu {
-    grid-area: menu;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    width: 100%;
-  }
-  .menu .pbtn {
-    height: 68px;
-    font-size: 20px;
-  }
-  .missions {
-    grid-area: missions;
-    width: 100%;
-    padding: 22px 22px 16px 22px;
-    margin-bottom: 24px;
-  }
-}
-
-/* MODO 2: Tablet Vertical (800x1280) */
-@media (min-width: 600px) and (orientation: portrait) {
-  #scr-hub {
-    max-width: 640px;
-    gap: 20px;
-  }
-  .hero {
-    max-height: 340px;
-  }
-  .mascot {
-    width: 210px;
-    max-height: 230px;
-  }
-  .menu .pbtn {
-    height: 68px;
-    font-size: 21px;
-  }
-  .missions {
-    padding: 24px 20px 18px 20px;
-    gap: 14px;
-  }
-  .mission .txt {
-    font-size: 15px;
-  }
-  .mission .bar {
-    height: 16px;
-  }
-}
-
-/* MODO 3: Tablet Horizontal (1024x768 Split Screen) */
-@media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
-  #scr-hub {
-    max-width: 920px;
-    gap: 12px;
-  }
-  .hero {
-    max-height: 280px;
-  }
-  .mascot {
-    width: 170px;
-    max-height: 190px;
-  }
-  .menu .pbtn {
-    height: 54px;
-    font-size: 17px;
-  }
-}
-
-/* MODO 4: Móvil Vertical (<= 480px) */
-@media (max-width: 480px) {
-  .hud {
-    gap: 6px;
-  }
-  .profile {
-    padding: 3px 8px 3px 4px;
-    gap: 6px;
-  }
-  .avatar {
-    width: 36px;
-    height: 36px;
-  }
-  .profile .hi {
-    font-size: 13px;
-  }
-  .profile .sub {
-    font-size: 10px;
-  }
-  .level-pill {
-    padding: 2px 6px;
-    gap: 1px;
-  }
-  .level-pill .lvl-txt {
-    font-size: 11px;
-  }
-  .level-pill .xp-mini-track {
-    width: 32px;
-    height: 4px;
-  }
-  .hud .pill {
-    padding: 4px 10px;
-    font-size: 13px;
-    gap: 4px;
-  }
-  .hud .iconbtn {
-    width: 38px;
-    height: 38px;
-  }
-}
-
-/* MODO 5: Móvil Horizontal (844x390 - 2 pulgares) */
-@media (max-height: 480px) and (orientation: landscape) {
-  #scr-hub {
-    max-width: 100%;
-    gap: 8px;
-    padding: 6px 14px;
-  }
-  .hud {
-    display: none; /* Ahorro total de espacio en móvil horizontal */
-  }
-  .hub-mobile-h-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    height: 100%;
-    align-items: center;
-  }
-  .hero {
-    max-height: 180px;
-  }
-  .mascot {
-    width: 100px;
-    max-height: 110px;
-  }
-  .bubble {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-  .menu .pbtn {
-    height: 44px;
-    font-size: 15px;
-  }
-  .missions {
-    display: none; /* Oculta en modo compacto 2 pulgares horizontal para evitar scroll */
-  }
-}
-
-/* ==========================================================================
-   SPRINT 2: CHIP DE NIVEL, SOMBREROS Y MODAL DE PERFIL
-   ========================================================================== */
-
-.level-pill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--card);
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-pill);
-  padding: 3px 10px;
-  box-shadow: 0 4px 0 var(--ink);
-  gap: 2px;
-  cursor: pointer;
-}
-
-.level-pill .lvl-txt {
-  font-family: var(--font-d);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--purple-d);
-  line-height: 1;
-}
-
-.level-pill .xp-mini-track {
-  width: 44px;
-  height: 5px;
-  background: #E8E2D8;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.level-pill .xp-mini-track i {
-  display: block;
-  height: 100%;
-  background: var(--blue);
-  border-radius: 999px;
-  transition: width 0.35s ease;
-}
-
-/* Accesorios de Avatar y Hero Mochi */
-.avatar {
-  position: relative;
-}
-
-.avatar-hat {
-  position: absolute;
-  top: -8px;
-  right: -6px;
-  width: 22px;
-  height: 22px;
-  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.2));
-  z-index: 5;
-}
-
-.avatar-hat svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.hero {
-  position: relative;
-}
-
-.hero-mochi-hat {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-4deg);
-  width: 90px;
-  max-width: 52%;
-  filter: drop-shadow(0 4px 0 rgba(0,0,0,0.25));
-  z-index: 5;
-  pointer-events: none;
-}
-.hero-mochi-hat svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Modal de Pasaporte / Perfil */
-.profile-modal {
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-lg);
-  background: var(--bg);
-  box-shadow: 0 10px 0 var(--ink);
-  padding: 20px 20px calc(24px + env(safe-area-inset-bottom, 0px)) 20px;
-  max-width: min(90vw, 380px);
-  width: 100%;
-  margin: auto;
-  box-sizing: border-box;
-}
-
-.profile-modal::backdrop {
-  background: rgba(36, 28, 21, 0.45);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-}
-
-.profile-modal h3 {
-  font-family: var(--font-d);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 12px;
-  text-align: center;
-}
-
-.profile-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-
-.profile-input-group label {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--ink-soft);
-}
-
-.profile-input-group input {
-  font-family: var(--font-b);
-  font-size: 16px;
-  font-weight: 800;
-  padding: 10px 14px;
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-md);
-  background: #FFFDF8;
-  color: var(--ink);
-  outline: none;
-  box-shadow: 0 3px 0 var(--ink);
-}
-
-.profile-age-selector {
-  display: flex;
-  gap: 10px;
-}
-
-.profile-age-btn {
-  flex: 1;
-  height: 44px;
-  border: var(--bw) solid var(--ink);
-  border-radius: var(--r-md);
-  background: #FFFDF8;
-  font-family: var(--font-d);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--ink);
-  cursor: pointer;
-  box-shadow: 0 3px 0 var(--ink);
-}
-
-.profile-age-btn.selected {
-  background: var(--amber);
-  border-color: var(--ink);
-}
-
-.profile-modal-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 16px;
-}
-
+/* ==========================================================================
+   KIMI PANDA — HUB PRINCIPAL (Bento Pop & 5 Modos Responsivos)
+   ========================================================================== */
+
+#scr-hub {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#scr-hub.active {
+  display: flex;
+}
+
+/* 1. TOP BAR HUD */
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 4px 14px 4px 6px;
+  box-shadow: 0 4px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.profile:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--ink);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: #CDEECD;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile .hi {
+  font-family: var(--font-d);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.profile .sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.1;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* 2. HERO SECTION: MOCHI + GLOBO DE DIÁLOGO */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 140px;
+  max-height: 260px;
+}
+
+.bubble {
+  position: relative;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-lg);
+  padding: 10px 18px;
+  font-family: var(--font-d);
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: 0 5px 0 var(--ink);
+  margin-bottom: 6px;
+  animation: bubblePop 0.5s var(--bouncy);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--ink);
+}
+
+@keyframes bubblePop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.mochi-hero-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascot {
+  width: auto;
+  height: min(38vw, 190px);
+  max-height: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 0 rgba(36, 28, 21, 0.15));
+  animation: floatMascot 4s ease-in-out infinite;
+}
+
+.mochi-shadow {
+  width: 140px;
+  height: 18px;
+  background: rgba(36, 28, 21, 0.12);
+  border-radius: 50%;
+  filter: blur(4px);
+  margin: -10px auto 0;
+  animation: shadowPulse 4s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.14; }
+  50% { transform: scale(0.85); opacity: 0.08; }
+}
+
+@keyframes floatMascot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 3. MENÚ 2x2 DE ACCIONES MECÁNICAS */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.menu .pbtn {
+  height: 56px;
+  padding: 0 16px;
+  font-size: clamp(16px, 3.8vw, 19px);
+  justify-content: flex-start;
+}
+
+.menu .ico {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: var(--r-sm);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.menu .ico svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 4. TARJETA BENTO DE MISIONES SEMANALES */
+.missions {
+  position: relative;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-lg);
+  padding: 22px 20px 16px 20px;
+  box-shadow: 0 6px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.missions .sticker {
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  background: var(--amber);
+  color: var(--ink);
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 3px 12px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  box-shadow: 0 3px 0 var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mission-claim-btn {
+  font-family: var(--font-d);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: var(--amber);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  box-shadow: 0 2px 0 var(--ink);
+  animation: pulseClaim 1.8s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes pulseClaim {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.mission-claim-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.mission .txt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.mission .reward {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--green-d);
+}
+
+.mission .reward svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mission .bar {
+  height: 12px;
+  background: #F0ECE4;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.mission .bar i {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  border-radius: var(--r-pill);
+  transition: width 0.4s ease;
+}
+
+.mission .bar.blue i {
+  background: var(--blue);
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA — PANTALLA HUB (5 MODOS)
+   ========================================================================== */
+
+/* MODO 1: Computadora (Desktop 1440x900 / 1920x1080) */
+@media (min-width: 900px) and (orientation: landscape) {
+  #scr-hub {
+    max-width: 1020px;
+    width: 100%;
+    display: none;
+    grid-template-columns: 1fr 1.08fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "hud      hud"
+      "hero     menu"
+      "missions missions";
+    gap: 20px 32px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 32px 0;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  #scr-hub.active {
+    display: grid;
+  }
+  .hud {
+    grid-area: hud;
+    width: 100%;
+  }
+  .hero {
+    grid-area: hero;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mascot {
+    width: auto;
+    height: 180px;
+    max-height: 200px;
+  }
+  .menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+  }
+  .menu .pbtn {
+    height: 68px;
+    font-size: 20px;
+  }
+  .missions {
+    grid-area: missions;
+    width: 100%;
+    padding: 22px 22px 16px 22px;
+    margin-bottom: 24px;
+  }
+}
+
+/* MODO 2: Tablet Vertical (800x1280) */
+@media (min-width: 600px) and (orientation: portrait) {
+  #scr-hub {
+    max-width: 640px;
+    gap: 20px;
+  }
+  .hero {
+    max-height: 340px;
+  }
+  .mascot {
+    width: 210px;
+    max-height: 230px;
+  }
+  .menu .pbtn {
+    height: 68px;
+    font-size: 21px;
+  }
+  .missions {
+    padding: 24px 20px 18px 20px;
+    gap: 14px;
+  }
+  .mission .txt {
+    font-size: 15px;
+  }
+  .mission .bar {
+    height: 16px;
+  }
+}
+
+/* MODO 3: Tablet Horizontal (1024x768 Split Screen) */
+@media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+  #scr-hub {
+    max-width: 920px;
+    gap: 12px;
+  }
+  .hero {
+    max-height: 280px;
+  }
+  .mascot {
+    width: 170px;
+    max-height: 190px;
+  }
+  .menu .pbtn {
+    height: 54px;
+    font-size: 17px;
+  }
+}
+
+/* MODO 4: Móvil Vertical (<= 480px) */
+@media (max-width: 480px) {
+  .hud {
+    gap: 6px;
+  }
+  .profile {
+    padding: 3px 8px 3px 4px;
+    gap: 6px;
+  }
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .profile .hi {
+    font-size: 13px;
+  }
+  .profile .sub {
+    font-size: 10px;
+  }
+  .level-pill {
+    padding: 2px 6px;
+    gap: 1px;
+  }
+  .level-pill .lvl-txt {
+    font-size: 11px;
+  }
+  .level-pill .xp-mini-track {
+    width: 32px;
+    height: 4px;
+  }
+  .hud .pill {
+    padding: 4px 10px;
+    font-size: 13px;
+    gap: 4px;
+  }
+  .hud .iconbtn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* MODO 5: Móvil Horizontal (844x390 - 2 pulgares) */
+@media (max-height: 480px) and (orientation: landscape) {
+  #scr-hub {
+    max-width: 100%;
+    gap: 8px;
+    padding: 6px 14px;
+  }
+  .hud {
+    display: none; /* Ahorro total de espacio en móvil horizontal */
+  }
+  .hub-mobile-h-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    height: 100%;
+    align-items: center;
+  }
+  .hero {
+    max-height: 180px;
+  }
+  .mascot {
+    width: 100px;
+    max-height: 110px;
+  }
+  .bubble {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .menu .pbtn {
+    height: 44px;
+    font-size: 15px;
+  }
+  .missions {
+    display: none; /* Oculta en modo compacto 2 pulgares horizontal para evitar scroll */
+  }
+}
+
+/* ==========================================================================
+   SPRINT 2: CHIP DE NIVEL, SOMBREROS Y MODAL DE PERFIL
+   ========================================================================== */
+
+.level-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 3px 10px;
+  box-shadow: 0 4px 0 var(--ink);
+  gap: 2px;
+  cursor: pointer;
+}
+
+.level-pill .lvl-txt {
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purple-d);
+  line-height: 1;
+}
+
+.level-pill .xp-mini-track {
+  width: 44px;
+  height: 5px;
+  background: #E8E2D8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.level-pill .xp-mini-track i {
+  display: block;
+  height: 100%;
+  background: var(--blue);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+/* Contenedores de Avatar y Hero Mochi */
+.avatar {
+  position: relative;
+}
+
+.hero {
+  position: relative;
+}
+
+/* Modal de Pasaporte / Perfil */
+.profile-modal {
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-lg);
+  background: var(--bg);
+  box-shadow: 0 10px 0 var(--ink);
+  padding: 20px 20px calc(24px + env(safe-area-inset-bottom, 0px)) 20px;
+  max-width: min(90vw, 380px);
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.profile-modal::backdrop {
+  background: rgba(36, 28, 21, 0.45);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.profile-modal h3 {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.profile-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.profile-input-group label {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.profile-input-group input {
+  font-family: var(--font-b);
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 14px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  background: #FFFDF8;
+  color: var(--ink);
+  outline: none;
+  box-shadow: 0 3px 0 var(--ink);
+}
+
+.profile-age-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-age-btn {
+  flex: 1;
+  height: 44px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-md);
+  background: #FFFDF8;
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--ink);
+}
+
+.profile-age-btn.selected {
+  background: var(--amber);
+  border-color: var(--ink);
+}
+
+.profile-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Modal de Rescate Afectivo ante Caídas (Global Error Boundary) */
+.crash-modal {
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-xl);
+  background: var(--cream);
+  padding: 24px;
+  max-width: 380px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 10px 0 var(--ink), 0 20px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.crash-modal::backdrop {
+  background: rgba(36, 28, 21, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.crash-mascot-box {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 12px;
+  animation: floatMascot 2.5s ease-in-out infinite;
+}
+
+.crash-mascot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.crash-title {
+  font-family: var(--font-d);
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.crash-msg {
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+

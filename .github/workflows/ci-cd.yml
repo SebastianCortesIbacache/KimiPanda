@@ -1,0 +1,88 @@
+name: Kimi Panda CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # -------------------------------------------------------------
+  # 1. VALIDACIÓN TÉCNICA Y AUDITORÍA DE CALIDAD
+  # -------------------------------------------------------------
+  validate:
+    name: Lint, Syntax & Asset Budget Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate JSON Data Files
+        run: |
+          node -e "
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('data/questions_mvp_6_7.json', 'utf8'));
+            if (!Array.isArray(data) || data.length === 0) {
+              console.error('questions_mvp_6_7.json debe ser un array no vacío');
+              process.exit(1);
+            }
+            console.log('✅ Banco JSON validado correctamente. Total preguntas:', data.length);
+          "
+
+      - name: Check JavaScript Syntax
+        run: |
+          for file in js/*.js; do
+            node -c "$file"
+          done
+          echo "✅ Todos los módulos JS tienen sintaxis correcta."
+
+      - name: Run Asset Budget Audit
+        run: |
+          python tools/check_asset_budgets.py
+
+  # -------------------------------------------------------------
+  # 2. DESPLIEGUE CONTINUO A GITHUB PAGES (SOLO EN MAIN)
+  # -------------------------------------------------------------
+  deploy:
+    name: Deploy to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Static Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

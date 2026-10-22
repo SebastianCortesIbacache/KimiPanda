@@ -16,7 +16,8 @@ const DEFAULT_PROFILE = {
   streak: 0,
   highStreak: 0,
   unlockedLevels: 1,
-  inventory: [],
+  inventory: ['classic'],
+  equippedSkin: 'classic',
   equippedHat: null,
   worldLevels: {
     inicio: 1,
@@ -64,6 +65,12 @@ export function loadProfile() {
       if (!currentProfile.hearts || currentProfile.hearts <= 0) {
         currentProfile.hearts = currentProfile.maxHearts || 3;
       }
+      // Garantizar migración a sistema de skins
+      currentProfile.inventory = currentProfile.inventory || ['classic'];
+      if (!currentProfile.inventory.includes('classic')) {
+        currentProfile.inventory.unshift('classic');
+      }
+      currentProfile.equippedSkin = currentProfile.equippedSkin || 'classic';
     } else {
       currentProfile = { ...DEFAULT_PROFILE };
       saveProfile();
@@ -116,7 +123,8 @@ export function resetProfile() {
       claimed1: false,
       claimed2: false
     },
-    inventory: [],
+    inventory: ['classic'],
+    equippedSkin: 'classic',
     equippedHat: null,
     achievements: []
   };
@@ -185,9 +193,9 @@ export function addXP(amount = 15) {
   return { xp: currentProfile.xp, level: newLevel, leveledUp, rank: currentProfile.rank };
 }
 
-export function buyItem(itemId, price) {
-  currentProfile.inventory = currentProfile.inventory || [];
-  if (currentProfile.inventory.includes(itemId)) {
+export function buySkin(skinId, price) {
+  currentProfile.inventory = currentProfile.inventory || ['classic'];
+  if (currentProfile.inventory.includes(skinId)) {
     return { success: false, reason: 'already_owned' };
   }
   if ((currentProfile.stars || 0) < price) {
@@ -195,20 +203,35 @@ export function buyItem(itemId, price) {
   }
 
   currentProfile.stars -= price;
-  currentProfile.inventory.push(itemId);
-  currentProfile.equippedHat = itemId; // Auto-equipar al comprar
+  currentProfile.inventory.push(skinId);
+  currentProfile.equippedSkin = skinId; // Auto-equipar al comprar
+  currentProfile.equippedHat = skinId;  // Compatibilidad legacy
   saveProfile();
-  return { success: true, item: itemId, remainingStars: currentProfile.stars };
+  return { success: true, skin: skinId, remainingStars: currentProfile.stars };
+}
+
+export function equipSkin(skinId) {
+  currentProfile.inventory = currentProfile.inventory || ['classic'];
+  if (skinId === null || currentProfile.inventory.includes(skinId)) {
+    currentProfile.equippedSkin = skinId || 'classic';
+    currentProfile.equippedHat = skinId; // Compatibilidad legacy
+    saveProfile();
+    return { success: true, equippedSkin: currentProfile.equippedSkin };
+  }
+  return { success: false, reason: 'not_in_inventory' };
+}
+
+export function getEquippedSkin() {
+  return currentProfile.equippedSkin || 'classic';
+}
+
+// Aliases para compatibilidad hacia atrás
+export function buyItem(itemId, price) {
+  return buySkin(itemId, price);
 }
 
 export function equipItem(itemId) {
-  currentProfile.inventory = currentProfile.inventory || [];
-  if (itemId === null || currentProfile.inventory.includes(itemId)) {
-    currentProfile.equippedHat = itemId;
-    saveProfile();
-    return { success: true, equippedHat: currentProfile.equippedHat };
-  }
-  return { success: false, reason: 'not_in_inventory' };
+  return equipSkin(itemId);
 }
 
 export function unlockNextWorldLevel(worldId) {

@@ -1,61 +1,160 @@
 /**
- * KIMI PANDA — TIENDA DE MOCHI Y ACCESORIOS (shop.js)
+ * KIMI PANDA — TIENDA DE TRAJES Y SKINS DE MOCHI (shop.js)
+ * Sistema de 9 Trajes Temáticos Canónicos Completos
  */
 
-import { getProfile, buyItem, equipItem } from './store.js';
+import { getProfile, buySkin, equipSkin, getEquippedSkin, buyItem, equipItem } from './store.js';
 import { playPop, playBuy, playEquip } from './audio.js';
 import { showToast, burstConfetti } from './ui.js';
 
-export const SHOP_ITEMS = [
+export const MOCHI_SKINS = [
   {
-    id: 'cap_explorer',
-    name: 'Gorra Exploradora',
-    emoji: '🧢',
-    price: 50,
-    desc: '¡Para protegerse del sol en las islas!',
-    svg: `<svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 24C6 14 14 8 26 8C36 8 42 13 42 22L46 25C47 26 46 28 44 28H4C2 28 2 26 3 25L6 24Z" fill="#3D9BE9" stroke="#241C15" stroke-width="2.5" stroke-linejoin="round"/><path d="M4 27C12 26 28 26 44 27C46 27 47 29 44 30C36 32 16 32 4 30C1 30 1 27 4 27Z" fill="#F0685F" stroke="#241C15" stroke-width="2"/><circle cx="25" cy="8" r="2.5" fill="#FFC53D" stroke="#241C15" stroke-width="1.8"/><path d="M14 18C17 12 30 12 34 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.6"/></svg>`
+    id: 'classic',
+    name: 'Mochi Excursionista',
+    category: 'Básico',
+    emoji: '🐼',
+    price: 0,
+    desc: '¡El traje clásico y alegre de Mochi para dar los primeros pasos en las islas!',
+    hubImg: 'assets/mascotas/skins/mochi_classic_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_classic_avatar.webp',
+    dioramaPhrase: '¡Listo para cualquier aventura con mi pañuelo verde!'
   },
   {
-    id: 'backpack_traveler',
-    name: 'Mochila de Viaje',
-    emoji: '🎒',
+    id: 'explorer',
+    name: 'Mochi Safari & Bosque',
+    category: 'Aventura',
+    emoji: '🧭',
     price: 60,
-    desc: 'Lleva tus cuadernos y lápices favoritos.',
-    svg: `<svg viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="28" height="32" rx="7" fill="#FFC53D" stroke="#241C15" stroke-width="2.5"/><path d="M16 10V6C16 4.3 17.3 3 19 3H25C26.7 3 28 4.3 28 6V10" stroke="#241C15" stroke-width="2.5"/><path d="M8 22H36" stroke="#241C15" stroke-width="2.5"/><rect x="13" y="27" width="18" height="11" rx="4" fill="#FF8A2A" stroke="#241C15" stroke-width="2"/><circle cx="22" cy="22" r="2.5" fill="#fff" stroke="#241C15" stroke-width="1.5"/><path d="M14 31H30" stroke="#241C15" stroke-width="1.5" stroke-linecap="round"/></svg>`
+    desc: 'Con sombrero de ala, brújula dorada y cantimplora para adentrarse en la selva.',
+    hubImg: 'assets/mascotas/skins/mochi_explorer_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_explorer_avatar.webp',
+    dioramaPhrase: '¡Con mi sombrero de explorador no me pierdo nunca!'
   },
   {
-    id: 'sunglasses_cool',
-    name: 'Gafas de Sol Estelares',
-    emoji: '🕶️',
-    price: 80,
-    desc: '¡El estilo más brillante de Kimi Panda!',
-    svg: `<svg viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 8C4 5 7 4 10 4H18C21 4 23 6 23 9V14C23 17 20 19 17 19H10C6 19 4 17 4 13V8Z" fill="#241C15" stroke="#241C15" stroke-width="2"/><path d="M25 8C25 5 28 4 31 4H39C42 4 44 6 44 9V14C44 17 42 19 38 19H31C28 19 25 17 25 13V8Z" fill="#241C15" stroke="#241C15" stroke-width="2"/><path d="M22 8H26" stroke="#241C15" stroke-width="2.5" stroke-linecap="round"/><path d="M7 7L13 15" stroke="#3D9BE9" stroke-width="2" stroke-linecap="round" opacity="0.85"/><path d="M28 7L34 15" stroke="#3D9BE9" stroke-width="2" stroke-linecap="round" opacity="0.85"/><circle cx="17" cy="8" r="1.5" fill="#fff"/><circle cx="38" cy="8" r="1.5" fill="#fff"/></svg>`
+    id: 'diver',
+    name: 'Mochi Buzo de Arrecifes',
+    category: 'Acuático',
+    emoji: '🤿',
+    price: 90,
+    desc: 'Equipado con visor subacuático y traje hidrodinámico para explorar el océano.',
+    hubImg: 'assets/mascotas/skins/mochi_diver_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_diver_avatar.webp',
+    dioramaPhrase: '¡Burbujas y corales! ¡Vamos a nadar con los peces!'
   },
   {
-    id: 'cape_hero',
-    name: 'Capa Voladora',
-    emoji: '✨',
+    id: 'aviator',
+    name: 'Mochi Aviador de las Nubes',
+    category: 'Vuelo',
+    emoji: '✈️',
     price: 120,
-    desc: '¡Siente el poder de responder veloz!',
-    svg: `<svg viewBox="0 0 46 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 6C15 6 18 10 23 10C28 10 31 6 31 6L40 40C40 40 33 37 23 42C13 37 6 40 6 40L15 6Z" fill="#F0685F" stroke="#241C15" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 12C21 24 23 38 23 42" stroke="#241C15" stroke-width="1.8" opacity="0.35"/><circle cx="23" cy="8" r="4.5" fill="#FFC53D" stroke="#241C15" stroke-width="2"/><circle cx="23" cy="8" r="1.8" fill="#fff"/></svg>`
+    desc: 'Chaqueta de piloto y gafas retro de cuero para volar entre cúmulos de algodón.',
+    hubImg: 'assets/mascotas/skins/mochi_aviator_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_aviator_avatar.webp',
+    dioramaPhrase: '¡Motores encendidos! ¡Volamos directo a las nubes!'
   },
   {
-    id: 'crown_gold',
-    name: 'Corona Real Dorada',
-    emoji: '👑',
+    id: 'scientist',
+    name: 'Mochi Pequeño Científico',
+    category: 'Ciencia',
+    emoji: '🧪',
     price: 150,
-    desc: 'Para la reina o rey de los acertijos.',
-    svg: `<svg viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 30L9 11L18 20L24 7L30 20L39 11L42 30H6Z" fill="#FFC53D" stroke="#241C15" stroke-width="2.5" stroke-linejoin="round"/><rect x="6" y="28" width="36" height="6" rx="2" fill="#FF8A2A" stroke="#241C15" stroke-width="2"/><circle cx="24" cy="7" r="2.5" fill="#F0685F" stroke="#241C15" stroke-width="1.5"/><circle cx="9" cy="11" r="2" fill="#3D9BE9" stroke="#241C15" stroke-width="1.5"/><circle cx="39" cy="11" r="2" fill="#3D9BE9" stroke="#241C15" stroke-width="1.5"/><circle cx="24" cy="31" r="1.5" fill="#fff"/></svg>`
+    desc: 'Bata blanca y probetas con líquidos burbujeantes para experimentos geniales.',
+    hubImg: 'assets/mascotas/skins/mochi_scientist_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_scientist_avatar.webp',
+    dioramaPhrase: '¡Hipótesis confirmada! La ciencia es divertidísima.'
   },
   {
-    id: 'hat_magic',
-    name: 'Sombrero Mágico',
+    id: 'astronaut',
+    name: 'Mochi Astronauta Cósmico',
+    category: 'Espacial',
+    emoji: '🧑‍🚀',
+    price: 180,
+    desc: 'Escafandra presurizada y mochila propulsora para viajar a las estrellas.',
+    hubImg: 'assets/mascotas/skins/mochi_astronaut_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_astronaut_avatar.webp',
+    dioramaPhrase: '¡3, 2, 1... Despegue estelar! ¡Gravedad cero!'
+  },
+  {
+    id: 'artist',
+    name: 'Mochi Pintor de Arcoíris',
+    category: 'Arte',
+    emoji: '🎨',
+    price: 210,
+    desc: 'Boina parisina y paleta salpicada con todos los colores del espectro.',
+    hubImg: 'assets/mascotas/skins/mochi_artist_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_artist_avatar.webp',
+    dioramaPhrase: '¡Pintemos el mundo de colores brillantes!'
+  },
+  {
+    id: 'detective',
+    name: 'Mochi Detective de Acertijos',
+    category: 'Misterio',
+    emoji: '🕵️',
+    price: 250,
+    desc: 'Gorra de sabueso y lupa mágica para resolver cualquier enigma curricular.',
+    hubImg: 'assets/mascotas/skins/mochi_detective_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_detective_avatar.webp',
+    dioramaPhrase: '¡Elemental, mi pequeño panda! El misterio está resuelto.'
+  },
+  {
+    id: 'wizard',
+    name: 'Mochi Sabio de las Estrellas',
+    category: 'Magia',
     emoji: '🧙',
-    price: 200,
-    desc: '¡Desata trucos y chispas de sabiduría!',
-    svg: `<svg viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 36C12 33 36 33 44 36C45 37 43 40 38 40H10C5 40 3 37 4 36Z" fill="#9B6BF3" stroke="#241C15" stroke-width="2.5"/><path d="M12 35L22 6C23 4 26 4 28 6L33 14C35 17 38 18 36 21L36 35H12Z" fill="#9B6BF3" stroke="#241C15" stroke-width="2.5" stroke-linejoin="round"/><path d="M13 32H35" stroke="#FFC53D" stroke-width="4"/><path d="M22 17L23 15L24 17L26 18L24 19L23 21L22 19L20 18L22 17Z" fill="#FFC53D" stroke="#241C15" stroke-width="1"/><path d="M27 25L28 23L29 25L31 26L29 27L28 29L27 27L25 26L27 25Z" fill="#FFC53D" stroke="#241C15" stroke-width="1"/></svg>`
+    price: 300,
+    desc: 'Túnica estrellada y varita centelleante para conjurar respuestas correctas.',
+    hubImg: 'assets/mascotas/skins/mochi_wizard_hub.webp',
+    avatarImg: 'assets/mascotas/skins/mochi_wizard_avatar.webp',
+    dioramaPhrase: '¡Abracadabra! ¡El conocimiento ilumina el camino!'
   }
 ];
+
+// Alias para compatibilidad hacia atrás
+export const SHOP_ITEMS = MOCHI_SKINS;
+
+export function updateGlobalMochiSkin() {
+  const profile = getProfile();
+  const equippedId = profile.equippedSkin || profile.equippedHat || 'classic';
+  const skin = MOCHI_SKINS.find(s => s.id === equippedId) || MOCHI_SKINS[0];
+
+  // 1. Hero Mascot en el Hub principal
+  const hubMascot = document.getElementById('hub-mascot');
+  if (hubMascot && skin.hubImg) {
+    if (hubMascot.getAttribute('src') !== skin.hubImg) {
+      hubMascot.src = skin.hubImg;
+    }
+    hubMascot.alt = `${skin.name} saludando`;
+  }
+
+  // 2. Avatar pequeño en el HUD superior
+  const hubAvatarImg = document.getElementById('hub-avatar-img') || document.querySelector('.avatar img');
+  if (hubAvatarImg && skin.avatarImg) {
+    if (hubAvatarImg.getAttribute('src') !== skin.avatarImg) {
+      hubAvatarImg.src = skin.avatarImg;
+    }
+    hubAvatarImg.alt = `Avatar de ${skin.name}`;
+  }
+
+  // 3. Mascota del Diorama en la Tienda
+  const shopMascot = document.getElementById('shop-mascot-img') || document.querySelector('.shop-diorama-mascot img');
+  if (shopMascot && skin.avatarImg) {
+    if (shopMascot.getAttribute('src') !== skin.avatarImg) {
+      shopMascot.src = skin.avatarImg;
+    }
+    shopMascot.alt = `${skin.name} probándose traje`;
+  }
+
+  // 4. Frase del diorama de la tienda
+  const dioramaBubble = document.getElementById('shop-diorama-bubble');
+  if (dioramaBubble && skin.dioramaPhrase) {
+    dioramaBubble.textContent = skin.dioramaPhrase;
+  }
+}
+
+// Alias de retrocompatibilidad
+export function updateHubEquippedHat() {
+  updateGlobalMochiSkin();
+}
 
 export function renderShopUI() {
   const profile = getProfile();
@@ -66,49 +165,50 @@ export function renderShopUI() {
     starsVal.textContent = profile.stars || 0;
   }
 
-  // Actualizar preview de Mochi con el accesorio equipado
-  const previewBadge = document.getElementById('shop-preview-hat');
-  if (previewBadge) {
-    const equipped = SHOP_ITEMS.find(i => i.id === profile.equippedHat);
-    previewBadge.innerHTML = equipped ? equipped.svg : '';
-    previewBadge.style.display = equipped ? 'block' : 'none';
-  }
+  // Actualizar visual global de Mochi en diorama
+  updateGlobalMochiSkin();
 
-  // Contenedor de artículos
+  // Contenedor de trajes / skins
   const grid = document.getElementById('shop-items-grid');
   if (!grid) return;
 
   grid.innerHTML = '';
 
-  SHOP_ITEMS.forEach(item => {
-    const isOwned = (profile.inventory || []).includes(item.id);
-    const isEquipped = profile.equippedHat === item.id;
-    const canAfford = (profile.stars || 0) >= item.price;
+  const equippedSkinId = profile.equippedSkin || profile.equippedHat || 'classic';
+  const inventory = profile.inventory || ['classic'];
+
+  MOCHI_SKINS.forEach(skin => {
+    const isOwned = inventory.includes(skin.id);
+    const isEquipped = equippedSkinId === skin.id;
+    const canAfford = (profile.stars || 0) >= skin.price;
 
     const card = document.createElement('article');
-    card.className = `shop-card ${isEquipped ? 'equipped' : ''} ${isOwned ? 'owned' : ''}`;
+    card.className = `shop-card skin-card ${isEquipped ? 'equipped' : ''} ${isOwned ? 'owned' : ''}`;
 
     let actionBtnHtml = '';
     if (isEquipped) {
-      actionBtnHtml = `<button type="button" class="pbtn green" disabled aria-label="Accesorio equipado">✓ Puesto</button>`;
+      actionBtnHtml = `<button type="button" class="pbtn green btn-equipped" disabled aria-label="Traje ${skin.name} equipado">✓ Puesto</button>`;
     } else if (isOwned) {
-      actionBtnHtml = `<button type="button" class="pbtn blue btn-equip" data-id="${item.id}" aria-label="Equipar ${item.name}">Equipar</button>`;
+      actionBtnHtml = `<button type="button" class="pbtn blue btn-equip" data-id="${skin.id}" aria-label="Vestir ${skin.name}">Vestir</button>`;
     } else {
       actionBtnHtml = `
-        <button type="button" class="pbtn orange btn-buy ${!canAfford ? 'disabled' : ''}" data-id="${item.id}" data-price="${item.price}" ${!canAfford ? 'disabled' : ''} aria-label="Comprar ${item.name} por ${item.price} estrellas">
+        <button type="button" class="pbtn orange btn-buy ${!canAfford ? 'disabled' : ''}" data-id="${skin.id}" data-price="${skin.price}" ${!canAfford ? 'disabled' : ''} aria-label="Comprar ${skin.name} por ${skin.price} estrellas">
           <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" width="18" height="18" aria-hidden="true">
             <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
           </svg>
-          ${item.price}
+          ${skin.price}
         </button>
       `;
     }
 
     card.innerHTML = `
-      <div class="shop-item-icon" aria-hidden="true">${item.svg}</div>
+      <div class="skin-thumb-wrap">
+        <img class="skin-thumb" src="${skin.avatarImg}" alt="${skin.name}" loading="lazy">
+        <span class="skin-badge">${skin.category}</span>
+      </div>
       <div class="shop-item-info">
-        <h3 class="shop-item-title">${item.name}</h3>
-        <p class="shop-item-desc">${item.desc}</p>
+        <h3 class="shop-item-title">${skin.emoji} ${skin.name}</h3>
+        <p class="shop-item-desc">${skin.desc}</p>
       </div>
       <div class="shop-item-action">
         ${actionBtnHtml}
@@ -119,13 +219,13 @@ export function renderShopUI() {
     const btnBuy = card.querySelector('.btn-buy');
     if (btnBuy) {
       btnBuy.onclick = (e) => {
-        const res = buyItem(item.id, item.price);
+        const res = buySkin(skin.id, skin.price);
         if (res.success) {
           playBuy();
           burstConfetti(e.currentTarget);
-          showToast(`¡Compraste ${item.name}! 🎉`);
+          showToast(`¡Conseguiste ${skin.name}! 🎉`);
           renderShopUI();
-          updateHubEquippedHat();
+          updateGlobalMochiSkin();
         } else {
           showToast('¡Necesitas más estrellas! ⭐');
         }
@@ -135,33 +235,14 @@ export function renderShopUI() {
     const btnEquip = card.querySelector('.btn-equip');
     if (btnEquip) {
       btnEquip.onclick = () => {
-        equipItem(item.id);
+        equipSkin(skin.id);
         playEquip();
-        showToast(`¡${item.name} equipado! ✨`);
+        showToast(`¡Mochi ahora viste ${skin.name}! ✨`);
         renderShopUI();
-        updateHubEquippedHat();
+        updateGlobalMochiSkin();
       };
     }
 
     grid.appendChild(card);
   });
-}
-
-export function updateHubEquippedHat() {
-  const profile = getProfile();
-  const equipped = SHOP_ITEMS.find(i => i.id === profile.equippedHat);
-
-  // Badge en el avatar del HUD (Accesibilidad / TextContent + Visual SVG)
-  const hubHat = document.getElementById('hub-avatar-hat');
-  if (hubHat) {
-    hubHat.innerHTML = equipped ? `<span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">${equipped.emoji || ''}</span>${equipped.svg}` : '';
-    hubHat.style.display = equipped ? 'block' : 'none';
-  }
-
-  // Badge en Mochi grande
-  const heroHat = document.getElementById('hero-mochi-hat');
-  if (heroHat) {
-    heroHat.innerHTML = equipped ? `<span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">${equipped.emoji || ''}</span>${equipped.svg}` : '';
-    heroHat.style.display = equipped ? 'block' : 'none';
-  }
 }

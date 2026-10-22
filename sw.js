@@ -2,7 +2,7 @@
  * KIMI PANDA — SERVICE WORKER OFFLINE-FIRST (PWA)
  */
 
-const CACHE_NAME = 'kimi-panda-v9';
+const CACHE_NAME = 'kimi-panda-v10';
 
 const PRECACHE_ASSETS = [
   './',
@@ -27,7 +27,25 @@ const PRECACHE_ASSETS = [
   './assets/mascotas/mochi_hub.webp',
   './assets/mascotas/mochi_celebrate.webp',
   './assets/mascotas/mochi_avatar.webp',
-  './assets/mascotas/mochi_thinking.webp'
+  './assets/mascotas/mochi_thinking.webp',
+  './assets/mascotas/skins/mochi_classic_hub.webp',
+  './assets/mascotas/skins/mochi_classic_avatar.webp',
+  './assets/mascotas/skins/mochi_explorer_hub.webp',
+  './assets/mascotas/skins/mochi_explorer_avatar.webp',
+  './assets/mascotas/skins/mochi_diver_hub.webp',
+  './assets/mascotas/skins/mochi_diver_avatar.webp',
+  './assets/mascotas/skins/mochi_aviator_hub.webp',
+  './assets/mascotas/skins/mochi_aviator_avatar.webp',
+  './assets/mascotas/skins/mochi_scientist_hub.webp',
+  './assets/mascotas/skins/mochi_scientist_avatar.webp',
+  './assets/mascotas/skins/mochi_astronaut_hub.webp',
+  './assets/mascotas/skins/mochi_astronaut_avatar.webp',
+  './assets/mascotas/skins/mochi_artist_hub.webp',
+  './assets/mascotas/skins/mochi_artist_avatar.webp',
+  './assets/mascotas/skins/mochi_detective_hub.webp',
+  './assets/mascotas/skins/mochi_detective_avatar.webp',
+  './assets/mascotas/skins/mochi_wizard_hub.webp',
+  './assets/mascotas/skins/mochi_wizard_avatar.webp'
 ];
 
 self.addEventListener('install', event => {

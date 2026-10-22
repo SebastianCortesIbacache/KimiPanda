@@ -1,11 +1,14 @@
 {
   "name": "kimi-panda",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kimi Panda — Aventura de Aprendizaje Didáctico y Agilidad Mental (Tier 1: 6-7 años, Mineduc Chile)",
   "main": "index.html",
   "scripts": {
     "start": "npx serve -l 8000 .",
-    "dev": "python -m http.server 8000"
+    "dev": "python -m http.server 8000",
+    "test": "npx playwright test",
+    "test:data": "node -e \"JSON.parse(require('fs').readFileSync('data/questions_mvp_6_7.json')); console.log('Data JSON OK');\"",
+    "check:assets": "python tools/check_asset_budgets.py"
   },
   "keywords": [
     "pwa",
@@ -18,5 +21,8 @@
     "language"
   ],
   "author": "Sebastian Cortes Ibacache",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
 }
