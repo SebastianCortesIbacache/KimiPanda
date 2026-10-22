@@ -1,857 +1,784 @@
-<!DOCTYPE html>
-
-<html lang="es">
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-
-  <title>Kimi Panda — Aventura de Aprendizaje</title>
-
-  
-
-  <!-- Tipografías Oficiales: Fredoka (Títulos/Botones) y Nunito (Cuerpo/Lectura) -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-
-  
-
-  <!-- Manifiesto PWA -->
-
-  <link rel="manifest" href="manifest.json">
-
-  <meta name="theme-color" content="#37A05C">
-
-  <meta name="description" content="Aventura de agilidad mental y aprendizaje didáctico para niños de 6 a 7 años">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <meta name="apple-mobile-web-app-title" content="Kimi Panda">
-
-  <link rel="icon" href="assets/mascotas/skins/mochi_classic_avatar.webp" type="image/webp">
-  <link rel="apple-touch-icon" href="assets/mascotas/skins/mochi_classic_avatar.webp">
-
-
-
-  <!-- Hojas de Estilo Modulares Desacopladas -->
-
-  <link rel="stylesheet" href="css/tokens.css">
-
-  <link rel="stylesheet" href="css/hub.css">
-
-  <link rel="stylesheet" href="css/game.css">
-
-  <link rel="stylesheet" href="css/shop.css">
-
-  <link rel="stylesheet" href="css/worlds.css">
-
-  <link rel="stylesheet" href="css/achievements.css">
-
-</head>
-
-<body>
-
-
-
-  <!-- Fondo Decorativo Limpio Anti-Fatiga (Cielo Cálido con Halos Difusos) -->
-
-  <div class="sky" id="sky">
-
-    <div class="blob b1"></div>
-
-    <div class="blob b2"></div>
-
-    <div class="blob b3"></div>
-
-  </div>
-
-
-
-  <!-- Contenedor Principal de la App -->
-
-  <main class="app" role="main">
-
-
-
-    <!-- ============================================================
-
-         1. PANTALLA PRINCIPAL: HUB BENTO POP
-
-         ============================================================ -->
-
-    <section class="screen active" id="scr-hub" aria-label="Menú Principal">
-
-      
-
-      <!-- Top Bar HUD -->
-
-      <header class="hud">
-
-        <div class="profile" id="hub-profile-btn" role="button" tabindex="0" aria-label="Perfil del jugador">
-
-          <div class="avatar">
-
-            <img id="hub-avatar-img" src="assets/mascotas/skins/mochi_classic_avatar.webp" alt="Avatar de Mochi" width="44" height="44">
-
-          </div>
-
-          <div>
-
-            <div class="hi" id="player-name">¡Hola, Sofía!</div>
-
-            <div class="sub" id="player-sub">7 años · Exploradora</div>
-
-          </div>
-
-        </div>
-
-        <div class="spacer"></div>
-
-        <div class="level-pill" id="hub-level-pill" role="button" tabindex="0" aria-label="Nivel y experiencia">
-
-          <span class="lvl-txt" id="hub-level-txt">Nv. 1</span>
-
-          <div class="xp-mini-track"><i id="hub-xp-fill" style="width: 0%;"></i></div>
-
-        </div>
-
-        <div class="pill" id="hub-stars" aria-label="Estrellas acumuladas">
-
-          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
-
-            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
-
-          </svg>
-
-          <span id="hub-stars-val">128</span>
-
-        </div>
-
-        <button type="button" class="iconbtn" id="btn-audio-toggle" aria-label="Silenciar sonido">
-
-          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-
-          </svg>
-
-        </button>
-
-      </header>
-
-
-
-      <!-- Escenario Central Hero con Mochi -->
-
-      <section class="hero" aria-label="Mochi el Panda">
-
-        <div class="bubble" id="hub-bubble">¿Qué jugamos hoy?</div>
-
-        <div class="mochi-hero-wrap">
-
-          <img class="mascot" id="hub-mascot" src="assets/mascotas/skins/mochi_classic_hub.webp" alt="Mochi saludando" width="220" height="230" role="button" tabindex="0" aria-label="Tocar a Mochi">
-
-          <div class="mochi-shadow" aria-hidden="true"></div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- Menú 2x2 de Acciones Principales -->
-
-      <nav class="menu" aria-label="Modos de juego">
-
-        <button type="button" class="pbtn green" id="btn-mundos" aria-label="Modo Mundos">
-
-          <span class="ico" aria-hidden="true">
-
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-              <path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="rgba(255,255,255,.18)"/>
-
-              <path d="M9 4v14M15 6v14"/>
-
-            </svg>
-
-          </span>
-
-          Mundos
-
-        </button>
-
-        <button type="button" class="pbtn orange" id="btn-libre" aria-label="Modo Juego Libre">
-
-          <span class="ico" aria-hidden="true">
-
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
-
-              <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="rgba(255,255,255,.18)"/>
-
-              <circle cx="8.3" cy="8.3" r="1.5" fill="#fff" stroke="none"/>
-
-              <circle cx="15.7" cy="8.3" r="1.5" fill="#fff" stroke="none"/>
-
-              <circle cx="12" cy="12" r="1.5" fill="#fff" stroke="none"/>
-
-              <circle cx="8.3" cy="15.7" r="1.5" fill="#fff" stroke="none"/>
-
-              <circle cx="15.7" cy="15.7" r="1.5" fill="#fff" stroke="none"/>
-
-            </svg>
-
-          </span>
-
-          Juego libre
-
-        </button>
-
-        <button type="button" class="pbtn blue" id="btn-tienda" aria-label="Tienda">
-
-          <span class="ico" aria-hidden="true">
-
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-              <path d="M4 7h16l-1.6 8.2a2.5 2.5 0 0 1-2.5 2H8.4a2.5 2.5 0 0 1-2.5-2.1L4 7z" fill="rgba(255,255,255,.18)"/>
-
-              <path d="M8.5 10V5.5a3.5 3.5 0 0 1 7 0V10"/>
-
-            </svg>
-
-          </span>
-
-          Tienda
-
-        </button>
-
-        <button type="button" class="pbtn purple" id="btn-logros" aria-label="Logros">
-
-          <span class="ico" aria-hidden="true">
-
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-              <path d="M7 4h10v5a5 5 0 0 1-10 0V4z" fill="rgba(255,255,255,.18)"/>
-
-              <path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4M12 14v3M8.5 21h7M10 17.5h4l.7 3.5h-5.4z"/>
-
-            </svg>
-
-          </span>
-
-          Logros
-
-        </button>
-
-      </nav>
-
-
-
-      <!-- Tarjeta Bento de Misiones Semanales -->
-
-      <section class="missions" aria-label="Misiones semanales">
-
-        <span class="sticker">Misiones semanales</span>
-
-        <div class="mission" id="mission-item-1">
-
-          <div class="txt">
-
-            <span id="mission-1-label">Juega 20 partidas (0/20)</span>
-
-            <div class="reward" id="mission-1-reward-pill">
-
-              <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
-
-                <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
-
-              </svg>
-
-              <span>+180</span>
-
-            </div>
-
-            <button type="button" class="mission-claim-btn" id="btn-claim-mission-1" style="display: none;" aria-label="Reclamar 180 estrellas">¡Reclamar! 🎁</button>
-
-          </div>
-
-          <div class="bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20">
-
-            <i id="mission-1-bar-fill" style="width: 0%"></i>
-
-          </div>
-
-        </div>
-
-        <div class="mission" id="mission-item-2">
-
-          <div class="txt">
-
-            <span id="mission-2-label">Acierta 40 de Matemáticas (0/40)</span>
-
-            <div class="reward" id="mission-2-reward-pill">
-
-              <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
-
-                <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
-
-              </svg>
-
-              <span>+220</span>
-
-            </div>
-
-            <button type="button" class="mission-claim-btn" id="btn-claim-mission-2" style="display: none;" aria-label="Reclamar 220 estrellas">¡Reclamar! 🎁</button>
-
-          </div>
-
-          <div class="bar blue" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="40">
-
-            <i id="mission-2-bar-fill" style="width: 0%"></i>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-    </section>
-
-
-
-    <!-- ============================================================
-
-         2. PANTALLA DE JUEGO: QUIZ ADAPTATIVO (2x2 Y ZERO SCROLL)
-
-         ============================================================ -->
-
-    <section class="screen" id="scr-game" aria-label="Pantalla de Juego">
-
-      
-
-      <!-- Top HUD de Ronda -->
-
-      <header class="g-hud">
-
-        <button type="button" class="iconbtn" id="btn-game-back" aria-label="Volver al menú principal">
-
-          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-
-            <path d="M15 5l-7 7 7 7"/>
-
-          </svg>
-
-        </button>
-
-        <div class="hearts" id="hearts" aria-label="Vidas restantes">
-
-          <svg viewBox="0 0 24 24" fill="#F0685F" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
-
-            <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
-
-          </svg>
-
-          <svg viewBox="0 0 24 24" fill="#F0685F" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
-
-            <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
-
-          </svg>
-
-          <svg viewBox="0 0 24 24" fill="#F0685F" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
-
-            <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
-
-          </svg>
-
-        </div>
-
-        <div class="progress" aria-label="Progreso de ronda">
-
-          <i id="prog" style="width: 0%;"></i>
-
-        </div>
-
-        <div class="pill" id="g-stars-pill" aria-label="Estrellas">
-
-          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
-
-            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
-
-          </svg>
-
-          <span id="g-stars">128</span>
-
-        </div>
-
-      </header>
-
-
-
-      <!-- Cuerpo Central: Tarjeta de Pregunta + Respuestas -->
-
-      <div class="g-body">
-
-        
-
-        <!-- Comodines Protectores Didácticos -->
-
-        <div class="g-helpers" role="group" aria-label="Comodines protectores">
-
-          <button type="button" class="helper-btn" id="btn-helper-5050" aria-label="Comodín Escudo 50/50">
-
-            <span class="helper-ico" aria-hidden="true">❄️</span>
-
-            <span class="helper-lbl">50/50</span>
-
-            <span class="helper-badge" id="badge-5050">1</span>
-
-          </button>
-
-          <button type="button" class="helper-btn" id="btn-helper-hint" aria-label="Comodín Pista Sabia">
-
-            <span class="helper-ico" aria-hidden="true">💡</span>
-
-            <span class="helper-lbl">Pista</span>
-
-            <span class="helper-badge" id="badge-hint">1</span>
-
-          </button>
-
-        </div>
-
-
-
-        <!-- Tarjeta de Pregunta Adaptativa -->
-
-        <article class="qcard text-only" id="qcard">
-
-          <span class="sticker" id="q-cat">Matemáticas</span>
-
-          <div class="q-media-frame" style="display: none;">
-
-            <img id="q-media-img" src="" alt="Ilustración didáctica">
-
-          </div>
-
-          <h2 class="q-big" id="q-text">8 + 7 = ?</h2>
-
-          <div class="q-hint-pill" id="q-hint-box" style="display: none;">
-
-            <span class="q-hint-icon" aria-hidden="true">💡</span>
-
-            <span class="q-hint-text" id="q-hint-text">¡Cuenta con calma!</span>
-
-          </div>
-
-          <div class="q-hint">Toca la respuesta correcta</div>
-
-        </article>
-
-
-
-        <!-- Cuadrícula 2x2 de Respuestas -->
-
-        <div class="answers" id="answers" role="group" aria-label="Opciones de respuesta"></div>
-
-
-
-      </div>
-
-
-
-    </section>
-
-
-
-    <!-- ============================================================
-
-         3. PANTALLA DE RESUMEN DE RONDA: CELEBRACIÓN Y RECOMPENSA
-
-         ============================================================ -->
-
-    <section class="screen" id="scr-summary" aria-label="Resumen de Ronda">
-
-      <div class="summary-card">
-
-        <img class="summary-mascot" id="summary-mascot" src="assets/mascotas/mochi_celebrate.webp" alt="Mochi celebrando victoria">
-
-        <h2 class="summary-title" id="summary-title">¡Ronda Superada!</h2>
-
-        <div class="summary-rating-stars" id="summary-rating-stars" aria-label="Calificación de 1 a 3 estrellas">
-
-          <span class="rating-star earned" style="animation-delay: 0.05s">⭐</span>
-
-          <span class="rating-star earned" style="animation-delay: 0.2s">⭐</span>
-
-          <span class="rating-star earned" style="animation-delay: 0.35s">⭐</span>
-
-        </div>
-
-        <div class="summary-rating-praise gold" id="summary-rating-praise">¡Ronda Perfecta! ¡Eres increíble! 🌟</div>
-
-        <div class="summary-stars-badge" id="summary-stars-badge">
-
-          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
-
-            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
-
-          </svg>
-
-          <span id="summary-stars">+18 ⭐</span>
-
-        </div>
-
-        <p id="summary-encouragement" style="font-weight: 700; color: var(--ink-soft); margin-bottom: 8px;">¡Excelente trabajo de agilidad mental!</p>
-
-        <div class="summary-actions" id="summary-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
-
-          <button type="button" class="pbtn orange" id="btn-summary-retry" style="display: none; width: 100%; height: 54px;">
-
-            Reintentar Ronda 🔄
-
-          </button>
-
-          <button type="button" class="pbtn green" id="btn-summary-done" style="width: 100%; height: 60px;">
-
-            ¡Continuar al Hub! 🚀
-
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ============================================================
-
-         4. PANTALLA: TIENDA DE MOCHI Y ACCESORIOS
-
-         ============================================================ -->
-
-    <section class="screen" id="scr-shop" aria-label="Tienda de Mochi">
-
-      <header class="shop-header">
-
-        <button type="button" class="iconbtn" id="btn-shop-back" aria-label="Volver al menú principal">
-
-          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-
-            <path d="M15 5l-7 7 7 7"/>
-
-          </svg>
-
-        </button>
-
-        <div class="shop-title-box">
-
-          <h2>Tienda de Mochi</h2>
-
-          <p>¡Viste a tu panda explorador!</p>
-
-        </div>
-
-        <div class="pill" aria-label="Tus estrellas">
-
-          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
-
-            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
-
-          </svg>
-
-          <span id="shop-stars-val">128</span>
-
-        </div>
-
-      </header>
-
-
-
-      <div class="shop-diorama">
-
-        <div class="shop-diorama-mascot">
-
-          <img id="shop-mascot-img" src="assets/mascotas/skins/mochi_classic_avatar.webp" alt="Mochi probador">
-
-        </div>
-
-        <div class="shop-diorama-bubble" id="shop-diorama-bubble">
-
-          ¡Elige tu traje favorito con las estrellas ganadas! ✨
-
-        </div>
-
-      </div>
-
-
-
-      <div class="shop-items-container">
-
-        <div class="shop-items-grid" id="shop-items-grid"></div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ============================================================
-
-         5. PANTALLA: MAPA DE MUNDOS CURRICULARES
-
-         ============================================================ -->
-
-    <section class="screen" id="scr-worlds" aria-label="Mundos de Aprendizaje">
-
-      <header class="worlds-header">
-
-        <button type="button" class="iconbtn" id="btn-worlds-back" aria-label="Volver al menú principal">
-
-          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-
-            <path d="M15 5l-7 7 7 7"/>
-
-          </svg>
-
-        </button>
-
-        <div class="worlds-title-box">
-
-          <h2>Mundos de Exploración</h2>
-
-          <p>Aprende paso a paso por asignatura</p>
-
-        </div>
-
-      </header>
-
-
-
-      <div class="worlds-container">
-
-        <div class="worlds-grid" id="worlds-grid"></div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ============================================================
-
-         6. PANTALLA: SALA DE LOGROS Y MEDALLERO
-
-         ============================================================ -->
-
-    <section class="screen" id="scr-achievements" aria-label="Sala de Logros">
-
-      <header class="ach-header">
-
-        <button type="button" class="iconbtn" id="btn-ach-back" aria-label="Volver al menú principal">
-
-          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-
-            <path d="M15 5l-7 7 7 7"/>
-
-          </svg>
-
-        </button>
-
-        <div class="ach-title-box">
-
-          <h2 id="ach-main-title">Sala de Trofeos</h2>
-
-          <p id="ach-main-desc">Tus logros y medallas ganadas</p>
-
-        </div>
-
-      </header>
-
-
-
-      <!-- Selector de Pestañas: Trofeos vs Destrezas -->
-
-      <nav class="ach-tabs" role="tablist" aria-label="Secciones de progreso">
-
-        <button type="button" class="ach-tab-btn active" id="tab-btn-trophies" role="tab" aria-selected="true" aria-controls="achievements-grid">
-
-          🏆 Trofeos
-
-        </button>
-
-        <button type="button" class="ach-tab-btn" id="tab-btn-skills" role="tab" aria-selected="false" aria-controls="skills-grid">
-
-          📊 Destrezas
-
-        </button>
-
-      </nav>
-
-
-
-      <div class="ach-container">
-
-        <div class="ach-grid" id="achievements-grid" role="tabpanel" aria-labelledby="tab-btn-trophies"></div>
-
-        <div class="skills-grid" id="skills-grid" role="tabpanel" aria-labelledby="tab-btn-skills" style="display: none;"></div>
-
-      </div>
-
-    </section>
-
-
-
-  </main>
-
-
-
-  <!-- Modal de Rescate Afectivo ante Caídas (Global Error Boundary) -->
-
-  <dialog class="crash-modal" id="mochi-crash-modal" aria-labelledby="crash-modal-title">
-
-    <div class="crash-mascot-box">
-
-      <img src="assets/mascotas/mochi_hub.webp" alt="Mochi sonriendo con calma" class="crash-mascot">
-
-    </div>
-
-    <h3 id="crash-modal-title" class="crash-title">¡Ups! Mochi tropezó con una ramita 🐼</h3>
-
-    <p class="crash-msg">No te preocupes, tus estrellas y medallas están bien guardadas. ¡Sigamos jugando juntos!</p>
-
-    <button type="button" class="pbtn green" id="btn-crash-reload" style="width: 100%; height: 52px;" aria-label="Continuar jugando">
-
-      ¡Continuar jugando! 🚀
-
-    </button>
-
-  </dialog>
-
-
-
-
-
-  <!-- Modal de Apoyo Afectivo: Segunda Oportunidad de Mochi (0 Corazones) -->
-
-  <dialog class="mochi-help-modal" id="mochi-help-modal" aria-labelledby="mochi-help-title">
-
-    <div class="mochi-help-content">
-
-      <div class="mochi-help-mascot-box">
-
-        <img src="assets/mascotas/mochi_avatar.webp" alt="Mochi amigable" class="mochi-help-mascot" id="mochi-help-img">
-
-      </div>
-
-      <h3 id="mochi-help-title" class="mochi-help-title">¡Ánimo, tú puedes! 🐼💖</h3>
-
-      <p class="mochi-help-msg" id="mochi-help-msg">¡Uff, estas preguntas están un poco difíciles! Toca a Mochi para recargar energías ✨</p>
-
-      <button type="button" class="pbtn green" id="btn-mochi-recharge" style="width: 100%; height: 56px;">
-
-        ¡Recargar y seguir! 💖
-
-      </button>
-
-    </div>
-
-  </dialog>
-
-
-
-  <!-- Modal de Pasaporte / Perfil -->
-
-  <dialog class="profile-modal" id="profile-modal" aria-labelledby="profile-modal-title">
-
-    <h3 id="profile-modal-title">Tu Pasaporte Panda 🐼</h3>
-
-    <form method="dialog" id="profile-form">
-
-      <div class="profile-input-group">
-
-        <label for="input-profile-name">Tu Nombre:</label>
-
-        <input type="text" id="input-profile-name" maxlength="15" autocomplete="off" required>
-
-      </div>
-
-      <div class="profile-input-group">
-
-        <label>Tu Edad:</label>
-
-        <div class="profile-age-selector">
-
-          <button type="button" class="profile-age-btn" data-age="6">6 años</button>
-
-          <button type="button" class="profile-age-btn selected" data-age="7">7 años</button>
-
-        </div>
-
-      </div>
-
-      <div class="profile-modal-actions">
-
-        <button type="button" class="pbtn orange" id="btn-profile-cancel" style="flex: 1; height: 48px;">Cancelar</button>
-
-        <button type="submit" class="pbtn green" id="btn-profile-save" style="flex: 1; height: 48px;">Guardar ✨</button>
-
-      </div>
-
-      <div class="profile-extra-actions" style="margin-top: 14px; display: flex; flex-direction: column; gap: 8px;">
-
-        <button type="button" class="pbtn blue pwa-install-btn" id="btn-pwa-install" style="display: none; height: 44px; font-size: 14px;" aria-label="Instalar Kimi Panda en tu tablet">
-
-          📲 ¡Instalar en tu Pantalla!
-
-        </button>
-
-        <button type="button" class="btn-text-danger" id="btn-profile-reset" style="background: none; border: none; color: #C84B43; font-family: var(--font-b); font-size: 12px; font-weight: 800; text-decoration: underline; cursor: pointer; padding: 4px;" aria-label="Reiniciar partida">
-
-          🔄 Reiniciar partida (Nuevo explorador)
-
-        </button>
-
-      </div>
-
-    </form>
-
-  </dialog>
-
-
-
-  <!-- Notificación Toast Dinámica -->
-
-  <aside class="toast" id="toast" role="status" aria-live="polite">¡Increíble! +3 ⭐</aside>
-
-
-
-  <!-- Pie de Marca Minimalista -->
-
-  <footer class="brandtag" aria-hidden="true">Kimi Panda v1.0.1 · MVP Flash PWA</footer>
-
-
-
-  <!-- Script Modular ESM -->
-
-  <script type="module" src="js/main.js"></script>
-
-
-
-</body>
-
-</html>
-
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+
+  <title>Kimi Panda — Aventura de Aprendizaje</title>
+
+  <!-- Tipografías Oficiales: Fredoka (Títulos/Botones) y Nunito (Cuerpo/Lectura) -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Manifiesto PWA -->
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#37A05C">
+
+  <meta name="description" content="Aventura de agilidad mental y aprendizaje didáctico para niños de 6 a 7 años">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="apple-mobile-web-app-title" content="Kimi Panda">
+
+  <link rel="icon" href="assets/mascotas/skins/mochi_classic_avatar.webp" type="image/webp">
+
+  <link rel="apple-touch-icon" href="assets/mascotas/skins/mochi_classic_avatar.webp">
+
+  <!-- Hojas de Estilo Modulares Desacopladas -->
+
+  <link rel="stylesheet" href="css/tokens.css">
+
+  <link rel="stylesheet" href="css/hub.css">
+
+  <link rel="stylesheet" href="css/game.css">
+
+  <link rel="stylesheet" href="css/shop.css">
+
+  <link rel="stylesheet" href="css/worlds.css">
+
+  <link rel="stylesheet" href="css/achievements.css">
+
+</head>
+
+<body>
+
+  <!-- Fondo Decorativo Limpio Anti-Fatiga (Cielo Cálido con Halos Difusos) -->
+
+  <div class="sky" id="sky">
+
+    <div class="blob b1"></div>
+
+    <div class="blob b2"></div>
+
+    <div class="blob b3"></div>
+
+  </div>
+
+  <!-- Contenedor Principal de la App -->
+
+  <main class="app" role="main">
+
+    <!-- ============================================================
+
+         1. PANTALLA PRINCIPAL: HUB BENTO POP
+
+         ============================================================ -->
+
+    <section class="screen active" id="scr-hub" aria-label="Menú Principal">
+
+      <!-- Top Bar HUD -->
+
+      <header class="hud">
+
+        <div class="profile" id="hub-profile-btn" role="button" tabindex="0" aria-label="Perfil del jugador">
+
+          <div class="avatar">
+
+            <img id="hub-avatar-img" src="assets/mascotas/skins/mochi_classic_avatar.webp" alt="Avatar de Mochi" width="44" height="44">
+
+          </div>
+
+          <div>
+
+            <div class="hi" id="player-name">¡Hola, Sofía!</div>
+
+            <div class="sub" id="player-sub">7 años · Exploradora</div>
+
+          </div>
+
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="level-pill" id="hub-level-pill" role="button" tabindex="0" aria-label="Nivel y experiencia">
+
+          <span class="lvl-txt" id="hub-level-txt">Nv. 1</span>
+
+          <div class="xp-mini-track"><i id="hub-xp-fill" style="width: 0%;"></i></div>
+
+        </div>
+
+        <div class="pill" id="hub-stars" aria-label="Estrellas acumuladas">
+
+          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
+
+            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
+
+          </svg>
+
+          <span id="hub-stars-val">128</span>
+
+        </div>
+
+        <button type="button" class="iconbtn" id="btn-audio-toggle" aria-label="Silenciar sonido">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+
+          </svg>
+
+        </button>
+
+      </header>
+
+      <!-- Escenario Central Hero con Mochi -->
+
+      <section class="hero" aria-label="Mochi el Panda">
+
+        <div class="bubble" id="hub-bubble">¿Qué jugamos hoy?</div>
+
+        <div class="mochi-hero-wrap">
+
+          <img class="mascot" id="hub-mascot" src="assets/mascotas/skins/mochi_classic_hub.webp" alt="Mochi saludando" width="220" height="230" role="button" tabindex="0" aria-label="Tocar a Mochi">
+
+          <div class="mochi-shadow" aria-hidden="true"></div>
+
+        </div>
+
+      </section>
+
+      <!-- Menú 2x2 de Acciones Principales -->
+
+      <nav class="menu" aria-label="Modos de juego">
+
+        <button type="button" class="pbtn green" id="btn-mundos" aria-label="Modo Mundos">
+
+          <span class="ico" aria-hidden="true">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+              <path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="rgba(255,255,255,.18)"/>
+
+              <path d="M9 4v14M15 6v14"/>
+
+            </svg>
+
+          </span>
+
+          Mundos
+
+        </button>
+
+        <button type="button" class="pbtn orange" id="btn-libre" aria-label="Modo Juego Libre">
+
+          <span class="ico" aria-hidden="true">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="rgba(255,255,255,.18)"/>
+
+              <circle cx="8.3" cy="8.3" r="1.5" fill="#fff" stroke="none"/>
+
+              <circle cx="15.7" cy="8.3" r="1.5" fill="#fff" stroke="none"/>
+
+              <circle cx="12" cy="12" r="1.5" fill="#fff" stroke="none"/>
+
+              <circle cx="8.3" cy="15.7" r="1.5" fill="#fff" stroke="none"/>
+
+              <circle cx="15.7" cy="15.7" r="1.5" fill="#fff" stroke="none"/>
+
+            </svg>
+
+          </span>
+
+          Juego libre
+
+        </button>
+
+        <button type="button" class="pbtn blue" id="btn-tienda" aria-label="Tienda">
+
+          <span class="ico" aria-hidden="true">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+              <path d="M4 7h16l-1.6 8.2a2.5 2.5 0 0 1-2.5 2H8.4a2.5 2.5 0 0 1-2.5-2.1L4 7z" fill="rgba(255,255,255,.18)"/>
+
+              <path d="M8.5 10V5.5a3.5 3.5 0 0 1 7 0V10"/>
+
+            </svg>
+
+          </span>
+
+          Tienda
+
+        </button>
+
+        <button type="button" class="pbtn purple" id="btn-logros" aria-label="Logros">
+
+          <span class="ico" aria-hidden="true">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+              <path d="M7 4h10v5a5 5 0 0 1-10 0V4z" fill="rgba(255,255,255,.18)"/>
+
+              <path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4M12 14v3M8.5 21h7M10 17.5h4l.7 3.5h-5.4z"/>
+
+            </svg>
+
+          </span>
+
+          Logros
+
+        </button>
+
+      </nav>
+
+      <!-- Tarjeta Bento de Misiones Semanales -->
+
+      <section class="missions" aria-label="Misiones semanales">
+
+        <span class="sticker">Misiones semanales</span>
+
+        <div class="mission" id="mission-item-1">
+
+          <div class="txt">
+
+            <span id="mission-1-label">Juega 20 partidas (0/20)</span>
+
+            <div class="reward" id="mission-1-reward-pill">
+
+              <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
+
+                <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
+
+              </svg>
+
+              <span>+180</span>
+
+            </div>
+
+            <button type="button" class="mission-claim-btn" id="btn-claim-mission-1" style="display: none;" aria-label="Reclamar 180 estrellas">¡Reclamar! 🎁</button>
+
+          </div>
+
+          <div class="bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20">
+
+            <i id="mission-1-bar-fill" style="width: 0%"></i>
+
+          </div>
+
+        </div>
+
+        <div class="mission" id="mission-item-2">
+
+          <div class="txt">
+
+            <span id="mission-2-label">Acierta 40 de Matemáticas (0/40)</span>
+
+            <div class="reward" id="mission-2-reward-pill">
+
+              <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
+
+                <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
+
+              </svg>
+
+              <span>+220</span>
+
+            </div>
+
+            <button type="button" class="mission-claim-btn" id="btn-claim-mission-2" style="display: none;" aria-label="Reclamar 220 estrellas">¡Reclamar! 🎁</button>
+
+          </div>
+
+          <div class="bar blue" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="40">
+
+            <i id="mission-2-bar-fill" style="width: 0%"></i>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+    <!-- ============================================================
+
+         2. PANTALLA DE JUEGO: QUIZ ADAPTATIVO (2x2 Y ZERO SCROLL)
+
+         ============================================================ -->
+
+    <section class="screen" id="scr-game" aria-label="Pantalla de Juego">
+
+      <!-- Top HUD de Ronda -->
+
+      <header class="g-hud">
+
+        <button type="button" class="iconbtn" id="btn-game-back" aria-label="Volver al menú principal">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+            <path d="M15 5l-7 7 7 7"/>
+
+          </svg>
+
+        </button>
+
+        <div class="hearts" id="hearts" aria-label="Vidas restantes">
+
+          <svg viewBox="0 0 24 24" fill="#F0685F" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
+
+            <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
+
+          </svg>
+
+          <svg viewBox="0 0 24 24" fill="#F0685F" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
+
+            <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
+
+          </svg>
+
+          <svg viewBox="0 0 24 24" fill="#F0685F" stroke="#241C15" stroke-width="1.8" aria-hidden="true">
+
+            <path d="M12 20.5S3 14.7 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 5.8-9 11.6-9 11.6z"/>
+
+          </svg>
+
+        </div>
+
+        <div class="progress" aria-label="Progreso de ronda">
+
+          <i id="prog" style="width: 0%;"></i>
+
+        </div>
+
+        <div class="pill" id="g-stars-pill" aria-label="Estrellas">
+
+          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
+
+            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
+
+          </svg>
+
+          <span id="g-stars">128</span>
+
+        </div>
+
+      </header>
+
+      <!-- Cuerpo Central: Tarjeta de Pregunta + Respuestas -->
+
+      <div class="g-body">
+
+        <!-- Comodines Protectores Didácticos -->
+
+        <div class="g-helpers" role="group" aria-label="Comodines protectores">
+
+          <button type="button" class="helper-btn" id="btn-helper-5050" aria-label="Comodín Escudo 50/50">
+
+            <span class="helper-ico" aria-hidden="true">❄️</span>
+
+            <span class="helper-lbl">50/50</span>
+
+            <span class="helper-badge" id="badge-5050">1</span>
+
+          </button>
+
+          <button type="button" class="helper-btn" id="btn-helper-hint" aria-label="Comodín Pista Sabia">
+
+            <span class="helper-ico" aria-hidden="true">💡</span>
+
+            <span class="helper-lbl">Pista</span>
+
+            <span class="helper-badge" id="badge-hint">1</span>
+
+          </button>
+
+        </div>
+
+        <!-- Tarjeta de Pregunta Adaptativa -->
+
+        <article class="qcard text-only" id="qcard">
+
+          <span class="sticker" id="q-cat">Matemáticas</span>
+
+          <div class="q-media-frame" style="display: none;">
+
+            <img id="q-media-img" src="" alt="Ilustración didáctica">
+
+          </div>
+
+          <h2 class="q-big" id="q-text">8 + 7 = ?</h2>
+
+          <div class="q-hint-pill" id="q-hint-box" style="display: none;">
+
+            <span class="q-hint-icon" aria-hidden="true">💡</span>
+
+            <span class="q-hint-text" id="q-hint-text">¡Cuenta con calma!</span>
+
+          </div>
+
+          <div class="q-hint">Toca la respuesta correcta</div>
+
+        </article>
+
+        <!-- Cuadrícula 2x2 de Respuestas -->
+
+        <div class="answers" id="answers" role="group" aria-label="Opciones de respuesta"></div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+
+         3. PANTALLA DE RESUMEN DE RONDA: CELEBRACIÓN Y RECOMPENSA
+
+         ============================================================ -->
+
+    <section class="screen" id="scr-summary" aria-label="Resumen de Ronda">
+
+      <div class="summary-card">
+
+        <img class="summary-mascot" id="summary-mascot" src="assets/mascotas/mochi_celebrate.webp" alt="Mochi celebrando victoria">
+
+        <h2 class="summary-title" id="summary-title">¡Ronda Superada!</h2>
+
+        <div class="summary-rating-stars" id="summary-rating-stars" aria-label="Calificación de 1 a 3 estrellas">
+
+          <span class="rating-star earned" style="animation-delay: 0.05s">⭐</span>
+
+          <span class="rating-star earned" style="animation-delay: 0.2s">⭐</span>
+
+          <span class="rating-star earned" style="animation-delay: 0.35s">⭐</span>
+
+        </div>
+
+        <div class="summary-rating-praise gold" id="summary-rating-praise">¡Ronda Perfecta! ¡Eres increíble! 🌟</div>
+
+        <div class="summary-stars-badge" id="summary-stars-badge">
+
+          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
+
+            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
+
+          </svg>
+
+          <span id="summary-stars">+18 ⭐</span>
+
+        </div>
+
+        <p id="summary-encouragement" style="font-weight: 700; color: var(--ink-soft); margin-bottom: 8px;">¡Excelente trabajo de agilidad mental!</p>
+
+        <div class="summary-actions" id="summary-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+
+          <button type="button" class="pbtn orange" id="btn-summary-retry" style="display: none; width: 100%; height: 54px;">
+
+            Reintentar Ronda 🔄
+
+          </button>
+
+          <button type="button" class="pbtn green" id="btn-summary-done" style="width: 100%; height: 60px;">
+
+            ¡Continuar al Hub! 🚀
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+
+         4. PANTALLA: TIENDA DE MOCHI Y ACCESORIOS
+
+         ============================================================ -->
+
+    <section class="screen" id="scr-shop" aria-label="Tienda de Mochi">
+
+      <header class="shop-header">
+
+        <button type="button" class="iconbtn" id="btn-shop-back" aria-label="Volver al menú principal">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+            <path d="M15 5l-7 7 7 7"/>
+
+          </svg>
+
+        </button>
+
+        <div class="shop-title-box">
+
+          <h2>Tienda de Mochi</h2>
+
+          <p>¡Viste a tu panda explorador!</p>
+
+        </div>
+
+        <div class="pill" aria-label="Tus estrellas">
+
+          <svg viewBox="0 0 24 24" fill="#FFC53D" stroke="#241C15" stroke-width="1.6" aria-hidden="true">
+
+            <path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/>
+
+          </svg>
+
+          <span id="shop-stars-val">128</span>
+
+        </div>
+
+      </header>
+
+      <div class="shop-diorama">
+
+        <div class="shop-diorama-mascot">
+
+          <img id="shop-mascot-img" src="assets/mascotas/skins/mochi_classic_avatar.webp" alt="Mochi probador">
+
+        </div>
+
+        <div class="shop-diorama-bubble" id="shop-diorama-bubble">
+
+          ¡Elige tu traje favorito con las estrellas ganadas! ✨
+
+        </div>
+
+      </div>
+
+      <div class="shop-items-container">
+
+        <div class="shop-items-grid" id="shop-items-grid"></div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+
+         5. PANTALLA: MAPA DE MUNDOS CURRICULARES
+
+         ============================================================ -->
+
+    <section class="screen" id="scr-worlds" aria-label="Mundos de Aprendizaje">
+
+      <header class="worlds-header">
+
+        <button type="button" class="iconbtn" id="btn-worlds-back" aria-label="Volver al menú principal">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+            <path d="M15 5l-7 7 7 7"/>
+
+          </svg>
+
+        </button>
+
+        <div class="worlds-title-box">
+
+          <h2>Mundos de Exploración</h2>
+
+          <p>Aprende paso a paso por asignatura</p>
+
+        </div>
+
+      </header>
+
+      <div class="worlds-container">
+
+        <div class="worlds-grid" id="worlds-grid"></div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+
+         6. PANTALLA: SALA DE LOGROS Y MEDALLERO
+
+         ============================================================ -->
+
+    <section class="screen" id="scr-achievements" aria-label="Sala de Logros">
+
+      <header class="ach-header">
+
+        <button type="button" class="iconbtn" id="btn-ach-back" aria-label="Volver al menú principal">
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#241C15" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+            <path d="M15 5l-7 7 7 7"/>
+
+          </svg>
+
+        </button>
+
+        <div class="ach-title-box">
+
+          <h2 id="ach-main-title">Sala de Trofeos</h2>
+
+          <p id="ach-main-desc">Tus logros y medallas ganadas</p>
+
+        </div>
+
+      </header>
+
+      <!-- Selector de Pestañas: Trofeos vs Destrezas -->
+
+      <nav class="ach-tabs" role="tablist" aria-label="Secciones de progreso">
+
+        <button type="button" class="ach-tab-btn active" id="tab-btn-trophies" role="tab" aria-selected="true" aria-controls="achievements-grid">
+
+          🏆 Trofeos
+
+        </button>
+
+        <button type="button" class="ach-tab-btn" id="tab-btn-skills" role="tab" aria-selected="false" aria-controls="skills-grid">
+
+          📊 Destrezas
+
+        </button>
+
+      </nav>
+
+      <div class="ach-container">
+
+        <div class="ach-grid" id="achievements-grid" role="tabpanel" aria-labelledby="tab-btn-trophies"></div>
+
+        <div class="skills-grid" id="skills-grid" role="tabpanel" aria-labelledby="tab-btn-skills" style="display: none;"></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Modal de Rescate Afectivo ante Caídas (Global Error Boundary) -->
+
+  <dialog class="crash-modal" id="mochi-crash-modal" aria-labelledby="crash-modal-title">
+
+    <div class="crash-mascot-box">
+
+      <img src="assets/mascotas/mochi_hub.webp" alt="Mochi sonriendo con calma" class="crash-mascot">
+
+    </div>
+
+    <h3 id="crash-modal-title" class="crash-title">¡Ups! Mochi tropezó con una ramita 🐼</h3>
+
+    <p class="crash-msg">No te preocupes, tus estrellas y medallas están bien guardadas. ¡Sigamos jugando juntos!</p>
+
+    <button type="button" class="pbtn green" id="btn-crash-reload" style="width: 100%; height: 52px;" aria-label="Continuar jugando">
+
+      ¡Continuar jugando! 🚀
+
+    </button>
+
+  </dialog>
+
+  <!-- Modal de Apoyo Afectivo: Segunda Oportunidad de Mochi (0 Corazones) -->
+
+  <dialog class="mochi-help-modal" id="mochi-help-modal" aria-labelledby="mochi-help-title">
+
+    <div class="mochi-help-content">
+
+      <div class="mochi-help-mascot-box">
+
+        <img src="assets/mascotas/mochi_avatar.webp" alt="Mochi amigable" class="mochi-help-mascot" id="mochi-help-img">
+
+      </div>
+
+      <h3 id="mochi-help-title" class="mochi-help-title">¡Ánimo, tú puedes! 🐼💖</h3>
+
+      <p class="mochi-help-msg" id="mochi-help-msg">¡Uff, estas preguntas están un poco difíciles! Toca a Mochi para recargar energías ✨</p>
+
+      <button type="button" class="pbtn green" id="btn-mochi-recharge" style="width: 100%; height: 56px;">
+
+        ¡Recargar y seguir! 💖
+
+      </button>
+
+    </div>
+
+  </dialog>
+
+  <!-- Modal de Pasaporte / Perfil -->
+
+  <dialog class="profile-modal" id="profile-modal" aria-labelledby="profile-modal-title">
+
+    <h3 id="profile-modal-title">Tu Pasaporte Panda 🐼</h3>
+
+    <form method="dialog" id="profile-form">
+
+      <div class="profile-input-group">
+
+        <label for="input-profile-name">Tu Nombre:</label>
+
+        <input type="text" id="input-profile-name" maxlength="15" autocomplete="off" required>
+
+      </div>
+
+      <div class="profile-input-group">
+
+        <label>Tu Edad:</label>
+
+        <div class="profile-age-selector">
+
+          <button type="button" class="profile-age-btn" data-age="6">6 años</button>
+
+          <button type="button" class="profile-age-btn selected" data-age="7">7 años</button>
+
+        </div>
+
+      </div>
+
+      <div class="profile-modal-actions">
+
+        <button type="button" class="pbtn orange" id="btn-profile-cancel" style="flex: 1; height: 48px;">Cancelar</button>
+
+        <button type="submit" class="pbtn green" id="btn-profile-save" style="flex: 1; height: 48px;">Guardar ✨</button>
+
+      </div>
+
+      <div class="profile-extra-actions" style="margin-top: 14px; display: flex; flex-direction: column; gap: 8px;">
+
+        <button type="button" class="pbtn blue pwa-install-btn" id="btn-pwa-install" style="display: none; height: 44px; font-size: 14px;" aria-label="Instalar Kimi Panda en tu tablet">
+
+          📲 ¡Instalar en tu Pantalla!
+
+        </button>
+
+        <button type="button" class="btn-text-danger" id="btn-profile-reset" style="background: none; border: none; color: #C84B43; font-family: var(--font-b); font-size: 12px; font-weight: 800; text-decoration: underline; cursor: pointer; padding: 4px;" aria-label="Reiniciar partida">
+
+          🔄 Reiniciar partida (Nuevo explorador)
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+  <!-- Notificación Toast Dinámica -->
+
+  <aside class="toast" id="toast" role="status" aria-live="polite">¡Increíble! +3 ⭐</aside>
+
+  <!-- Pie de Marca Minimalista -->
+
+  <footer class="brandtag" aria-hidden="true">Kimi Panda v1.0.1 · MVP Flash PWA</footer>
+
+  <!-- Script Modular ESM -->
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
+
